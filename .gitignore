@@ -1,0 +1,14 @@
+# Loại bỏ các thư mục và file tạm của Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Loại bỏ các thư mục bin và obj
+bin/
+obj/
+
+# Loại bỏ các file tạm khác
+*.tmp
+*.log
