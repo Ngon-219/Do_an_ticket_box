@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj": {}
+    "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj": {}
   },
   "projects": {
-    "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj": {
+    "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
+        "projectUniqueName": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
         "projectName": "Do_an_ticket_box",
-        "projectPath": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
+        "projectPath": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
         "packagesPath": "C:\\Users\\vucon\\.nuget\\packages\\",
-        "outputPath": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\obj\\",
+        "outputPath": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
