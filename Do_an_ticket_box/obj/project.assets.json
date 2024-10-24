@@ -2007,24 +2007,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vucon\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Nguyen Van Dung\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
+      "projectUniqueName": "C:\\Workspace\\Tai lieu\\Do an cong nghe web nang cao\\Source_Do_An\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
       "projectName": "Do_an_ticket_box",
-      "projectPath": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
-      "packagesPath": "C:\\Users\\vucon\\.nuget\\packages\\",
-      "outputPath": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\obj\\",
+      "projectPath": "C:\\Workspace\\Tai lieu\\Do an cong nghe web nang cao\\Source_Do_An\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
+      "packagesPath": "C:\\Users\\Nguyen Van Dung\\.nuget\\packages\\",
+      "outputPath": "C:\\Workspace\\Tai lieu\\Do an cong nghe web nang cao\\Source_Do_An\\Do_an_ticket_box\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\vucon\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Nguyen Van Dung\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2032,7 +2027,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2045,11 +2039,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -2086,7 +2075,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
