@@ -1,11 +1,61 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<div>
+    <div class="d-flex justify-content-center align-items-center text-center box-shadow" style="position: relative">
+        <div class="" style="width: 100vw;">
+            <button id="prev" class="d-flex align-content-center align-items-center text-center border-0" style="font-size: 40px; height: 40vh; background-color: rgba(128, 128, 128, 0.3); position: absolute; top: 0%;"><</button>
+            <button id="next" class="d-flex align-content-center align-items-center text-center border-0" style="font-size: 40px; height: 40vh; background-color: rgba(128, 128, 128, 0.3); position: absolute; top: 0%; right: 0%">></button>
+            <div class="banner">
+                <img class="d-none" style="width: 100vw; height: 40vh;" src="https://i.ytimg.com/vi/RKDSHLlZW7g/maxresdefault.jpg" alt="Alternate Text" />
+                <img class="d-none" style="width: 100vw; height: 40vh;" src="https://wallpapercave.com/wp/wp9748824.jpg" alt="Alternate Text" />
+                <img class="d-none" style="width: 100vw; height: 40vh;" src="https://rare-gallery.com/livewalls/imgpreview/142533-doggie-corgi-in-front-of-the-house-live-wallpaper.jpg" alt="Alternate Text" />
+            </div>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    <h1>
-        orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    </h1>
+        </div>
+
+        <script>
+            let currentIndex = 0;
+            const images = document.querySelectorAll('.banner img');
+            const totalImages = images.length;
+            images[currentIndex].classList.remove('d-none')
+            const solveBanner = () => {
+                const images = document.querySelectorAll('.banner img');
+                const totalImages = images.length;
+                images[currentIndex].classList.remove('d-none')
+                document.getElementById('next').addEventListener('click', () => {
+                    images[currentIndex].classList.add('d-none');
+                    currentIndex = (currentIndex + 1) % totalImages;
+                    images[currentIndex].classList.remove('d-none');
+                    console.log('ahihi')
+                })
+                document.getElementById('prev').addEventListener('click', () => {
+                    if (currentIndex == 0) {
+                        images[currentIndex].classList.add('d-none');
+                        currentIndex = totalImages - 1;
+                        images[currentIndex].classList.remove('d-none');
+                        console.log('ahihi')
+                    } else {
+                        images[currentIndex].classList.add('d-none');
+                        currentIndex = currentIndex - 1;
+                        images[currentIndex].classList.remove('d-none');
+                        console.log('ahihi')
+                    }
+                })
+            }
+
+            solveBanner();
+
+            const changeImg = () => {
+
+                images[currentIndex].classList.add('d-none');
+                currentIndex = (currentIndex + 1) % totalImages;
+                images[currentIndex].classList.remove('d-none');
+            }
+            setInterval(() => {
+                changeImg();
+            }, 3000);
+        </script>
+    </div>
+    <div>ấdf</div>
 </div>
