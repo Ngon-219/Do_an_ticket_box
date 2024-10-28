@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "D:\\Desktop\\check\\Do_an_ticket_box\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\check\\do_an_ticket_box\\do_an_ticket_box\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\check\\do_an_ticket_box\\do_an_ticket_box\\views\\home\\nosearchresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\home\\nosearchresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -17,6 +13,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\check\\do_an_ticket_box\\do_an_ticket_box\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\check\\do_an_ticket_box\\do_an_ticket_box\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\check\\do_an_ticket_box\\do_an_ticket_box\\views\\home\\searchresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -69,39 +69,29 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAsAAAAAZmZmZmYkwBsAAAApAAAAAAAAAA==",
+              "ViewState": "AQIAADsAAAAAAAAAAAAIwFkAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-22T02:19:52.18Z"
+              "WhenOpened": "2024-10-22T02:19:52.18Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\_ViewImports.cshtml",
-              "ToolTip": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "Do_an_ticket_box\\Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-24T14:30:51.779Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Home\\Index.cshtml",
               "ToolTip": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Do_an_ticket_box\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAwBAAAAMDMzMzMfwJwAAAAYAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-22T02:50:31.992Z"
+              "WhenOpened": "2024-10-22T02:50:31.992Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -174,7 +164,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Controllers\\HomeController.cs",
@@ -186,8 +176,33 @@
               "EditorCaption": ""
             },
             {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "noSearchResult.cshtml",
+              "DocumentMoniker": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
+              "ToolTip": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
+              "RelativeToolTip": "Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
+              "ViewState": "AQIAANgAAAAAAAAAAAAAAI0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-26T15:15:55.179Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\_ViewImports.cshtml",
+              "ToolTip": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "Do_an_ticket_box\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-24T14:30:51.779Z"
             },
             {
               "$type": "Document",
@@ -212,18 +227,6 @@
               "ViewState": "AgIAAK0AAAAAAAAAAAAmwLcAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-26T15:01:51.769Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "noSearchResult.cshtml",
-              "DocumentMoniker": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
-              "ToolTip": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
-              "RelativeToolTip": "Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAL8AAABlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-26T15:15:55.179Z"
             },
             {
               "$type": "Document",
