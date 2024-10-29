@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pIynf+0sZTscyYN8VIq4OhAj3lSXDszJyjN6GduWLQg=",
+  "Hash": "DvzVR/RcrkHs7RYFZ2vhzvJonFk9dXrWfn1cSm00VsY=",
   "Source": "Do_an_ticket_box",
   "BasePath": "_content/Do_an_ticket_box",
   "Mode": "Default",
@@ -72,6 +72,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\wwwroot\\css\\style-searchResult.css",
+      "SourceId": "Do_an_ticket_box",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\wwwroot\\",
+      "BasePath": "_content/Do_an_ticket_box",
+      "RelativePath": "css/style-searchResult.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\style-searchResult.css"
     },
     {
       "Identity": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\wwwroot\\favicon.ico",
