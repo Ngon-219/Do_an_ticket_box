@@ -45,11 +45,11 @@
                             @if(true)
                             {
                                 <div style="display: flex; justify-content: center; align-items:center;">
-                                    <a class="login__page  nav-link text-white align-content-center align-items-center d-flex" style="margin-left:1vw; margin-right:1vw; font-weight: 500;" asp-area="" asp-controller="Home" asp-action="Privacy">
+                                    <a class="login__page  nav-link text-white align-content-center align-items-center d-flex" style="margin-left:1vw; margin-right:1vw; font-weight: 500; cursor:pointer;">
                                         Đăng Nhập
                                     </a>
                                     <div class="text-white align-content-center align-items-center d-flex" style="width:1px; height: 20px; background-color: #fff;"></div>
-                                    <a class="register__page nav-link text-white align-content-center align-items-center d-flex" style="margin-left:1vw; margin-right:1vw; font-weight: 500;" asp-area="" asp-controller="Home" asp-action="Privacy">
+                                    <a class="register__page nav-link text-white align-content-center align-items-center d-flex" style="margin-left:1vw; margin-right:1vw; font-weight: 500; cursor:pointer;">
                                         Đăng kí
                                     </a>
                                 </div>
@@ -299,7 +299,7 @@
                     </div>
                     <div class="auth-form__switch">
                         <div class="auth-form__switch-text">
-                            Bạn đã có tài khoản? <a href="#" class="auth-form__switch-btn js-notify-list">Đăng nhập</a>
+                            Bạn đã có tài khoản? <a href="#" class="login__page auth-form__switch-btn js-notify-list">Đăng nhập</a>
                         </div>
                     </div>
                 </div>
@@ -341,7 +341,7 @@
                     </div>
                     <div class="grid-center auth-form__switch">
                         <div class=" auth-form__switch-text">
-                            Bạn mới biết đến TicketBox?<a href="#" class="auth-form__switch-btn js-notify-list">Đăng ký</a>
+                            Bạn mới biết đến TicketBox?<a href="#" class="register__page auth-form__switch-btn">Đăng ký</a>
                         </div>
                     </div>
                 </div>
@@ -350,27 +350,30 @@
     </div>
     @* modal *@
     <script>
-        const loginBtn = document.querySelector('.login__page');
-        const registerBtn = document.querySelector('.register__page');
-        const modal = document.querySelector('.js-modal');
-        const modalOverLay = document.querySelector('.js-modal-overlay');
+        const loginBtns = document.querySelectorAll('.login__page');
+        const registerBtns = document.querySelectorAll('.register__page');
         const loginForm = document.querySelector('.js-login-form');
         const registerForm = document.querySelector('.js-register-form');
+        const modal = document.querySelector('.js-modal');
+        const modalOverLay = document.querySelector('.js-modal-overlay');
         const modalCloseButtons = document.querySelectorAll('.js-modal-close');
 
-        
-        loginBtn.addEventListener('click', function (event) {
-            event.preventDefault();  
-            modal.style.display = 'flex'; 
-            loginForm.style.display = 'block'; 
-            registerForm.style.display = 'none';
+        loginBtns.forEach((loginBtn) => {
+            loginBtn.addEventListener('click', function (event) {
+                event.preventDefault();
+                modal.style.display = 'flex';          // Hiển thị modal
+                loginForm.style.display = 'block';  // Hiển thị biểu mẫu đăng nhập
+                registerForm.style.display = 'none';      // Ẩn biểu mẫu đăng ký
+            });
         });
 
-        registerBtn.addEventListener('click', function (event) {
-            event.preventDefault(); 
-            modal.style.display = 'flex'; 
-            registerForm.style.display = 'block'; 
-            loginForm.style.display = 'none'; 
+        registerBtns.forEach((registerBtn) => {
+            registerBtn.addEventListener('click', function (event) {
+                event.preventDefault();
+                modal.style.display = 'flex';          // Hiển thị modal
+                registerForm.style.display = 'block';  // Hiển thị biểu mẫu đăng ký
+                loginForm.style.display = 'none';      // Ẩn biểu mẫu đăng nhập
+            });
         });
 
         modalCloseButtons.forEach(button => {

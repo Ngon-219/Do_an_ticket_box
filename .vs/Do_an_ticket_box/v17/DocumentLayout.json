@@ -65,11 +65,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Bookmark",
@@ -119,7 +123,7 @@
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\My-PC\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAH8BAAAAAAAAAAAAAI4BAAAZAAAA",
+              "ViewState": "AQIAAGMBAAAAAAAAAAAiwGwBAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-22T02:19:52.18Z",
               "EditorCaption": ""
