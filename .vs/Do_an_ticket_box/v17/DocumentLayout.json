@@ -3,19 +3,11 @@
   "WorkspaceRootPath": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\.vs\\ProjectEvaluation\\do_an_ticket_box.projects.v8.bin||{25834150-CD7E-11D0-92DF-00A0C9138C45}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.vs\\ProjectEvaluation\\do_an_ticket_box.projects.v8.bin||{25834150-CD7E-11D0-92DF-00A0C9138C45}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\.vs\\ProjectEvaluation\\do_an_ticket_box.metadata.v8.bin||{25834150-CD7E-11D0-92DF-00A0C9138C45}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.vs\\ProjectEvaluation\\do_an_ticket_box.metadata.v8.bin||{25834150-CD7E-11D0-92DF-00A0C9138C45}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Do_an_ticket_box\\Do_an_ticket_box.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\8.0.303\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Do_an_ticket_box\\Do_an_ticket_box.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
@@ -83,7 +75,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -94,30 +86,12 @@
               "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "do_an_ticket_box.projects.v8.bin",
-              "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\.vs\\ProjectEvaluation\\do_an_ticket_box.projects.v8.bin",
-              "RelativeDocumentMoniker": ".vs\\ProjectEvaluation\\do_an_ticket_box.projects.v8.bin",
-              "ToolTip": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\.vs\\ProjectEvaluation\\do_an_ticket_box.projects.v8.bin",
-              "RelativeToolTip": ".vs\\ProjectEvaluation\\do_an_ticket_box.projects.v8.bin",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-10-29T15:37:20.669Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "do_an_ticket_box.metadata.v8.bin",
-              "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\.vs\\ProjectEvaluation\\do_an_ticket_box.metadata.v8.bin",
-              "RelativeDocumentMoniker": ".vs\\ProjectEvaluation\\do_an_ticket_box.metadata.v8.bin",
-              "ToolTip": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\.vs\\ProjectEvaluation\\do_an_ticket_box.metadata.v8.bin",
-              "RelativeToolTip": ".vs\\ProjectEvaluation\\do_an_ticket_box.metadata.v8.bin",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-10-29T15:37:17.558Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "Do_an_ticket_box.csproj.user",
               "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj.user",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Do_an_ticket_box.csproj.user",
@@ -130,29 +104,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Microsoft.NET.Sdk.StaticWebAssets.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
               "ToolTip": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
               "ViewState": "AQIAAMsBAAAAAAAAAAAkwNoBAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2024-10-29T15:32:51.767Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T15:32:51.767Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "ViewState": "AQIAAA4AAAAAAAAAAAAkwB0AAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2024-10-29T15:35:37.631Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T15:35:37.631Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\MyTicket\\Index.cshtml",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\MyTicket\\Index.cshtml",
@@ -164,7 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "MyTicketController.cs",
               "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Controllers\\MyTicketController.cs",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Controllers\\MyTicketController.cs",
@@ -172,12 +144,11 @@
               "RelativeToolTip": "Do_an_ticket_box\\Controllers\\MyTicketController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T15:29:32.275Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T15:29:32.275Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
@@ -185,12 +156,11 @@
               "RelativeToolTip": "Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AQIAAGMBAAAAAAAAAAAiwGoBAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-29T15:29:32.278Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T15:29:32.278Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 9,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\_ViewImports.cshtml",
@@ -202,7 +172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 10,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Home\\Index.cshtml",
@@ -214,7 +184,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 13,
               "Title": "Item.cshtml",
               "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\Item.cshtml",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\Item.cshtml",
@@ -226,7 +196,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 11,
               "Title": "Error.cshtml",
               "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\Error.cshtml",
@@ -238,7 +208,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 16,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\vucon\\AppData\\Local\\SourceServer\\4470e05fca941afeda2274881b29f4038bae7e293854cd9dc671f0e69fa3f792\\Do_an_ticket_box\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\vucon\\AppData\\Local\\SourceServer\\4470e05fca941afeda2274881b29f4038bae7e293854cd9dc671f0e69fa3f792\\Do_an_ticket_box\\Controllers\\HomeController.cs",
@@ -248,7 +218,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Controllers\\HomeController.cs",
@@ -256,12 +226,11 @@
               "RelativeToolTip": "Do_an_ticket_box\\Controllers\\HomeController.cs",
               "ViewState": "AQIAACcAAAAAAAAAAAAAABEAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T15:29:32.299Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T15:29:32.299Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 8,
               "Title": "responsive.css",
               "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\wwwroot\\css\\responsive.css",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\wwwroot\\css\\responsive.css",
@@ -272,12 +241,8 @@
               "WhenOpened": "2024-10-29T15:29:32.257Z"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 12,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Program.cs",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Program.cs",
@@ -289,7 +254,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -301,7 +266,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 14,
               "Title": "site.js",
               "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\wwwroot\\js\\site.js",
@@ -313,7 +278,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 15,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Home\\Privacy.cshtml",
