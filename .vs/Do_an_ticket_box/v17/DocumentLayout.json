@@ -1,58 +1,76 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Desktop\\check\\Do_an_ticket_box\\",
+  "WorkspaceRootPath": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\check\\do_an_ticket_box\\do_an_ticket_box\\views\\home\\nosearchresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\home\\nosearchresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\.vs\\ProjectEvaluation\\do_an_ticket_box.projects.v8.bin||{25834150-CD7E-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.vs\\ProjectEvaluation\\do_an_ticket_box.projects.v8.bin||{25834150-CD7E-11D0-92DF-00A0C9138C45}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\check\\do_an_ticket_box\\do_an_ticket_box\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\.vs\\ProjectEvaluation\\do_an_ticket_box.metadata.v8.bin||{25834150-CD7E-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.vs\\ProjectEvaluation\\do_an_ticket_box.metadata.v8.bin||{25834150-CD7E-11D0-92DF-00A0C9138C45}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\check\\do_an_ticket_box\\do_an_ticket_box\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\8.0.303\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\check\\do_an_ticket_box\\do_an_ticket_box\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Do_an_ticket_box\\Do_an_ticket_box.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\do_an_web_nang_cao\\do_an_ticket_box\\do_an_ticket_box\\controllers\\myticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\controllers\\myticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\do_an_web_nang_cao\\do_an_ticket_box\\do_an_ticket_box\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\check\\do_an_ticket_box\\do_an_ticket_box\\views\\home\\searchresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\home\\searchresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\do_an_web_nang_cao\\do_an_ticket_box\\do_an_ticket_box\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\check\\do_an_ticket_box\\do_an_ticket_box\\wwwroot\\css\\style-searchresult.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\wwwroot\\css\\style-searchresult.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\check\\do_an_ticket_box\\do_an_ticket_box\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\do_an_web_nang_cao\\do_an_ticket_box\\do_an_ticket_box\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\check\\do_an_ticket_box\\do_an_ticket_box\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\do_an_web_nang_cao\\do_an_ticket_box\\do_an_ticket_box\\views\\myticket\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\myticket\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\check\\do_an_ticket_box\\do_an_ticket_box\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\do_an_web_nang_cao\\do_an_ticket_box\\do_an_ticket_box\\wwwroot\\css\\responsive.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\wwwroot\\css\\responsive.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\do_an_web_nang_cao\\do_an_ticket_box\\do_an_ticket_box\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\check\\do_an_ticket_box\\do_an_ticket_box\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\do_an_web_nang_cao\\do_an_ticket_box\\do_an_ticket_box\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\do_an_web_nang_cao\\do_an_ticket_box\\do_an_ticket_box\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\check\\do_an_ticket_box\\do_an_ticket_box\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\do_an_web_nang_cao\\do_an_ticket_box\\do_an_ticket_box\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\check\\do_an_ticket_box\\do_an_ticket_box\\views\\shared\\item.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\do_an_web_nang_cao\\do_an_ticket_box\\do_an_ticket_box\\views\\shared\\item.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\shared\\item.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\check\\do_an_ticket_box\\do_an_ticket_box\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\do_an_web_nang_cao\\do_an_ticket_box\\do_an_ticket_box\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|d:\\desktop\\do_an_web_nang_cao\\do_an_ticket_box\\do_an_ticket_box\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vucon\\AppData\\Local\\SourceServer\\4470e05fca941afeda2274881b29f4038bae7e293854cd9dc671f0e69fa3f792\\Do_an_ticket_box\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -65,128 +83,193 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "do_an_ticket_box.projects.v8.bin",
+              "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\.vs\\ProjectEvaluation\\do_an_ticket_box.projects.v8.bin",
+              "RelativeDocumentMoniker": ".vs\\ProjectEvaluation\\do_an_ticket_box.projects.v8.bin",
+              "ToolTip": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\.vs\\ProjectEvaluation\\do_an_ticket_box.projects.v8.bin",
+              "RelativeToolTip": ".vs\\ProjectEvaluation\\do_an_ticket_box.projects.v8.bin",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-29T15:37:20.669Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAADsAAAAAAAAAAAAIwFkAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-22T02:19:52.18Z",
+              "Title": "do_an_ticket_box.metadata.v8.bin",
+              "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\.vs\\ProjectEvaluation\\do_an_ticket_box.metadata.v8.bin",
+              "RelativeDocumentMoniker": ".vs\\ProjectEvaluation\\do_an_ticket_box.metadata.v8.bin",
+              "ToolTip": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\.vs\\ProjectEvaluation\\do_an_ticket_box.metadata.v8.bin",
+              "RelativeToolTip": ".vs\\ProjectEvaluation\\do_an_ticket_box.metadata.v8.bin",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-29T15:37:17.558Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Do_an_ticket_box.csproj.user",
+              "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj.user",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Do_an_ticket_box.csproj.user",
+              "ToolTip": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj.user",
+              "RelativeToolTip": "Do_an_ticket_box\\Do_an_ticket_box.csproj.user",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003464|",
+              "WhenOpened": "2024-10-29T15:35:47.97Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Microsoft.NET.Sdk.StaticWebAssets.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
+              "ViewState": "AQIAAMsBAAAAAAAAAAAkwNoBAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2024-10-29T15:32:51.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Microsoft.Common.CurrentVersion.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAkwB0AAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2024-10-29T15:35:37.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Do_an_ticket_box\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAQAAAA",
+              "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\MyTicket\\Index.cshtml",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\MyTicket\\Index.cshtml",
+              "ToolTip": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\MyTicket\\Index.cshtml",
+              "RelativeToolTip": "Do_an_ticket_box\\Views\\MyTicket\\Index.cshtml",
+              "ViewState": "AQIAAJUBAAAAAAAAAAAUwKIBAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-22T02:50:31.992Z",
+              "WhenOpened": "2024-10-29T15:29:32.271Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MyTicketController.cs",
+              "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Controllers\\MyTicketController.cs",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Controllers\\MyTicketController.cs",
+              "ToolTip": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Controllers\\MyTicketController.cs",
+              "RelativeToolTip": "Do_an_ticket_box\\Controllers\\MyTicketController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T15:29:32.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAGMBAAAAAAAAAAAiwGoBAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-29T15:29:32.278Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "Item.cshtml",
-              "DocumentMoniker": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\Item.cshtml",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\Item.cshtml",
-              "ToolTip": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\Item.cshtml",
-              "RelativeToolTip": "Do_an_ticket_box\\Views\\Shared\\Item.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\_ViewImports.cshtml",
+              "ToolTip": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "Do_an_ticket_box\\Views\\_ViewImports.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-24T14:26:05.468Z"
+              "WhenOpened": "2024-10-29T15:29:32.279Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Error.cshtml",
-              "DocumentMoniker": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\Error.cshtml",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\Error.cshtml",
-              "ToolTip": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\Error.cshtml",
-              "RelativeToolTip": "Do_an_ticket_box\\Views\\Shared\\Error.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Do_an_ticket_box\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEkAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-25T07:02:30.855Z"
+              "WhenOpened": "2024-10-29T15:29:32.281Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Item.cshtml",
+              "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\Item.cshtml",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\Item.cshtml",
+              "ToolTip": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\Item.cshtml",
+              "RelativeToolTip": "Do_an_ticket_box\\Views\\Shared\\Item.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-29T15:29:32.284Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "Do_an_ticket_box\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-29T15:29:32.286Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\vucon\\AppData\\Local\\SourceServer\\4470e05fca941afeda2274881b29f4038bae7e293854cd9dc671f0e69fa3f792\\Do_an_ticket_box\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\vucon\\AppData\\Local\\SourceServer\\4470e05fca941afeda2274881b29f4038bae7e293854cd9dc671f0e69fa3f792\\Do_an_ticket_box\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-24T04:02:47.923Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Program.cs",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\Program.cs",
-              "ToolTip": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Program.cs",
-              "RelativeToolTip": "Do_an_ticket_box\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T04:03:36.595Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "_ValidationScriptsPartial.cshtml",
-              "DocumentMoniker": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ToolTip": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "RelativeToolTip": "Do_an_ticket_box\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-23T15:57:56.776Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "site.js",
-              "DocumentMoniker": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\wwwroot\\js\\site.js",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\wwwroot\\js\\site.js",
-              "ToolTip": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\wwwroot\\js\\site.js",
-              "RelativeToolTip": "Do_an_ticket_box\\wwwroot\\js\\site.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-10-24T04:20:38.897Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Controllers\\HomeController.cs",
+              "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Do_an_ticket_box\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAABEAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T04:02:05.877Z",
+              "WhenOpened": "2024-10-29T15:29:32.299Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "noSearchResult.cshtml",
-              "DocumentMoniker": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
-              "ToolTip": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
-              "RelativeToolTip": "Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
-              "ViewState": "AQIAANgAAAAAAAAAAAAAAI0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-26T15:15:55.179Z",
-              "EditorCaption": ""
+              "DocumentIndex": 10,
+              "Title": "responsive.css",
+              "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\wwwroot\\css\\responsive.css",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\wwwroot\\css\\responsive.css",
+              "ToolTip": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\wwwroot\\css\\responsive.css",
+              "RelativeToolTip": "Do_an_ticket_box\\wwwroot\\css\\responsive.css",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAABgAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-10-29T15:29:32.257Z"
             },
             {
               "$type": "Bookmark",
@@ -194,51 +277,51 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Program.cs",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Program.cs",
+              "ToolTip": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Program.cs",
+              "RelativeToolTip": "Do_an_ticket_box\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T15:29:32.292Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\_ViewImports.cshtml",
-              "ToolTip": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "Do_an_ticket_box\\Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "Do_an_ticket_box\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-24T14:30:51.779Z"
+              "WhenOpened": "2024-10-29T15:29:32.294Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "style-searchResult.css",
-              "DocumentMoniker": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\wwwroot\\css\\style-searchResult.css",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\wwwroot\\css\\style-searchResult.css",
-              "ToolTip": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\wwwroot\\css\\style-searchResult.css",
-              "RelativeToolTip": "Do_an_ticket_box\\wwwroot\\css\\style-searchResult.css",
-              "ViewState": "AgIAAGUAAAAAAAAAAAAgwIEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-10-26T14:51:41.849Z"
+              "DocumentIndex": 16,
+              "Title": "site.js",
+              "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\wwwroot\\js\\site.js",
+              "ToolTip": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "Do_an_ticket_box\\wwwroot\\js\\site.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-29T15:29:32.296Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SearchResult.cshtml",
-              "DocumentMoniker": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\SearchResult.cshtml",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Home\\SearchResult.cshtml",
-              "ToolTip": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\SearchResult.cshtml",
-              "RelativeToolTip": "Do_an_ticket_box\\Views\\Home\\SearchResult.cshtml",
-              "ViewState": "AgIAAK0AAAAAAAAAAAAmwLcAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-26T15:01:51.769Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 17,
               "Title": "Privacy.cshtml",
-              "DocumentMoniker": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\Privacy.cshtml",
+              "DocumentMoniker": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Home\\Privacy.cshtml",
-              "ToolTip": "D:\\Desktop\\check\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\Privacy.cshtml",
               "RelativeToolTip": "Do_an_ticket_box\\Views\\Home\\Privacy.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-22T02:51:24.167Z"
+              "WhenOpened": "2024-10-29T15:29:32.302Z"
             }
           ]
         }
