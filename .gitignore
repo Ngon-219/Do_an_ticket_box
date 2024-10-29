@@ -1,2 +1,26 @@
-.vs
-/Do_an_ticket_box/bin
+# Thư mục build và tệp biên dịch
+bin/
+obj/
+
+# Tệp cấu hình của Visual Studio
+.vscode/
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Tệp nhật ký và tạm thời
+*.log
+*.tmp
+*.cache
+
+# Tệp xuất bản
+publish/
+
+# Tệp cấu hình máy chủ
+config/applicationhost.config
+
+# Thư mục chứa dữ liệu ẩn
+.DS_Store
+Thumbs.db
