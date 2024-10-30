@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ASUS\\Source\\Repos\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj": {}
+    "C:\\Users\\ADMIN\\Source\\Repos\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ASUS\\Source\\Repos\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj": {
+    "C:\\Users\\ADMIN\\Source\\Repos\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\Source\\Repos\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
+        "projectUniqueName": "C:\\Users\\ADMIN\\Source\\Repos\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
         "projectName": "Do_an_ticket_box",
-        "projectPath": "C:\\Users\\ASUS\\Source\\Repos\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\Source\\Repos\\Do_an_ticket_box\\Do_an_ticket_box\\obj\\",
+        "projectPath": "C:\\Users\\ADMIN\\Source\\Repos\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
+        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ADMIN\\Source\\Repos\\Do_an_ticket_box\\Do_an_ticket_box\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -72,6 +72,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.33, 6.0.33]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.33, 6.0.33]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -80,7 +98,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
