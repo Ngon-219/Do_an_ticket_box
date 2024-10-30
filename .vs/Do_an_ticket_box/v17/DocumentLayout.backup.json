@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\phith\\Documents\\doan\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\phith\\documents\\doan\\do_an_ticket_box\\views\\home\\nosearchresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\home\\nosearchresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\phith\\documents\\doan\\do_an_ticket_box\\views\\home\\searchresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\home\\searchresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\phith\\documents\\doan\\do_an_ticket_box\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\phith\\documents\\doan\\do_an_ticket_box\\views\\home\\nosearchresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\home\\nosearchresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\phith\\documents\\doan\\do_an_ticket_box\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -17,14 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\phith\\documents\\doan\\do_an_ticket_box\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\phith\\documents\\doan\\do_an_ticket_box\\views\\home\\searchresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\home\\searchresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\phith\\documents\\doan\\do_an_ticket_box\\wwwroot\\css\\style-searchresult.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\wwwroot\\css\\style-searchresult.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\phith\\documents\\doan\\do_an_ticket_box\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -65,50 +61,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "noSearchResult.cshtml",
-              "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
-              "ToolTip": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
-              "RelativeToolTip": "Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAL8AAABlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-26T15:15:55.179Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SearchResult.cshtml",
-              "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Home\\SearchResult.cshtml",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Home\\SearchResult.cshtml",
-              "ToolTip": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Home\\SearchResult.cshtml",
-              "RelativeToolTip": "Do_an_ticket_box\\Views\\Home\\SearchResult.cshtml",
-              "ViewState": "AgIAAK0AAAAAAAAAAAAmwLcAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-26T15:01:51.769Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "style-searchResult.css",
-              "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\wwwroot\\css\\style-searchResult.css",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\wwwroot\\css\\style-searchResult.css",
-              "ToolTip": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\wwwroot\\css\\style-searchResult.css",
-              "RelativeToolTip": "Do_an_ticket_box\\wwwroot\\css\\style-searchResult.css",
-              "ViewState": "AgIAAGUAAAAAAAAAAAAgwIEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-10-26T14:51:41.849Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -118,40 +75,26 @@
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAsAAAAAZmZmZmYkwBsAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAAB0AAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-22T02:19:52.18Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\_ViewImports.cshtml",
-              "ToolTip": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "Do_an_ticket_box\\Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-24T14:30:51.779Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Do_an_ticket_box\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAwBAAAAMDMzMzMfwJwAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAEoAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-22T02:50:31.992Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-22T02:50:31.992Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "Item.cshtml",
               "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Shared\\Item.cshtml",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\Item.cshtml",
@@ -159,12 +102,11 @@
               "RelativeToolTip": "Do_an_ticket_box\\Views\\Shared\\Item.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-24T14:26:05.468Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-24T14:26:05.468Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "Error.cshtml",
               "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\Error.cshtml",
@@ -172,12 +114,11 @@
               "RelativeToolTip": "Do_an_ticket_box\\Views\\Shared\\Error.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-25T07:02:30.855Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-25T07:02:30.855Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\vucon\\AppData\\Local\\SourceServer\\4470e05fca941afeda2274881b29f4038bae7e293854cd9dc671f0e69fa3f792\\Do_an_ticket_box\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\vucon\\AppData\\Local\\SourceServer\\4470e05fca941afeda2274881b29f4038bae7e293854cd9dc671f0e69fa3f792\\Do_an_ticket_box\\Controllers\\HomeController.cs",
@@ -188,7 +129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Program.cs",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Program.cs",
@@ -196,12 +137,11 @@
               "RelativeToolTip": "Do_an_ticket_box\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T04:03:36.595Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-24T04:03:36.595Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -209,12 +149,11 @@
               "RelativeToolTip": "Do_an_ticket_box\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-23T15:57:56.776Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-23T15:57:56.776Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "site.js",
               "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\wwwroot\\js\\site.js",
@@ -222,25 +161,61 @@
               "RelativeToolTip": "Do_an_ticket_box\\wwwroot\\js\\site.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-10-24T04:20:38.897Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-24T04:20:38.897Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Do_an_ticket_box\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAoAAAAwMzMzMzM9wBgAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T04:02:05.877Z",
+              "WhenOpened": "2024-10-24T04:02:05.877Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "noSearchResult.cshtml",
+              "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
+              "ToolTip": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
+              "RelativeToolTip": "Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
+              "ViewState": "AgIAAEkAAABANDMzMzMrwNAAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-26T15:15:55.179Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "Do_an_ticket_box\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-24T14:30:51.779Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SearchResult.cshtml",
+              "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Home\\SearchResult.cshtml",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Home\\SearchResult.cshtml",
+              "ToolTip": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Home\\SearchResult.cshtml*",
+              "RelativeToolTip": "Do_an_ticket_box\\Views\\Home\\SearchResult.cshtml*",
+              "ViewState": "AgIAAHMAAAAAMjMzMzMLwH8AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-26T15:01:51.769Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Home\\Privacy.cshtml",
@@ -248,8 +223,7 @@
               "RelativeToolTip": "Do_an_ticket_box\\Views\\Home\\Privacy.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-22T02:51:24.167Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-22T02:51:24.167Z"
             }
           ]
         }
