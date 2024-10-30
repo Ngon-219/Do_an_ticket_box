@@ -17,6 +17,10 @@ namespace Do_an_ticket_box.Controllers
         {
             return View();
         }
+        public IActionResult Ticket ()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {
