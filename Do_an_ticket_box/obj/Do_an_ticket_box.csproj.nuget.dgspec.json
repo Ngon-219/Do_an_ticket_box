@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Workspace\\Tai lieu\\Do an cong nghe web nang cao\\Source_Do_An\\Do_an_ticket_box\\Do_an_ticket_box.csproj": {}
+    "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Do_an_ticket_box.csproj": {}
   },
   "projects": {
-    "C:\\Workspace\\Tai lieu\\Do an cong nghe web nang cao\\Source_Do_An\\Do_an_ticket_box\\Do_an_ticket_box.csproj": {
+    "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Do_an_ticket_box.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Workspace\\Tai lieu\\Do an cong nghe web nang cao\\Source_Do_An\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
+        "projectUniqueName": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
         "projectName": "Do_an_ticket_box",
-        "projectPath": "C:\\Workspace\\Tai lieu\\Do an cong nghe web nang cao\\Source_Do_An\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
-        "packagesPath": "C:\\Users\\Nguyen Van Dung\\.nuget\\packages\\",
-        "outputPath": "C:\\Workspace\\Tai lieu\\Do an cong nghe web nang cao\\Source_Do_An\\Do_an_ticket_box\\obj\\",
+        "projectPath": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
+        "packagesPath": "C:\\Users\\phith\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nguyen Van Dung\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\phith\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,6 +35,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -66,24 +72,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.33, 6.0.33]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.33, 6.0.33]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.33, 6.0.33]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.33, 6.0.33]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -92,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

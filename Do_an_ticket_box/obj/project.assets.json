@@ -10178,24 +10178,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vucon\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\phith\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
+      "projectUniqueName": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
       "projectName": "Do_an_ticket_box",
-      "projectPath": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
-      "packagesPath": "C:\\Users\\vucon\\.nuget\\packages\\",
-      "outputPath": "D:\\Desktop\\do_an_web_nang_cao\\Do_an_ticket_box\\Do_an_ticket_box\\obj\\",
+      "projectPath": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
+      "packagesPath": "C:\\Users\\phith\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\vucon\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\phith\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10261,8 +10256,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

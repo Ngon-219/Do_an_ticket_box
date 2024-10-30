@@ -1,159 +1,111 @@
-﻿<!DOCTYPE html>
-<html lang="vi">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ticketbox</title>
-    <link rel="stylesheet" href="style-searchResult.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            color: white;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: rgb(25 135 84);
-            padding: 10px 20px;
-        }
-
-        .title {
-            font-size: 20px;
-            font-weight: bold;
-            padding-top: 20px;
-            padding-left: 30px;
-            color: #28a745;
-        }
-
-        .result-error {
-            display: flex;
-            flex-direction: column;
-            -webkit-box-pack: center;
-            justify-content: center;
-            -webkit-box-align: center;
-            align-items: center;
-            width: 100%;
-            color: white;
-        }
-
-        .recomment {
-            padding-left: 40px;
-            padding-right: 40px;
-        }
-
-        .recomment-content {
-            display: flex;
-            ;
-            flex-direction: column;
-            -webkit-box-pack: center;
-            justify-content: center;
-            -webkit-box-align: center;
-            align-items: center;
-            width: 100%;
-            padding-top: 20px;
-        }
-
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 5px; /* Khoảng cách giữa các thẻ */
-            padding: 15px;
-        }
-
-        .result {
-            display: flex;
-            justify-content: center;
-        }
-
-        .logo {
-            font-size: calc(1.325rem + .9vw) !important;
-            font-weight: 500;
-        }
-
-        .search-bar {
-            display: flex;
-        }
-
-        .search-bar input {
-            padding: 10px;
-            border: 1px solid #fff;
-            border-radius: 5px 0 0 5px;
-            flex-grow: 1; /* Cho phép ô nhập liệu chiếm toàn bộ chiều rộng */
-        }
-
-        .search-bar button {
-            padding: 10px;
-            border: 1px solid #212529;
-            color: #fff;
-            background-color: #212529;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-        }
-
-        .user-actions button {
-            margin-left: 10px;
-            background-color: rgb(25 135 84);
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-            border-radius: 10px;
-            color: #fff;
-            font-size: 15px;
-        }
-
-
-        .event-card {
-            background-color: #222;
-            border-radius: 10px;
-            overflow: hidden;
-            width: 300px;
-            margin: 10px; /* Tạo khoảng cách giữa các thẻ */
-        }
-
-            .event-card img {
-                width: 100%;
-                height: auto;
-            }
-
-        .event-info {
-            padding: 10px;
-        }
-
-        .event-info h2 {
-            font-size: 20px;
-        }
-
-        .event-info p {
-            margin-top: 5px;
-        }
-
-    </style>
+﻿<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+<style>
+.body-search {
+    background-color: #000000;
+    color: white;
+}
 
-<body>
-    <!-- <header>
-        <div class="logo">Ticket Box</div>
-        <div class="search-bar">
-            <input type="text" placeholder="Bạn tìm gì hôm nay">             
-            <button class="search">Tìm kiếm</button>                    
-        </div>
-               
-        <div class="user-actions">
-            <button>Tạo sự kiện</button>
-            <button>Vé đã mua</button>
-        </div> -->
-    </header>
-    <div class="title">
+
+.title-search{
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-left: 30px;
+    color: #28a745;
+}
+
+.result-error {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    color: white;
+
+}
+.recomment-search{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.recomment-content{
+    display: flex;;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.container-search {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Tối đa 4 cột */
+    gap: 5px;
+    padding: 15px;
+}
+
+/* Media query cho màn hình nhỏ */
+@@media (max-width: 650px) {
+    .container-search {
+        grid-template-columns: 1fr; 
+    }
+}
+
+
+.result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.event-card {
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+}
+
+.event-card img {
+    width: 100%;
+    height: 150px;
+    display: block;
+
+}
+
+.event-info {
+    padding: 15px;
+    background-color: #303030;
+    text-align: left;
+}
+
+.event-info h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+    color: #ffffff;
+}
+
+.event-info p {
+    font-size: 1rem;
+    color: #ffffff;
+    margin: 5px 0;
+}
+.price-search {
+    color: #28a745;
+}
+</style>
+
+
+<body class="body-search">
+    <div class="title-search">
         <p>Kết quả tìm kiếm :</p>
     </div>
     <div class="result-error">
@@ -166,88 +118,105 @@
         <div>
             Vui lòng thử lại với từ khóa khác!
         </div>
-        <div>
-           ******
+        <hr style="width: 70%; height: 2px">
+    </div>
+    <div class="recomment-search">
+        <div class="recomment-content">
+            Dưới dây là 1 số sự kiện sắp diễn ra có thể bạn quan tâm!
         </div>
-        
-    </div>
-<div class="recomment">
-    <div class="recomment-content">
-        Dưới dây là 1 số sự kiện sắp diên ra có thể bạn quan tâm!
-    </div>
-    <div class="container">
-        <div class="result">
-            <div class="event-card">
-                <img src="https://salt.tkbcdn.com/ts/ds/5a/fd/95/e16ce8800ce8d0b9662bb0df01830185.jpg" alt="8WONDER Winter 2024">
-                <div class="event-info">
-                    <h2>8WONDER Winter 2024</h2>
-                    <p>Từ 1.000.000đ</p>
-                    <p>08 tháng 12, 2024</p>
+        <div class="container-search">
+            <div class="result">
+                <div class="event-card" style="cursor: pointer;" id="item-card">
+                    <img src="https://salt.tkbcdn.com/ts/ds/5a/fd/95/e16ce8800ce8d0b9662bb0df01830185.jpg" alt="8WONDER Winter 2024">
+                    <div class="event-info">
+                        <h2>8WONDER Winter 2024</h2>
+                        <p1 class="price-search">Từ 1.000.000đ</p1>
+                        <p><i class="fas fa-calendar-alt"></i> 08 tháng 12, 2024</p>
+                    </div>
+                </div>
+            </div>
+            <div class="result">
+                <div class="event-card" style="cursor: pointer;" id="item-card">
+                    <img src="https://salt.tkbcdn.com/ts/ds/5a/fd/95/e16ce8800ce8d0b9662bb0df01830185.jpg" alt="8WONDER Winter 2024">
+                    <div class="event-info">
+                        <h2>8WONDER Winter 2024</h2>
+                        <p1 class="price-search">Từ 1.000.000đ</p1>
+                        <p><i class="fas fa-calendar-alt"></i> 08 tháng 12, 2024</p>
+                    </div>
+                </div>
+            </div>
+            <div class="result">
+                <div class="event-card" style="cursor: pointer;" id="item-card">
+                    <img src="https://salt.tkbcdn.com/ts/ds/5a/fd/95/e16ce8800ce8d0b9662bb0df01830185.jpg" alt="8WONDER Winter 2024">
+                    <div class="event-info">
+                        <h2>8WONDER Winter 2024</h2>
+                        <p1 class="price-search">Từ 1.000.000đ</p1>
+                        <p><i class="fas fa-calendar-alt"></i> 08 tháng 12, 2024</p>
+                    </div>
+                </div>
+            </div>
+            <div class="result">
+                <div class="event-card" style="cursor: pointer;" id="item-card">
+                    <img src="https://salt.tkbcdn.com/ts/ds/5a/fd/95/e16ce8800ce8d0b9662bb0df01830185.jpg" alt="8WONDER Winter 2024">
+                    <div class="event-info">
+                        <h2>8WONDER Winter 2024</h2>
+                        <p1 class="price-search">Từ 1.000.000đ</p1>
+                        <p><i class="fas fa-calendar-alt"></i> 08 tháng 12, 2024</p>
+                    </div>
+                </div>
+            </div>
+            <div class="result">
+                <div class="event-card" style="cursor: pointer;" id="item-card">
+                    <img src="https://salt.tkbcdn.com/ts/ds/5a/fd/95/e16ce8800ce8d0b9662bb0df01830185.jpg" alt="8WONDER Winter 2024">
+                    <div class="event-info">
+                        <h2>8WONDER Winter 2024</h2>
+                        <p1 class="price-search">Từ 1.000.000đ</p1>
+                        <p><i class="fas fa-calendar-alt"></i> 08 tháng 12, 2024</p>
+                    </div>
+                </div>
+            </div>
+            <div class="result">
+                <div class="event-card" style="cursor: pointer;" id="item-card">
+                    <img src="https://salt.tkbcdn.com/ts/ds/5a/fd/95/e16ce8800ce8d0b9662bb0df01830185.jpg" alt="8WONDER Winter 2024">
+                    <div class="event-info">
+                        <h2>8WONDER Winter 2024</h2>
+                        <p1 class="price-search">Từ 1.000.000đ</p1>
+                        <p><i class="fas fa-calendar-alt"></i> 08 tháng 12, 2024</p>
+                    </div>
+                </div>
+            </div>
+            <div class="result">
+                <div class="event-card" style="cursor: pointer;" id="item-card">
+                    <img src="https://salt.tkbcdn.com/ts/ds/5a/fd/95/e16ce8800ce8d0b9662bb0df01830185.jpg" alt="8WONDER Winter 2024">
+                    <div class="event-info">
+                        <h2>8WONDER Winter 2024</h2>
+                        <p1 class="price-search">Từ 1.000.000đ</p1>
+                        <p><i class="fas fa-calendar-alt"></i> 08 tháng 12, 2024</p>
+                    </div>
+                </div>
+            </div>
+            <div class="result">
+                <div class="event-card" style="cursor: pointer;" id="item-card">
+                    <img src="https://salt.tkbcdn.com/ts/ds/5a/fd/95/e16ce8800ce8d0b9662bb0df01830185.jpg" alt="8WONDER Winter 2024">
+                    <div class="event-info">
+                        <h2>8WONDER Winter 2024</h2>
+                        <p1 class="price-search">Từ 1.000.000đ</p1>
+                        <p><i class="fas fa-calendar-alt"></i> 08 tháng 12, 2024</p>
+                    </div>
+                </div>
+            </div>
+            <div class="result">
+                <div class="event-card" style="cursor: pointer;" id="item-card">
+                    <img src="https://salt.tkbcdn.com/ts/ds/5a/fd/95/e16ce8800ce8d0b9662bb0df01830185.jpg" alt="8WONDER Winter 2024">
+                    <div class="event-info">
+                        <h2>8WONDER Winter 2024</h2>
+                        <p1 class="price-search">Từ 1.000.000đ</p1>
+                        <p><i class="fas fa-calendar-alt"></i> 08 tháng 12, 2024</p>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="result">
-            <div class="event-card">
-                <img src="https://salt.tkbcdn.com/ts/ds/5a/fd/95/e16ce8800ce8d0b9662bb0df01830185.jpg" alt="8WONDER Winter 2024">
-                <div class="event-info">
-                    <h2>8WONDER Winter 2024</h2>
-                    <p>Từ 1.000.000đ</p>
-                    <p>08 tháng 12, 2024</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="result">
-            <div class="event-card">
-                <img src="https://salt.tkbcdn.com/ts/ds/5a/fd/95/e16ce8800ce8d0b9662bb0df01830185.jpg" alt="8WONDER Winter 2024">
-                <div class="event-info">
-                    <h2>8WONDER Winter 2024</h2>
-                    <p>Từ 1.000.000đ</p>
-                    <p>08 tháng 12, 2024</p>
-                </div>
-            </div>
-        </div>
-        <div class="result">
-            <div class="event-card">
-                <img src="https://salt.tkbcdn.com/ts/ds/5a/fd/95/e16ce8800ce8d0b9662bb0df01830185.jpg" alt="8WONDER Winter 2024">
-                <div class="event-info">
-                    <h2>8WONDER Winter 2024</h2>
-                    <p>Từ 1.000.000đ</p>
-                    <p>08 tháng 12, 2024</p>
-                </div>
-            </div>
-        </div><div class="result">
-            <div class="event-card">
-                <img src="https://salt.tkbcdn.com/ts/ds/5a/fd/95/e16ce8800ce8d0b9662bb0df01830185.jpg" alt="8WONDER Winter 2024">
-                <div class="event-info">
-                    <h2>8WONDER Winter 2024</h2>
-                    <p>Từ 1.000.000đ</p>
-                    <p>08 tháng 12, 2024</p>
-                </div>
-            </div>
-        </div><div class="result">
-            <div class="event-card">
-                <img src="https://salt.tkbcdn.com/ts/ds/5a/fd/95/e16ce8800ce8d0b9662bb0df01830185.jpg" alt="8WONDER Winter 2024">
-                <div class="event-info">
-                    <h2>8WONDER Winter 2024</h2>
-                    <p>Từ 1.000.000đ</p>
-                    <p>08 tháng 12, 2024</p>
-                </div>
-            </div>
-        </div><div class="result">
-            <div class="event-card">
-                <img src="https://salt.tkbcdn.com/ts/ds/5a/fd/95/e16ce8800ce8d0b9662bb0df01830185.jpg" alt="8WONDER Winter 2024">
-                <div class="event-info">
-                    <h2>8WONDER Winter 2024</h2>
-                    <p>Từ 1.000.000đ</p>
-                    <p>08 tháng 12, 2024</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-    <script src="script-searchResult.js"></script>
 </body>
 
-</html>
