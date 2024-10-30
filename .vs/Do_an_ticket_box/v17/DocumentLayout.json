@@ -3,24 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\asus\\source\\repos\\do_an_ticket_box\\do_an_ticket_box\\do_an_ticket_box.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\do_an_ticket_box.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\asus\\source\\repos\\do_an_ticket_box\\do_an_ticket_box\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\asus\\source\\repos\\do_an_ticket_box\\do_an_ticket_box\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\asus\\source\\repos\\do_an_ticket_box\\do_an_ticket_box\\views\\myticket\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\myticket\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\asus\\source\\repos\\do_an_ticket_box\\do_an_ticket_box\\controllers\\myticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\controllers\\myticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\asus\\source\\repos\\do_an_ticket_box\\do_an_ticket_box\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\asus\\source\\repos\\do_an_ticket_box\\do_an_ticket_box\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\asus\\source\\repos\\do_an_ticket_box\\do_an_ticket_box\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\asus\\source\\repos\\do_an_ticket_box\\do_an_ticket_box\\do_an_ticket_box.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\do_an_ticket_box.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\asus\\source\\repos\\do_an_ticket_box\\do_an_ticket_box\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\asus\\source\\repos\\do_an_ticket_box\\do_an_ticket_box\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -34,43 +46,81 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 8,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "Do_an_ticket_box\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-30T05:53:22.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\MyTicket\\Index.cshtml",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\MyTicket\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\MyTicket\\Index.cshtml",
+              "RelativeToolTip": "Do_an_ticket_box\\Views\\MyTicket\\Index.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAALwBAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-30T05:47:51.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MyTicketController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Controllers\\MyTicketController.cs",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Controllers\\MyTicketController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Controllers\\MyTicketController.cs",
+              "RelativeToolTip": "Do_an_ticket_box\\Controllers\\MyTicketController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T05:47:04.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Do_an_ticket_box",
               "DocumentMoniker": "C:\\Users\\ASUS\\Source\\Repos\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Do_an_ticket_box.csproj",
               "ToolTip": "C:\\Users\\ASUS\\Source\\Repos\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
               "RelativeToolTip": "Do_an_ticket_box\\Do_an_ticket_box.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-10-24T05:46:56.23Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "WhenOpened": "2024-10-24T05:46:56.23Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\wwwroot\\css\\site.css",
               "ToolTip": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\wwwroot\\css\\site.css",
               "RelativeToolTip": "Do_an_ticket_box\\wwwroot\\css\\site.css",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAeAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-10-24T02:22:13.417Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -83,20 +133,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAADEAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAPAQAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-22T02:19:52.18Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Home\\Privacy.cshtml",
@@ -108,7 +158,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Home\\Index.cshtml",
@@ -116,8 +166,7 @@
               "RelativeToolTip": "Do_an_ticket_box\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-22T02:50:31.992Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-22T02:50:31.992Z"
             }
           ]
         }
