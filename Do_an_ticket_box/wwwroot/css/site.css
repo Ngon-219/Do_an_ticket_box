@@ -1,18 +1,7 @@
-html {
-  font-size: 14px;
+﻿body {
+    background-color: #121212;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin-bottom: 60px;
+body::-webkit-scrollbar {
+    display: none;
 }

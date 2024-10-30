@@ -28,6 +28,8 @@ namespace Do_an_ticket_box.Models
         public string role { get; set; }
         [Column("Status", TypeName ="varchar(20)")]
         public string status { get; set; }
+        [Column("AvatarImgUrl", TypeName ="text")]
+        public string avatarImg { get; set; }
         public List<Booking> Bookings { get; set; }
         public List<Report> Reports { get; set; }
 

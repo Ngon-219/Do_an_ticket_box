@@ -1,0 +1,129 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(25 135 84);
+    padding: 10px 20px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-left: 30px;
+    color: #28a745;
+}
+
+.result-error {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    color: white;
+}
+
+.recomment {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.recomment-content {
+    display: flex;
+    ;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 5px; /* Khoảng cách giữa các thẻ */
+    padding: 15px;
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    font-size: calc(1.325rem + .9vw) !important;
+    font-weight: 500;
+}
+
+.search-bar {
+    display: flex;
+}
+
+    .search-bar input {
+        padding: 10px;
+        border: 1px solid #fff;
+        border-radius: 5px 0 0 5px;
+        flex-grow: 1; /* Cho phép ô nhập liệu chiếm toàn bộ chiều rộng */
+    }
+
+    .search-bar button {
+        padding: 10px;
+        border: 1px solid #212529;
+        color: #fff;
+        background-color: #212529;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+    }
+
+.user-actions button {
+    margin-left: 10px;
+    background-color: rgb(25 135 84);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+}
+
+
+.event-card {
+    background-color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    margin: 10px; /* Tạo khoảng cách giữa các thẻ */
+}
+
+    .event-card img {
+        width: 100%;
+        height: auto;
+    }
+
+.event-info {
+    padding: 10px;
+}
+
+    .event-info h2 {
+        font-size: 20px;
+    }
+
+    .event-info p {
+        margin-top: 5px;
+    }
