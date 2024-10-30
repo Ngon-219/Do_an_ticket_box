@@ -57,23 +57,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Ticket.cs",
-              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Models\\Ticket.cs",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\Models\\Ticket.cs",
-              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Models\\Ticket.cs",
-              "RelativeToolTip": "Do_an_ticket_box\\Models\\Ticket.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T07:54:22.29Z"
             },
             {
               "$type": "Document",
@@ -155,10 +143,22 @@
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-22T02:19:52.18Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Ticket.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Models\\Ticket.cs",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Models\\Ticket.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Models\\Ticket.cs",
+              "RelativeToolTip": "Do_an_ticket_box\\Models\\Ticket.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T07:54:22.29Z"
             },
             {
               "$type": "Document",

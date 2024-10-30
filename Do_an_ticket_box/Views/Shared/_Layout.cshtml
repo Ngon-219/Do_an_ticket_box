@@ -6,6 +6,7 @@
     <title>@ViewData["Title"] - Do_an_ticket_box</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="~/Do_an_ticket_box.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -21,31 +22,44 @@
                                 <div class="input-group">
                                     <div class="form-outline" data-mdb-input-init>
                                         <input type="search" id="form1" class="form-control" placeholder="Bạn tìm gì hôm nay" />
-                                       @*  <label class="form-label" for="form1">Search</label> *@
-                                    </div>
-                                    <button type="button" class="btn btn-dark" data-mdb-ripple-init>
-                                        Search
-                                    </button>
+                                        @* <label class="form-label" for="form1">Search</label> *@
+                               @*  </div>
+                                <form action="@Url.Action("SearchResult", "Home")" method="get">
+                                    <button type="submit" class="btn btn-dark">Search</button>
+                                </form>
+                                </div> *@
                                 </div>
-                            </li>
+                                    <form action="@Url.Action("noSearchResult", "Home")" method="get">
+                                    <button type="submit" class="btn btn-dark">Search</button>
+                                    </form>
+                                </div>
+                        </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white border border-light rounded-pill" style="padding-left:20px; padding-right:20px; font-weight: 500; margin-right: 1vw;" asp-area="" asp-controller="Home" asp-action="Index">Tạo sự kiện</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link text-white align-content-center align-items-center d-flex" style="margin-left:1vw; margin-right:1vw; font-weight: 500;" asp-area="" asp-controller="Home" asp-action="Privacy">
+                                <a class="nav-link text-white align-content-center align-items-center d-flex" style="margin-left:1vw; margin-right:1vw; font-weight: 500;" asp-area="" asp-controller="MyTicket" asp-action="Index">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-ticket-detailed" style="margin-right:5px;" viewBox="0 0 16 16">
                                                 <path d="M4 5.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5M5 7a1 1 0 0 0 0 2h6a1 1 0 1 0 0-2z" />
                                                 <path d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
                                             </svg>
                                             Vé của bạn
-                                    </a>
+                                </a>
                             </li>
                             <li class="nav-item">
                             @if(true)
                             {
-                                <a class="nav-link text-white align-content-center align-items-center d-flex" style="margin-left:1vw; margin-right:1vw; font-weight: 500;" asp-area="" asp-controller="Home" asp-action="Privacy">
-                                    Đăng Nhập | Đăng kí
-                                </a>
+                                <div style="display: flex; justify-content: center; align-items:center;">
+                                    <a class="login__page  nav-link text-white align-content-center align-items-center d-flex" style="margin-left:1vw; margin-right:1vw; font-weight: 500; cursor:pointer;">
+                                        Đăng Nhập
+                                    </a>
+                                    <div class="text-white align-content-center align-items-center d-flex" style="width:1px; height: 20px; background-color: #fff;"></div>
+                                    <a class="register__page nav-link text-white align-content-center align-items-center d-flex" style="margin-left:1vw; margin-right:1vw; font-weight: 500; cursor:pointer;">
+                                        Đăng kí
+                                    </a>
+                                </div>
+
+                                
                             } else
                             {
                                 <a class="nav-link text-white align-content-center align-items-center d-flex" style="margin-left:1vw; margin-right:1vw; font-weight: 500;" asp-area="" asp-controller="Home" asp-action="Privacy">
@@ -58,6 +72,7 @@
                     </div>
                 </div>
             </nav>
+
         <nav id="mobile" class="d-none navbar navbar-expand-lg navbar-toggleable-lg bg-success">
             <div class="container-fluid">
                 <a class="navbar-brand text-white fs-2" style="font-weight:500;" asp-area="" asp-controller="Home" asp-action="Index">Ticket Box</a>
@@ -68,13 +83,18 @@
                 </button>
                 <div class="navbar-collapse collapse d-lg-inline-flex justify-content-between" id="navbarSupportedContent">
                     <ul class="navbar-nav flex-grow-2">
-                        <li id="search_bar" class="nav-item" >
+                        <li id="search_bar" class="nav-item" style="margin-right: 5vw; margin-left: 5vw;">
                             <div class="input-group">
                                 <div class="form-outline" data-mdb-input-init>
                                     <input type="search" id="form1" class="form-control" placeholder="Bạn tìm gì hôm nay" />
                                     @* <label class="form-label" for="form1">Search</label> *@
+                                    @*  </div>
+                                    <form action="@Url.Action("SearchResult", "Home")" method="get">
+                                    <button type="submit" class="btn btn-dark">Search</button>
+                                    </form>
+                                    </div> *@
                                 </div>
-                                <form action="@Url.Action("Ticket", "Home")" method="get">
+                                <form action="@Url.Action("noSearchResult", "Home")" method="get">
                                     <button type="submit" class="btn btn-dark">Search</button>
                                 </form>
                             </div>
@@ -95,9 +115,15 @@
                         <li class="nav-item">
                             @if (false)
                             {
-                                <a class="nav-link text-white align-content-center align-items-center d-flex" style="margin-left:1vw; margin-right:1vw; font-weight: 500;" asp-area="" asp-controller="Home" asp-action="Privacy">
-                                    Đăng Nhập | Đăng kí
-                                </a>
+                                <div style="display: flex; justify-content: center; align-items:center;">
+                                    <a class="login__page nav-link text-white align-content-center align-items-center d-flex" style="margin-left:1vw; margin-right:1vw; font-weight: 500;">
+                                        Đăng Nhập
+                                    </a>
+                                    <div class="text-white align-content-center align-items-center d-flex" style="width:1px; height: 20px; background-color: #fff;"></div>
+                                    <a class="register__page nav-link text-white align-content-center align-items-center d-flex" style="margin-left:1vw; margin-right:1vw; font-weight: 500;">
+                                        Đăng kí
+                                    </a>
+                                </div>
                             }
                             else
                             {
@@ -238,6 +264,412 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    <!--modal -->
+    <div class="modal js-modal">
+        <div class="modal__overlay js-modal-overlay"></div>
+        <div class="modal__body">
+            <!-- Resigester form -->
+            <div class="js-register-form auth-form__register-form auth-form">
+                <div class="auth-form__container js-modal-container">
+                    <div class="auth-form__header">
+                        <div class="auth-form__heading">
+                            <p>Đăng ký tài khoản</p>
+                        </div>
+                        <div class="auth-form__close-register js-modal-close">
+                            <svg class="svgIcon" style="position: absolute;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input type="text" class="auth-form__input" placeholder="Nhập email của bạn">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Nhập mật khẩu của bạn">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Nhập lại mật khẩu của bạn">
+                        </div>
+                    </div>
+
+                    <div class="auth-form__aside">
+                        <p class="auth-form__policy-text">
+                            Bằng việc tiếp tục, bạn đã đọc và đồng ý vớ
+                            <a href="" class="auth-form__text-link">Điều khoản dịch vụ</a> &
+                            <a href="" class="auth-form__text-link">Chính sách bảo mật thông tin cá nhân</a>
+                            của TicketBox
+                        </p>
+                    </div>
+
+                    <div class="auth-form__controls">
+                        <button class="auth-form__sign-up auth-form__input" style="margin: 0 12px;">ĐĂNG KÝ</button>
+                    </div>
+                    <div class="auth-text">
+                        <div class="auth-text-crossbar"></div> <div class="auth-text-crossbar-text">hoặc</div> <div class="auth-text-crossbar"></div>
+                    </div>
+                    <div class="auth-form__switch">
+                        <div class="auth-form__switch-text">
+                            Bạn đã có tài khoản? <a href="#" class="login__page auth-form__switch-btn js-notify-list">Đăng nhập</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sign-in form -->
+            <div class="js-login-form auth-form__sign-up-form auth-form">
+                <div class="auth-form__container js-modal-container">
+                    <div class="auth-form__header">
+                        <div class="auth-form__heading">
+                            <div class="auth-form__close-sign-up js-modal-close">
+                                <svg class="svgIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                            </div>
+                            <span>Đăng nhập</span>
+                            <svg class="svgImage" xmlns="http://www.w3.org/2000/svg" width="80" height="64" fill="none" class="sc-dhKdcB cNLBZc"><path fill="#FFD530" d="M75.538 76.358s-.678-12.34-9.182-25.508H21.221L21 57.5"></path><path stroke="#2A2D34" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M75.538 76.358s-.678-12.34-9.182-25.508H21.221L21 57.5"></path><path fill="#FFD530" d="M23.903 49.471S18.77 29.948 10.172 28.843C1.168 27.683-.855 42.697 20 61"></path><path stroke="#2A2D34" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M23.903 49.471S18.77 29.948 10.172 28.843C1.168 27.683-.855 42.697 20 61"></path><path fill="#FFD530" d="M66.071 56.529s2.975 7.218 2.972 14.13c-.004 9.717-2.827 13.444-4.248 17.078 0 0-.005 7.487-1.293 10.553-1.29 3.067-11.386 3.006-14.123 1.01-3.446-2.51-4.592-10.926-4.592-10.926H42.475s-.858 8.413-4.307 10.922c-2.74 1.991-13.04 2.043-14.326-1.026-1.286-3.069-.895-10.556-.895-10.556-1.417-3.636-4.416-7.365-4.411-17.085.004-6.909 2.987-14.125 2.987-14.125"></path><path stroke="#2A2D34" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M66.071 56.529s2.975 7.218 2.972 14.13c-.004 9.717-2.827 13.444-4.248 17.078 0 0-.005 7.487-1.293 10.553-1.29 3.067-11.386 3.006-14.123 1.01-3.446-2.51-4.592-10.926-4.592-10.926H42.475s-.858 8.413-4.307 10.922c-2.74 1.991-13.04 2.043-14.326-1.026-1.286-3.069-.895-10.556-.895-10.556-1.417-3.636-4.416-7.365-4.411-17.085.004-6.909 2.987-14.125 2.987-14.125"></path><path fill="#fff" d="M43.788 82.767c8.075 0 14.62-8.33 14.62-18.604S51.863 45.56 43.788 45.56c-8.074 0-14.62 8.33-14.62 18.604 0 10.275 6.546 18.604 14.62 18.604Z"></path><path fill="#2DC275" d="M43.79 55.001C31.1 55.008 23.92 52.19 21.224 50.85v-3.123c2.477 1.188 10.662 4.526 22.568 4.52 11.905.006 20.088-3.332 22.567-4.52v3.123C63.662 52.19 56.48 55.008 43.791 55Z"></path><path stroke="#2A2D34" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M43.79 55.001C31.1 55.008 23.92 52.19 21.224 50.85v-3.123c2.477 1.188 10.662 4.526 22.568 4.52 11.905.006 20.088-3.332 22.567-4.52v3.123C63.662 52.19 56.48 55.008 43.791 55"></path><path fill="#FFD530" stroke="#2A2D34" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="m46.44 58.62-1.41 1.41a1.753 1.753 0 0 1-2.48 0l-1.41-1.41a1.753 1.753 0 0 1 0-2.48l1.41-1.41a1.753 1.753 0 0 1 2.48 0l1.41 1.41a1.753 1.753 0 0 1 0 2.48Z"></path><path fill="#fff" d="M73.766 18.37C67.816 3.143 52.322 1.495 43.87 1.48h-.162c-8.453.015-23.945 1.663-29.898 16.89-7.636 19.537 7.512 29.359 7.512 29.359a54.56 54.56 0 0 0 22.466 4.52A54.692 54.692 0 0 0 56.125 51a54.642 54.642 0 0 0 10.13-3.272s15.148-9.822 7.511-29.359Z"></path><path fill="#FFD530" d="M43.789 10.268c7.625 0 4.25 7.74 5.064 11.777.816 4.036 2.954 2.384 13.241.702 9.804-1.604 12.719 11.666 12.972 12.74 1.331-4.482 1.492-10.186-1.218-17.117C67.859 3.045 52.202 1.475 43.788 1.48c-8.413-.005-24.07 1.565-30.059 16.89-2.71 6.929-2.549 12.635-1.218 17.117.253-1.071 3.169-14.342 12.972-12.74 10.287 1.684 12.427 3.334 13.241-.702.816-4.037-2.56-11.777 5.065-11.777Z"></path><path stroke="#2A2D34" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M33.183 27.523s2.366 1.627 4.77.549c2.405-1.078 3.35-1.953 5.835-1.953 2.489.003 3.433.875 5.838 1.955 2.405 1.078 4.77-.547 4.77-.547"></path><path fill="#2DC275" stroke="#2A2D34" stroke-miterlimit="10" d="m46.697 22.845.034-.039c.795-.904.352-2.312-.816-2.612-.741-.192-1.543-.246-2.129-.249-.583 0-1.387.055-2.129.247-1.168.3-1.613 1.706-.818 2.61l.034.04c1.55 1.736 4.278 1.738 5.824.003Z"></path><path fill="#2A2D34" d="M32.41 19.945a.525.525 0 0 0-.506.651 2.804 2.804 0 0 0 5.456 0 .525.525 0 0 0-.507-.65H32.41ZM55.17 19.945c.339 0 .585.321.506.651a2.804 2.804 0 0 1-5.456 0 .525.525 0 0 1 .507-.65h4.443Z"></path><path stroke="#2A2D34" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M66.336 47.729c-2.477 1.189-10.644 4.526-22.55 4.52-11.905-.007-20.07-3.33-22.547-4.52 0 0-15.148-9.822-7.512-29.359C19.718 3.045 35.375 1.475 43.789 1.48c8.413-.005 24.07 1.565 30.059 16.89 7.639 19.537-7.512 29.359-7.512 29.359Z"></path><path fill="#FFD530" d="M24.72 5.986s-4.64-2.066-7.983 1.1c-3.342 3.166-2.61 6.753-2.11 7.74.971 1.915 6.716 5.386 9.073 3.696 2.622-1.878.755-9.386.755-9.386"></path><path stroke="#2A2D34" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M24.72 5.986s-4.64-2.066-7.983 1.1c-3.342 3.166-2.61 6.753-2.11 7.74.971 1.915 6.716 5.386 9.073 3.696 2.622-1.878.755-9.386.755-9.386"></path><path fill="#FFD530" d="M62.858 5.986s4.64-2.066 7.982 1.1c3.342 3.166 2.61 6.753 2.11 7.74-.971 1.915-6.716 5.386-9.073 3.696-2.621-1.878-.755-9.386-.755-9.386"></path><path stroke="#2A2D34" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M62.858 5.986s4.64-2.066 7.982 1.1c3.342 3.166 2.61 6.753 2.11 7.74-.971 1.915-6.716 5.386-9.073 3.696-2.621-1.878-.755-9.386-.755-9.386"></path></svg>
+                        </div>
+                    </div>
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input type="text" class="auth-form__input" placeholder="Nhập email hoặc số điện thoại">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Nhập mật khẩu">
+                        </div>
+                        <div class="auth-form__group">
+                            <button class="auth-form__sign-up auth-form__input">Đăng nhập</button>
+                        </div>
+                    </div>
+
+                    <div class="auth-form__switch-sign">
+                        <a href="#" class="auth-form__switch-btn js-notify-list">Quên mật khẩu?</a>
+                        <a href="#" class="auth-form__switch-btn js-notify-list">Đăng nhập với SMS</a>
+                    </div>
+                    <div class="auth-text">
+                        <div class="auth-text-crossbar"></div> <div class="auth-text-crossbar-text">hoặc</div> <div class="auth-text-crossbar"></div>
+                    </div>
+                    <div class="grid-center auth-form__switch">
+                        <div class=" auth-form__switch-text">
+                            Bạn mới biết đến TicketBox?<a href="#" class="register__page auth-form__switch-btn">Đăng ký</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @* modal *@
+    <script>
+        const loginBtns = document.querySelectorAll('.login__page');
+        const registerBtns = document.querySelectorAll('.register__page');
+        const loginForm = document.querySelector('.js-login-form');
+        const registerForm = document.querySelector('.js-register-form');
+        const modal = document.querySelector('.js-modal');
+        const modalOverLay = document.querySelector('.js-modal-overlay');
+        const modalCloseButtons = document.querySelectorAll('.js-modal-close');
+
+        loginBtns.forEach((loginBtn) => {
+            loginBtn.addEventListener('click', function (event) {
+                event.preventDefault();
+                modal.style.display = 'flex';          // Hiển thị modal
+                loginForm.style.display = 'block';  // Hiển thị biểu mẫu đăng nhập
+                registerForm.style.display = 'none';      // Ẩn biểu mẫu đăng ký
+            });
+        });
+
+        registerBtns.forEach((registerBtn) => {
+            registerBtn.addEventListener('click', function (event) {
+                event.preventDefault();
+                modal.style.display = 'flex';          // Hiển thị modal
+                registerForm.style.display = 'block';  // Hiển thị biểu mẫu đăng ký
+                loginForm.style.display = 'none';      // Ẩn biểu mẫu đăng nhập
+            });
+        });
+
+        modalCloseButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                modal.style.display = 'none';
+            });
+        });
+
+        modalOverLay.addEventListener('click', function (event) {
+            if (event.target === modalOverLay) {
+                modal.style.display = 'none';
+            }
+        });
+
+
+    </script>
+
+    <style>
+        /* MODAL */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: none;
+            animation: fadeIn linear 0.1s;
+            z-index: 1000;
+        }
+
+        .modal__overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: -1;
+        }
+
+        .modal__body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            --grow-from: 0.7;
+            --grow-to: 1;
+            margin: auto;
+            animation: Growth linear 0.1s;
+        }
+        /* Authen modal */
+        .auth-form {
+            display: block;
+            width: 500px;
+            background-color: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+
+        .auth-form__container {
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+        .auth-form__header {
+            color: #333;
+            /* max-width: 8.5rem; */
+            font-size: 20px;
+            font-weight: 400;
+            background-color: rgb(45, 194, 117);
+            width: 100%;
+            height: 112px;
+            position: relative;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+        .auth-form__heading {
+            height: 64px;
+            position: absolute;
+            margin: auto;
+            width: 85%;
+            bottom: 0px;
+            left: 10%;
+        }
+
+        .auth-form__header .auth-form__heading span {
+            position: absolute;
+            bottom: 20px;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 28px;
+            color: rgb(255, 255, 255);
+            line-height: 32px;
+            left: 0px;
+        }
+
+        .auth-form__header .auth-form__heading .svgImage {
+            position: absolute;
+            right: 20px;
+            bottom: 0px;
+        }
+
+        .auth-form__header .auth-form__heading .svgIcon {
+            position:absolute;
+            top:0;
+        }
+
+        .auth-form__header .auth-form__heading p {
+            position: absolute;
+            bottom: 10px;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 28px;
+            color: rgb(255, 255, 255);
+            line-height: 32px;
+            left: 90px;
+        }
+
+        .auth-form__close-register {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            cursor: pointer;
+            color: #fff;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .auth-form__close-sign-up {
+            position: absolute;
+            right: -5px;
+            top: -30px;
+            cursor: pointer;
+            color: #fff;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .auth-form__switch .auth-form__switch-btn {
+            text-decoration: none;
+        }
+
+        .auth-form__group {
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .auth-form__form {
+            margin: 40px 12px 0;
+        }
+
+        .auth-form__input {
+            width: 100%;
+            height: 40px;
+            margin-bottom: 16px;
+            padding: 7px 11px;
+            font-size: 14px;
+            border: 1px solid #dbdbdb;
+            border-radius: 2px;
+            outline: none;
+        }
+
+            .auth-form__input:focus {
+                border-color: #888;
+            }
+
+        .auth-form__aside {
+            margin-top: 16px;
+        }
+
+        .auth-form__policy-text {
+            font-size: 14px;
+            line-height: 18px;
+            text-align: center;
+            padding: 0 12px;
+        }
+
+        .auth-form__text-link {
+            text-decoration: none;
+            color: rgb(45, 194, 117) !important;
+        }
+
+        .auth-form__controls {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 60px;
+        }
+
+        .auth-form__socials {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .auth-form__switch {
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 28px;
+        }
+
+        .btn--with-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 210px;
+            height: 40px;
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #bdbdbd;
+        }
+
+        .btn-form__controls-back {
+            background-color: #fff;
+            margin-right: 8px;
+        }
+
+        .auth-form__sign-up-form {
+            display: none;
+        }
+
+        .auth-text {
+            display: flex;
+            align-items: center;
+            margin-top: 16px;
+        }
+
+            .auth-text .auth-text-crossbar {
+                height: 1px;
+                width: 50%;
+                background-color: #dbdbdb;
+                flex: 1;
+            }
+
+        .auth-form__switch-text {
+            color: #000;
+            margin: 20px 0 0 0;
+            font-size: 18px;
+        }
+
+        .auth-text-crossbar-text {
+            color: #ccc;
+            padding: 0 16px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        /* Sign-in form */
+        .auth-form__sign-up-form {
+        }
+
+        .auth-form__sign-up {
+            font-size: 14px;
+            font-weight: 500;
+            color: #000;
+        }
+
+            .auth-form__sign-up:hover {
+                color: #fff;
+                background-color: rgb(45, 194, 117);
+            }
+
+        .auth-form__switch-sign {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .auth-form__switch-btn {
+            font-size: 18px;
+            text-decoration: none;
+            color: rgb(45, 194, 117) !important;
+        }
+    </style>
+
 </body>
 <script>
     window.addEventListener('resize', function () {

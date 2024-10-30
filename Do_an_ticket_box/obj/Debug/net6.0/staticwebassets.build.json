@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "IqPsHxrIkRu24W5I3vz3jHVe6HzlPwck2QvcP/tKakA=",
+  "Hash": "VecVfOciPNO+K7j4RMrZ5mKLhTxvZ4P5sHXa2y/LlJY=",
   "Source": "Do_an_ticket_box",
   "BasePath": "_content/Do_an_ticket_box",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\ADMIN\\Source\\Repos\\Do_an_ticket_box\\Do_an_ticket_box\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Do_an_ticket_box.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\ADMIN\\Source\\Repos\\Do_an_ticket_box\\Do_an_ticket_box\\wwwroot\\css\\responsive.css",
+      "SourceId": "Do_an_ticket_box",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ADMIN\\Source\\Repos\\Do_an_ticket_box\\Do_an_ticket_box\\wwwroot\\",
+      "BasePath": "_content/Do_an_ticket_box",
+      "RelativePath": "css/responsive.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\responsive.css"
     },
     {
       "Identity": "C:\\Users\\ADMIN\\Source\\Repos\\Do_an_ticket_box\\Do_an_ticket_box\\wwwroot\\css\\site.css",
