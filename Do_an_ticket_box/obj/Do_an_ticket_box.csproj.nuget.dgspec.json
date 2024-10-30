@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Do_an_ticket_box.csproj": {}
+    "C:\\Users\\ASUS\\Source\\Repos\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj": {}
   },
   "projects": {
-    "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Do_an_ticket_box.csproj": {
+    "C:\\Users\\ASUS\\Source\\Repos\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
+        "projectUniqueName": "C:\\Users\\ASUS\\Source\\Repos\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
         "projectName": "Do_an_ticket_box",
-        "projectPath": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
-        "packagesPath": "C:\\Users\\phith\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\obj\\",
+        "projectPath": "C:\\Users\\ASUS\\Source\\Repos\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ASUS\\Source\\Repos\\Do_an_ticket_box\\Do_an_ticket_box\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\phith\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -80,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

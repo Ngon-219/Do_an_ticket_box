@@ -1,57 +1,58 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\phith\\Documents\\doan\\",
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\phith\\documents\\doan\\do_an_ticket_box\\views\\home\\searchresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\home\\searchresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\asus\\source\\repos\\do_an_ticket_box\\do_an_ticket_box\\views\\myticket\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\myticket\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\phith\\documents\\doan\\do_an_ticket_box\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\asus\\source\\repos\\do_an_ticket_box\\do_an_ticket_box\\controllers\\myticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\controllers\\myticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\phith\\documents\\doan\\do_an_ticket_box\\views\\home\\nosearchresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\home\\nosearchresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\phith\\documents\\doan\\do_an_ticket_box\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\phith\\documents\\doan\\do_an_ticket_box\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\asus\\source\\repos\\do_an_ticket_box\\do_an_ticket_box\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\phith\\documents\\doan\\do_an_ticket_box\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\asus\\source\\repos\\do_an_ticket_box\\do_an_ticket_box\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\asus\\source\\repos\\do_an_ticket_box\\do_an_ticket_box\\views\\home\\nosearchresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\home\\nosearchresult.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\asus\\source\\repos\\do_an_ticket_box\\do_an_ticket_box\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\asus\\source\\repos\\do_an_ticket_box\\do_an_ticket_box\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\asus\\source\\repos\\do_an_ticket_box\\do_an_ticket_box\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\phith\\documents\\doan\\do_an_ticket_box\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\asus\\source\\repos\\do_an_ticket_box\\do_an_ticket_box\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\asus\\source\\repos\\do_an_ticket_box\\do_an_ticket_box\\do_an_ticket_box.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\do_an_ticket_box.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\asus\\source\\repos\\do_an_ticket_box\\do_an_ticket_box\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\asus\\source\\repos\\do_an_ticket_box\\do_an_ticket_box\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\phith\\documents\\doan\\do_an_ticket_box\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\phith\\documents\\doan\\do_an_ticket_box\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\phith\\documents\\doan\\do_an_ticket_box\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\phith\\documents\\doan\\do_an_ticket_box\\views\\shared\\item.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\views\\shared\\item.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|c:\\users\\phith\\documents\\doan\\do_an_ticket_box\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{4FC90C9B-9BA9-45CA-AA37-12253DB965D6}|Do_an_ticket_box\\Do_an_ticket_box.csproj|solutionrelative:do_an_ticket_box\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\vucon\\AppData\\Local\\SourceServer\\4470e05fca941afeda2274881b29f4038bae7e293854cd9dc671f0e69fa3f792\\Do_an_ticket_box\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -61,90 +62,131 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAAB0AAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-22T02:19:52.18Z"
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Do_an_ticket_box\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T06:08:10.511Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Do_an_ticket_box\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAAEoAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-22T02:50:31.992Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Item.cshtml",
-              "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Shared\\Item.cshtml",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\Item.cshtml",
-              "ToolTip": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Shared\\Item.cshtml",
-              "RelativeToolTip": "Do_an_ticket_box\\Views\\Shared\\Item.cshtml",
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Do_an_ticket_box\\Controllers\\AccountController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-24T14:26:05.468Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Error.cshtml",
-              "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Shared\\Error.cshtml",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\Error.cshtml",
-              "ToolTip": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Shared\\Error.cshtml",
-              "RelativeToolTip": "Do_an_ticket_box\\Views\\Shared\\Error.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-25T07:02:30.855Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\vucon\\AppData\\Local\\SourceServer\\4470e05fca941afeda2274881b29f4038bae7e293854cd9dc671f0e69fa3f792\\Do_an_ticket_box\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\vucon\\AppData\\Local\\SourceServer\\4470e05fca941afeda2274881b29f4038bae7e293854cd9dc671f0e69fa3f792\\Do_an_ticket_box\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\vucon\\AppData\\Local\\SourceServer\\4470e05fca941afeda2274881b29f4038bae7e293854cd9dc671f0e69fa3f792\\Do_an_ticket_box\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "..\\..\\..\\vucon\\AppData\\Local\\SourceServer\\4470e05fca941afeda2274881b29f4038bae7e293854cd9dc671f0e69fa3f792\\Do_an_ticket_box\\Controllers\\HomeController.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T04:02:47.923Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Program.cs",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\Program.cs",
-              "ToolTip": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Program.cs",
-              "RelativeToolTip": "Do_an_ticket_box\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T04:03:36.595Z"
+              "WhenOpened": "2024-10-30T06:02:00.507Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "noSearchResult.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
+              "RelativeToolTip": "Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-30T06:01:31.014Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-30T05:59:56.494Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "Do_an_ticket_box\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-30T05:53:22.482Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\MyTicket\\Index.cshtml",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\MyTicket\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\MyTicket\\Index.cshtml",
+              "RelativeToolTip": "Do_an_ticket_box\\Views\\MyTicket\\Index.cshtml",
+              "ViewState": "AgIAAFEAAAAAAAAAAAApwGIAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-30T05:47:51.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MyTicketController.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Controllers\\MyTicketController.cs",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Controllers\\MyTicketController.cs",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Controllers\\MyTicketController.cs",
+              "RelativeToolTip": "Do_an_ticket_box\\Controllers\\MyTicketController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T05:47:04.053Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Do_an_ticket_box",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Source\\Repos\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Do_an_ticket_box.csproj",
+              "ToolTip": "C:\\Users\\ASUS\\Source\\Repos\\Do_an_ticket_box\\Do_an_ticket_box\\Do_an_ticket_box.csproj",
+              "RelativeToolTip": "Do_an_ticket_box\\Do_an_ticket_box.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-24T05:46:56.23Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "Do_an_ticket_box\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-10-24T02:22:13.417Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "_ValidationScriptsPartial.cshtml",
-              "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-              "ToolTip": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeToolTip": "Do_an_ticket_box\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -152,76 +194,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "site.js",
-              "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\wwwroot\\js\\site.js",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\wwwroot\\js\\site.js",
-              "ToolTip": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\wwwroot\\js\\site.js",
-              "RelativeToolTip": "Do_an_ticket_box\\wwwroot\\js\\site.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-10-24T04:20:38.897Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Do_an_ticket_box\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-24T04:02:05.877Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "noSearchResult.cshtml",
-              "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
-              "ToolTip": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
-              "RelativeToolTip": "Do_an_ticket_box\\Views\\Home\\noSearchResult.cshtml",
-              "ViewState": "AgIAAEkAAABANDMzMzMrwNAAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-26T15:15:55.179Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\_ViewImports.cshtml",
-              "ToolTip": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "Do_an_ticket_box\\Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-24T14:30:51.779Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SearchResult.cshtml",
-              "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Home\\SearchResult.cshtml",
-              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Home\\SearchResult.cshtml",
-              "ToolTip": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Home\\SearchResult.cshtml",
-              "RelativeToolTip": "Do_an_ticket_box\\Views\\Home\\SearchResult.cshtml",
-              "ViewState": "AgIAAGYAAAAgMzMzMzMrwHsAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-26T15:01:51.769Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Do_an_ticket_box\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAPAQAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-22T02:19:52.18Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Privacy.cshtml",
-              "DocumentMoniker": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Home\\Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Home\\Privacy.cshtml",
-              "ToolTip": "C:\\Users\\phith\\Documents\\doan\\Do_an_ticket_box\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\Privacy.cshtml",
               "RelativeToolTip": "Do_an_ticket_box\\Views\\Home\\Privacy.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-22T02:51:24.167Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Do_an_ticket_box\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ASUS\\source\\repos\\Do_an_ticket_box\\Do_an_ticket_box\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Do_an_ticket_box\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-22T02:50:31.992Z"
             }
           ]
         }
