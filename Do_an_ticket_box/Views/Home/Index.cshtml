@@ -75,8 +75,9 @@
                 </div>
                 <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
                     <div class="bg-white" style="height: 35vh;  border-radius: 10px; overflow: hidden;">
-                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://wallpapercave.com/wp/wp9748824.jpg" Alternate Text" />
+                        <a href="@Url.Action("Ticket", "Home")"><img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://wallpapercave.com/wp/wp9748824.jpg" Alternate Text" /></a>
                     </div>
+
                 </div>
                 <div class="col-6 p-1 col-lg-3 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
                     <div class="bg-white" style="height: 35vh;  border-radius: 10px; overflow: hidden;">
@@ -121,6 +122,11 @@
             </div>
         </div>
         <script>
+            
+            // document.getElementById("item-card").addEventListener("click", function() {
+            //     window.location.href = '@Url.Action("Ticket", "Home")';
+            // });
+
             const item = document.querySelectorAll('.container #item-card');
             const totalItem = item.length;
 
