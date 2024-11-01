@@ -73,12 +73,14 @@
                 <div class="col-12">
                     <h3 class="text-white">Sự kiện xu hướng</h3>
                 </div>
+                @foreach(var even in Model) {
                 <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
                     <div class="bg-white" style="height: 35vh;  border-radius: 10px; overflow: hidden;">
-                        <a href="@Url.Action("Ticket", "Home")"><img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://wallpapercave.com/wp/wp9748824.jpg" Alternate Text" /></a>
+                        <a href="@Url.Action("Ticket", "Home")"><img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="htt://wallpapercave.com/wp/wp9748824.jpg" alt = "@even.Event_Name" /></a>
                     </div>
 
                 </div>
+        }
                 <div class="col-6 p-1 col-lg-3 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
                     <div class="bg-white" style="height: 35vh;  border-radius: 10px; overflow: hidden;">
                         <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://img.freepik.com/premium-photo/confetti-fireworks-crowd-music-festival_989072-16.jpg" alt="Alternate Text" />
