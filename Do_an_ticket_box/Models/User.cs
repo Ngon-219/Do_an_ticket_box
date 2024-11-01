@@ -10,25 +10,25 @@ namespace Do_an_ticket_box.Models
     {
         [Key]
         public int UserID { get; set; }
-        [Column("Name", TypeName = "varchar(100)")]
+        [Column("Name", TypeName = "nvarchar(100)")]
         public string UserName { get; set; }
-        [Column("Surname", TypeName = "varchar(100)")]
+        [Column("Surname", TypeName = "nvarchar(100)")]
         public string UserSurname { get; set; }
-        [Column("Email", TypeName = "varchar(100)")]
+        [Column("Email", TypeName = "nvarchar(100)")]
         public string Email { get; set; }
-        [Column("Phone", TypeName = "varchar(20)")]
+        [Column("Phone", TypeName = "nvarchar(20)")]
         public string Phone { get; set; }
-        [Column("Password", TypeName = "varchar(255)")]
+        [Column("Password", TypeName = "nvarchar(255)")]
         public string Password { get; set; }
-        [Column("Address", TypeName = "text")]
+        [Column("Address", TypeName = "nvarchar(max)")]
         public string Address { get; set; }
         [Column("Created_at", TypeName ="timestamp")]
         public DateTime Created_at { get; set; }
-        [Column("Role", TypeName ="varchar(20)")]
+        [Column("Role", TypeName ="nvarchar(20)")]
         public string role { get; set; }
-        [Column("Status", TypeName ="varchar(20)")]
+        [Column("Status", TypeName ="nvarchar(20)")]
         public string status { get; set; }
-        [Column("AvatarImgUrl", TypeName ="text")]
+        [Column("AvatarImgUrl", TypeName ="nvarchar(max)")]
         public string avatarImg { get; set; }
         public List<Booking> Bookings { get; set; }
         public List<Report> Reports { get; set; }
