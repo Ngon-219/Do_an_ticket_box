@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<Event>;
+@{
     ViewData["Title"] = "Home Page";
 }
 <div>
@@ -10,10 +11,10 @@
                 <img class="d-none" style="width: 100vw; height: 40vh;" src="https://wallpapercave.com/wp/wp9748824.jpg" alt="Alternate Text" />
                 <img class="d-none" style="width: 100vw; height: 40vh;" src="https://rare-gallery.com/livewalls/imgpreview/142533-doggie-corgi-in-front-of-the-house-live-wallpaper.jpg" alt="Alternate Text" />
             </div>
-
         </div>
 
         <script>
+            
             let currentIndex = 0;
             const images = document.querySelectorAll('.banner img');
             const totalImages = images.length;
@@ -56,7 +57,7 @@
         </script>
     </div>
 
-    <div class="d-flex align-items-center align-content-center" style="padding-top: 2vh; box-shadow: 10px 10px 10px 10px #fff:">
+    <div class="d-flex align-items-center align-content-center" style="padding-top: 2vh; box-shadow: 10px 10px 10px 10px">
         <div class="container" style="position:relative;">
             <button id="pre-item-card" style="position:absolute; left: 3vw; top:20vh; padding:0; border-radius:100%; border:none; background-color: #121212;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">

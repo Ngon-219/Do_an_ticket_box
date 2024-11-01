@@ -1,4 +1,5 @@
 ﻿using Do_an_ticket_box.Models;
+using Do_an_ticket_box.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,15 +8,18 @@ namespace Do_an_ticket_box.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var ngon = this._context.Events.ToList();
+            return View(ngon);
         }
         
         public IActionResult SearchResult()
