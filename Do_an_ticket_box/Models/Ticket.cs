@@ -11,13 +11,13 @@ namespace Do_an_ticket_box.Models
         [ForeignKey("Event")]
         public int Event_ID { get; set; }
         public Event Event { get; set; }
-        [Column("Ticket_type", TypeName ="varchar(50)")]
+        [Column("Ticket_type", TypeName ="nvarchar(50)")]
         public string Ticket_type { get; set; }
         [Column("Price", TypeName = "Decimal(10,2)")]
         public decimal price { get; set; }
         [Column("Seat_number", TypeName = "int")]
         public int seat_number { get; set; }
-        [Column("Status", TypeName = "varchar(50)")]
+        [Column("Status", TypeName = "nvarchar(50)")]
         public string status { get; set; }
         [Column("Seat_remain", TypeName = "int")]
         public int seat_remain { get; set; }

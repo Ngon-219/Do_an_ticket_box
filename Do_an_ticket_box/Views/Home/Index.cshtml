@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<Event>;
+@{
     ViewData["Title"] = "Home Page";
 }
 <div>
@@ -10,10 +11,10 @@
                 <img class="d-none" style="width: 100vw; height: 40vh;" src="https://wallpapercave.com/wp/wp9748824.jpg" alt="Alternate Text" />
                 <img class="d-none" style="width: 100vw; height: 40vh;" src="https://rare-gallery.com/livewalls/imgpreview/142533-doggie-corgi-in-front-of-the-house-live-wallpaper.jpg" alt="Alternate Text" />
             </div>
-
         </div>
 
         <script>
+            
             let currentIndex = 0;
             const images = document.querySelectorAll('.banner img');
             const totalImages = images.length;
@@ -56,7 +57,7 @@
         </script>
     </div>
 
-    <div class="d-flex align-items-center align-content-center" style="padding-top: 2vh; box-shadow: 10px 10px 10px 10px #fff:">
+    <div class="d-flex align-items-center align-content-center" style="padding-top: 2vh; box-shadow: 10px 10px 10px 10px">
         <div class="container" style="position:relative;">
             <button id="pre-item-card" style="position:absolute; left: 3vw; top:20vh; padding:0; border-radius:100%; border:none; background-color: #121212;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
@@ -72,11 +73,14 @@
                 <div class="col-12">
                     <h3 class="text-white">Sự kiện xu hướng</h3>
                 </div>
+                @foreach(var even in Model) {
                 <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
                     <div class="bg-white" style="height: 35vh;  border-radius: 10px; overflow: hidden;">
-                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://wallpapercave.com/wp/wp9748824.jpg" Alternate Text" />
+                        <a href="@Url.Action("Ticket", "Home")"><img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="htt://wallpapercave.com/wp/wp9748824.jpg" alt = "@even.Event_Name" /></a>
                     </div>
+
                 </div>
+        }
                 <div class="col-6 p-1 col-lg-3 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
                     <div class="bg-white" style="height: 35vh;  border-radius: 10px; overflow: hidden;">
                         <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://img.freepik.com/premium-photo/confetti-fireworks-crowd-music-festival_989072-16.jpg" alt="Alternate Text" />
@@ -120,6 +124,11 @@
             </div>
         </div>
         <script>
+            
+            // document.getElementById("item-card").addEventListener("click", function() {
+            //     window.location.href = '@Url.Action("Ticket", "Home")';
+            // });
+
             const item = document.querySelectorAll('.container #item-card');
             const totalItem = item.length;
 
