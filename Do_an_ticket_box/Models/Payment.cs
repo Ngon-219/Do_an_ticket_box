@@ -14,7 +14,7 @@ namespace Do_an_ticket_box.Models
         public DateTime payment_time { get; set; }
         [Column("Amount_paid", TypeName = "decimal")]
         public decimal amount_paid { get; set; }
-        [Column("Status", TypeName = "varchar(20)")]
+        [Column("Status", TypeName = "nvarchar(20)")]
         public string status { get; set; }
         public Booking Booking { get; set; }
     }

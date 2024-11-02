@@ -14,7 +14,7 @@ namespace Do_an_ticket_box.Models
         public int Event_ID { get; set; }
         [Column("Report", TypeName = "int")]
         public int rate { get; set; }
-        [Column("Comment", TypeName = "text")]
+        [Column("Comment", TypeName = "nvarchar(max)")]
         public string comment { get; set; }
         [Column("Created", TypeName = "timestamp")]
         public DateTime Created { get; set; } = DateTime.Now;

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<Event>;
+@{
     ViewData["Title"] = "Home Page";
 }
 <div>
@@ -7,14 +8,13 @@
             <button id="prev" class="d-flex align-content-center align-items-center text-center border-0" style="font-size: 40px; height: 40vh; background-color: rgba(128, 128, 128, 0.3); position: absolute; top: 0%;"><</button>
             <button id="next" class="d-flex align-content-center align-items-center text-center border-0" style="font-size: 40px; height: 40vh; background-color: rgba(128, 128, 128, 0.3); position: absolute; top: 0%; right: 0%">></button>
             <div class="banner">
-                <img class="d-none" style="width: 100vw; height: 40vh;" src="https://i.ytimg.com/vi/RKDSHLlZW7g/maxresdefault.jpg" alt="Alternate Text" />
                 <img class="d-none" style="width: 100vw; height: 40vh;" src="https://wallpapercave.com/wp/wp9748824.jpg" alt="Alternate Text" />
                 <img class="d-none" style="width: 100vw; height: 40vh;" src="https://rare-gallery.com/livewalls/imgpreview/142533-doggie-corgi-in-front-of-the-house-live-wallpaper.jpg" alt="Alternate Text" />
             </div>
-
         </div>
 
         <script>
+            
             let currentIndex = 0;
             const images = document.querySelectorAll('.banner img');
             const totalImages = images.length;
@@ -47,7 +47,6 @@
             solveBanner();
 
             const changeImg = () => {
-
                 images[currentIndex].classList.add('d-none');
                 currentIndex = (currentIndex + 1) % totalImages;
                 images[currentIndex].classList.remove('d-none');
@@ -57,5 +56,246 @@
             }, 3000);
         </script>
     </div>
-    <div>ấdf</div>
+
+    <div class="d-flex align-items-center align-content-center" style="padding-top: 2vh; box-shadow: 10px 10px 10px 10px">
+        <div class="container" style="position:relative;">
+            <button id="pre-item-card" style="position:absolute; left: 3vw; top:20vh; padding:0; border-radius:100%; border:none; background-color: #121212;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+                </svg>
+            </button>
+            <button id="next-item-card" style="position:absolute; right: 3vw; top:20vh; padding:0; border-radius:100%; border:none; background-color: #121212;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+                </svg>
+            </button>
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="text-white">Sự kiện xu hướng</h3>
+                </div>
+                @foreach(var even in Model) {
+                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
+                    <div class="bg-white" style="height: 35vh;  border-radius: 10px; overflow: hidden;">
+                        <a href="@Url.Action("Ticket", "Home")"><img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="htt://wallpapercave.com/wp/wp9748824.jpg" alt = "@even.Event_Name" /></a>
+                    </div>
+
+                </div>
+        }
+                <div class="col-6 p-1 col-lg-3 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
+                    <div class="bg-white" style="height: 35vh;  border-radius: 10px; overflow: hidden;">
+                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://img.freepik.com/premium-photo/confetti-fireworks-crowd-music-festival_989072-16.jpg" alt="Alternate Text" />
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
+                    <div class="bg-white" style="height: 35vh;  border-radius: 10px; overflow: hidden;">
+                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://images7.alphacoders.com/133/1339451.png" alt="Alternate Text" />
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
+                    <div class="bg-white" style="height: 35vh;  border-radius: 10px; overflow: hidden;">
+                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNvbmNlcnR8ZW58MHx8MHx8fDA%3D" alt="Alternate Text" />
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
+                    <div class="bg-white" style="height: 35vh;  border-radius: 10px; overflow: hidden;">
+                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="Alternate Text" />
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
+                    <div class="bg-white" style="height: 35vh;  border-radius: 10px; overflow: hidden;">
+                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="Alternate Text" />
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
+                    <div class="bg-white" style="height: 35vh;  border-radius: 10px; overflow: hidden;">
+                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="Alternate Text" />
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
+                    <div class="bg-white" style="height: 35vh;  border-radius: 10px; overflow: hidden;">
+                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="Alternate Text" />
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
+                    <div class="bg-white" style="height: 35vh;  border-radius: 10px; overflow: hidden;">
+                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="Alternate Text" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            
+            // document.getElementById("item-card").addEventListener("click", function() {
+            //     window.location.href = '@Url.Action("Ticket", "Home")';
+            // });
+
+            const item = document.querySelectorAll('.container #item-card');
+            const totalItem = item.length;
+
+            const solveBtn = () => {
+                let startIndex = 0, lastIndex = 3, valueSub = 4;
+                if (window.innerWidth < 900) {
+                    lastIndex = 1;
+                    valueSub = 2
+                }
+                document.getElementById('pre-item-card').addEventListener('click', () => {
+                    let arr = Array.prototype.slice.call(item);
+                    console.log('solve previous btn');
+                    if (startIndex == 0) {
+                        alert('Đầu danh sách ');
+                    } else {
+                        startIndex = startIndex - 1;
+                        lastIndex = startIndex + valueSub;
+                        console.log(lastIndex, " ", startIndex);
+                        arr[startIndex].classList.remove('d-none');
+                        if (!arr[lastIndex].classList.contains('d-none')) {
+                            arr[lastIndex].classList.add('d-none');
+                        }
+                        lastIndex -= 1;
+                    }
+                });
+                document.getElementById('next-item-card').addEventListener('click', () => {
+                    console.log('solve next btn');
+                    let arr = Array.prototype.slice.call(item);
+                    if (lastIndex == totalItem - 1) {
+                        alert('Cuối danh sách');
+                    } else {
+                        lastIndex = lastIndex + 1;
+                        startIndex = lastIndex - valueSub;
+                        console.log(lastIndex, " ", startIndex);
+                        arr[lastIndex].classList.remove('d-none');
+                        if (!arr[startIndex].classList.contains('d-none')) {
+                            arr[startIndex].classList.add('d-none');
+                        }
+                        startIndex += 1;
+                    }
+                });
+            }
+
+            const showSlide = () => {
+                let arr = Array.prototype.slice.call(item);
+                if (totalItem > 4 && window.innerWidth > 900) {
+                    for (let i = 4; i < totalItem; i++) {
+                        arr[i].classList.add('d-none');
+                    }
+                }
+                if (totalItem > 2 && window.innerWidth < 900) {
+                    for (let i = 2; i < totalItem; i++) {
+                        arr[i].classList.add('d-none');
+                    }
+                }
+            }
+
+            const solveResponsive = () => {
+                if (window.innerWidth > 900) {
+                    document.getElementById('pre-item-card').style.left = '-1vw';
+                    document.getElementById('next-item-card').style.right = '-1vw';
+                }
+            }
+            
+            solveBtn();
+            showSlide()
+            solveResponsive();
+        </script>
+    </div>
+
+    </div class="d-flex align-items-center align-content-center" style="padding-top: 2vh; box-shadow: 10px 10px 10px 10px #fff:">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="text-white">Sự kiện trong tháng</h3>
+                </div>
+                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
+                    <div class="bg-black" style="height: 35vh;  border-radius: 10px; overflow: hidden; position: relative;">
+                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="Alternate Text" />
+                        <div class="text-white" style="position: absolute; bottom:0; padding-left:0.5vw; background-color: rgba(128, 128, 128, 0.1); width:100%">
+                            <h5>ahihi</h5>
+                            <h6>ngày giờ</h6>
+                            <h6> địa điểm</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
+                    <div class="bg-black" style="height: 35vh;  border-radius: 10px; overflow: hidden; position: relative;">
+                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="Alternate Text" />
+                        <div class="text-white" style="position: absolute; bottom:0; padding-left:0.5vw; background-color: rgba(128, 128, 128, 0.1); width:100%">
+                            <h5>ahihi</h5>
+                            <h6>ngày giờ</h6>
+                            <h6> địa điểm</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
+                    <div class="bg-black" style="height: 35vh;  border-radius: 10px; overflow: hidden; position: relative;">
+                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="Alternate Text" />
+                        <div class="text-white" style="position: absolute; bottom:0; padding-left:0.5vw; background-color: rgba(128, 128, 128, 0.1); width:100%">
+                            <h5>ahihi</h5>
+                            <h6>ngày giờ</h6>
+                            <h6> địa điểm</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
+                    <div class="bg-black" style="height: 35vh;  border-radius: 10px; overflow: hidden; position: relative;">
+                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="Alternate Text" />
+                        <div class="text-white" style="position: absolute; bottom:0; padding-left:0.5vw; background-color: rgba(128, 128, 128, 0.1); width:100%">
+                            <h5>ahihi</h5>
+                            <h6>ngày giờ</h6>
+                            <h6> địa điểm</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
+                    <div class="bg-black" style="height: 35vh;  border-radius: 10px; overflow: hidden; position: relative;">
+                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="Alternate Text" />
+                        <div class="text-white" style="position: absolute; bottom:0; padding-left:0.5vw; background-color: rgba(128, 128, 128, 0.1); width:100%">
+                            <h5>ahihi</h5>
+                            <h6>ngày giờ</h6>
+                            <h6> địa điểm</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
+                    <div class="bg-black" style="height: 35vh;  border-radius: 10px; overflow: hidden; position: relative;">
+                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="Alternate Text" />
+                        <div class="text-white" style="position: absolute; bottom:0; padding-left:0.5vw; background-color: rgba(128, 128, 128, 0.1); width:100%">
+                            <h5>ahihi</h5>
+                            <h6>ngày giờ</h6>
+                            <h6> địa điểm</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
+                    <div class="bg-black" style="height: 35vh;  border-radius: 10px; overflow: hidden; position: relative;">
+                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="Alternate Text" />
+                        <div class="text-white" style="position: absolute; bottom:0; padding-left:0.5vw; background-color: rgba(128, 128, 128, 0.1); width:100%">
+                            <h5>ahihi</h5>
+                            <h6>ngày giờ</h6>
+                            <h6> địa điểm</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
+                    <div class="bg-black" style="height: 35vh;  border-radius: 10px; overflow: hidden; position: relative;">
+                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="Alternate Text" />
+                        <div class="text-white" style="position: absolute; bottom:0; padding-left:0.5vw; background-color: rgba(128, 128, 128, 0.1); width:100%">
+                            <h5>ahihi</h5>
+                            <h6>ngày giờ</h6>
+                            <h6> địa điểm</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
+                    <div class="bg-black" style="height: 35vh;  border-radius: 10px; overflow: hidden; position: relative;">
+                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="Alternate Text" />
+                        <div class="text-white" style="position: absolute; bottom:0; padding-left:0.5vw; background-color: rgba(128, 128, 128, 0.1); width:100%">
+                            <h5>ahihi</h5>
+                            <h6>ngày giờ</h6>
+                            <h6> địa điểm</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div>
 </div>
