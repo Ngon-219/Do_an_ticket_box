@@ -5,6 +5,7 @@ using System.Diagnostics;
 
 namespace Do_an_ticket_box.Controllers
 {
+/*    [Route("[controller]/[action]")]*/
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -16,16 +17,25 @@ namespace Do_an_ticket_box.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+/*        [Route("/")]*/
+        public IActionResult Index(int? id)
         {
             var ngon = this._context.Events.ToList();
             return View(ngon);
         }
+
+        public IActionResult Error404()
+        {
+            return View();
+        }
+
         
         public IActionResult SearchResult()
         {
             return View();
         }
+/*
+        [Route("/search")]*/
         public IActionResult noSearchResult() { 
             return View();
         }

@@ -4,6 +4,7 @@ using Do_an_ticket_box.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Do_an_ticket_box.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241104154710_AddGenderToUserTable")]
+    partial class AddGenderToUserTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,13 +32,13 @@ namespace Do_an_ticket_box.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Booking_ID"), 1L, 1);
 
-                    b.Property<int?>("Event_ID")
+                    b.Property<int>("Event_ID")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Ticket_ID")
+                    b.Property<int>("Ticket_ID")
                         .HasColumnType("int");
 
-                    b.Property<int?>("User_ID")
+                    b.Property<int>("User_ID")
                         .HasColumnType("int");
 
                     b.Property<byte[]>("booking_time")
@@ -45,10 +47,11 @@ namespace Do_an_ticket_box.Migrations
                         .HasColumnName("Booking_time");
 
                     b.Property<string>("status")
+                        .IsRequired()
                         .HasColumnType("nvarchar(20)")
                         .HasColumnName("Status");
 
-                    b.Property<decimal?>("total_amout")
+                    b.Property<decimal>("total_amout")
                         .HasColumnType("decimal")
                         .HasColumnName("Total_amout");
 
@@ -68,6 +71,7 @@ namespace Do_an_ticket_box.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Event_ID"), 1L, 1);
 
                     b.Property<string>("Event_Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(150)")
                         .HasColumnName("Event_name");
 
@@ -79,7 +83,7 @@ namespace Do_an_ticket_box.Migrations
                         .HasColumnType("time")
                         .HasColumnName("Event_time");
 
-                    b.Property<int?>("avaiable_ticket")
+                    b.Property<int>("avaiable_ticket")
                         .HasColumnType("int")
                         .HasColumnName("Avaiable_tickets");
 
@@ -89,18 +93,21 @@ namespace Do_an_ticket_box.Migrations
                         .HasColumnName("Created_at");
 
                     b.Property<string>("description")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Description");
 
                     b.Property<string>("event_image")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Event_image");
 
                     b.Property<string>("location")
+                        .IsRequired()
                         .HasColumnType("nvarchar(255)")
                         .HasColumnName("Location");
 
-                    b.Property<int?>("total_tickets")
+                    b.Property<int>("total_tickets")
                         .HasColumnType("int")
                         .HasColumnName("Total_tickets");
 
@@ -117,10 +124,10 @@ namespace Do_an_ticket_box.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Payment_ID"), 1L, 1);
 
-                    b.Property<int?>("Booking_ID")
+                    b.Property<int>("Booking_ID")
                         .HasColumnType("int");
 
-                    b.Property<decimal?>("amount_paid")
+                    b.Property<decimal>("amount_paid")
                         .HasColumnType("decimal")
                         .HasColumnName("Amount_paid");
 
@@ -130,14 +137,14 @@ namespace Do_an_ticket_box.Migrations
                         .HasColumnName("Payment_time");
 
                     b.Property<string>("status")
+                        .IsRequired()
                         .HasColumnType("nvarchar(20)")
                         .HasColumnName("Status");
 
                     b.HasKey("Payment_ID");
 
                     b.HasIndex("Booking_ID")
-                        .IsUnique()
-                        .HasFilter("[Booking_ID] IS NOT NULL");
+                        .IsUnique();
 
                     b.ToTable("Payment");
                 });
@@ -155,17 +162,18 @@ namespace Do_an_ticket_box.Migrations
                         .HasColumnType("timestamp")
                         .HasColumnName("Created");
 
-                    b.Property<int?>("Event_ID")
+                    b.Property<int>("Event_ID")
                         .HasColumnType("int");
 
-                    b.Property<int?>("User_ID")
+                    b.Property<int>("User_ID")
                         .HasColumnType("int");
 
                     b.Property<string>("comment")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Comment");
 
-                    b.Property<int?>("rate")
+                    b.Property<int>("rate")
                         .HasColumnType("int")
                         .HasColumnName("Report");
 
@@ -186,26 +194,28 @@ namespace Do_an_ticket_box.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Ticket_ID"), 1L, 1);
 
-                    b.Property<int?>("Event_ID")
+                    b.Property<int>("Event_ID")
                         .HasColumnType("int");
 
                     b.Property<string>("Ticket_type")
+                        .IsRequired()
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("Ticket_type");
 
-                    b.Property<decimal?>("price")
+                    b.Property<decimal>("price")
                         .HasColumnType("Decimal(10,2)")
                         .HasColumnName("Price");
 
-                    b.Property<int?>("seat_number")
+                    b.Property<int>("seat_number")
                         .HasColumnType("int")
                         .HasColumnName("Seat_number");
 
-                    b.Property<int?>("seat_remain")
+                    b.Property<int>("seat_remain")
                         .HasColumnType("int")
                         .HasColumnName("Seat_remain");
 
                     b.Property<string>("status")
+                        .IsRequired()
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("Status");
 
@@ -225,6 +235,7 @@ namespace Do_an_ticket_box.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserID"), 1L, 1);
 
                     b.Property<string>("Address")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Address");
 
@@ -234,38 +245,47 @@ namespace Do_an_ticket_box.Migrations
                         .HasColumnName("Created_at");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasColumnName("Email");
 
                     b.Property<string>("Password")
+                        .IsRequired()
                         .HasColumnType("nvarchar(255)")
                         .HasColumnName("Password");
 
                     b.Property<string>("Phone")
+                        .IsRequired()
                         .HasColumnType("nvarchar(20)")
                         .HasColumnName("Phone");
 
                     b.Property<string>("UserName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasColumnName("Name");
 
                     b.Property<string>("UserSurname")
+                        .IsRequired()
                         .HasColumnType("nvarchar(100)")
                         .HasColumnName("Surname");
 
                     b.Property<string>("avatarImg")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("AvatarImgUrl");
 
                     b.Property<string>("gender")
+                        .IsRequired()
                         .HasColumnType("nvarchar(20)")
                         .HasColumnName("Gender");
 
                     b.Property<string>("role")
+                        .IsRequired()
                         .HasColumnType("nvarchar(20)")
                         .HasColumnName("Role");
 
                     b.Property<string>("status")
+                        .IsRequired()
                         .HasColumnType("nvarchar(20)")
                         .HasColumnName("Status");
 
@@ -278,7 +298,9 @@ namespace Do_an_ticket_box.Migrations
                 {
                     b.HasOne("Do_an_ticket_box.Models.User", "User")
                         .WithMany("Bookings")
-                        .HasForeignKey("User_ID");
+                        .HasForeignKey("User_ID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("User");
                 });
@@ -287,7 +309,9 @@ namespace Do_an_ticket_box.Migrations
                 {
                     b.HasOne("Do_an_ticket_box.Models.Booking", "Booking")
                         .WithOne("Payment")
-                        .HasForeignKey("Do_an_ticket_box.Models.Payment", "Booking_ID");
+                        .HasForeignKey("Do_an_ticket_box.Models.Payment", "Booking_ID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Booking");
                 });
@@ -296,11 +320,15 @@ namespace Do_an_ticket_box.Migrations
                 {
                     b.HasOne("Do_an_ticket_box.Models.Event", "Event")
                         .WithMany("Report")
-                        .HasForeignKey("Event_ID");
+                        .HasForeignKey("Event_ID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Do_an_ticket_box.Models.User", "User")
                         .WithMany("Reports")
-                        .HasForeignKey("User_ID");
+                        .HasForeignKey("User_ID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Event");
 
@@ -311,14 +339,17 @@ namespace Do_an_ticket_box.Migrations
                 {
                     b.HasOne("Do_an_ticket_box.Models.Event", "Event")
                         .WithMany("Ticket")
-                        .HasForeignKey("Event_ID");
+                        .HasForeignKey("Event_ID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Event");
                 });
 
             modelBuilder.Entity("Do_an_ticket_box.Models.Booking", b =>
                 {
-                    b.Navigation("Payment");
+                    b.Navigation("Payment")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Do_an_ticket_box.Models.Event", b =>
