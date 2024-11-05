@@ -1,6 +1,10 @@
 ﻿using Do_an_ticket_box.Models;
 using Do_an_ticket_box.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using System;
 using System.Diagnostics;
 
 namespace Do_an_ticket_box.Controllers
@@ -10,11 +14,13 @@ namespace Do_an_ticket_box.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ApplicationDbContext _context;
+        private readonly string _connectionString;
 
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context, IConfiguration configuration)
         {
             _logger = logger;
             _context = context;
+            _connectionString = configuration.GetConnectionString("defaultString");
         }
 
 /*        [Route("/")]*/
@@ -39,9 +45,21 @@ namespace Do_an_ticket_box.Controllers
         public IActionResult noSearchResult() { 
             return View();
         }
-        public IActionResult Ticket ()
+        public async Task<IActionResult> Ticket (int id)
         {
-            return View();
+            var EventInfor = await this._context.Events.FindAsync(id);
+            var ticket = this._context.Ticket
+            .Include(t => t.Event)
+                .Where(t => t.Event_ID == id)
+                .ToList();
+            ViewData["ticket"] = ticket;
+
+            var minPriceForEvent = this._context.Ticket
+                .Where(t => t.Event_ID == id)
+                .Min(t => t.price);
+            ViewData["min_price"] = minPriceForEvent;
+
+            return View(EventInfor);
         }
 
         public IActionResult Privacy()

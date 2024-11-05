@@ -1,4 +1,5 @@
-﻿<style>
+﻿@model Event;
+<style>
 .mal {
     background-color: #000; /* Đổi màu nền thành màu đen */
     color: #fff; /* Đổi màu chữ thành màu trắng cho dễ đọc */
@@ -154,49 +155,37 @@ button:hover {
     <section class="event-info-ticket">
         <div class="left-content-ticket">
 
-            <h1>#Wonder Winter 2024</h1>
-            <p><i class="fas fa-calendar"></i> &nbsp 09:00, 8 Tháng 12, 2024</p>
-            <p><i class="fas fa-map-marker-alt"></i> &nbsp VinWonders Grand Park, Long Thạnh Mỹ, Quận 9, TP.HCM</p>
+            <h1>@Model.Event_Name</h1>
+            <p><i class="fas fa-calendar"></i> @Model.Event_time @Model.Event_date.ToString("d")</p>
+            <p><i class="fas fa-map-marker-alt"></i> @Model.location</p>
             <hr style="margin-top: 60px;">
             <div class="ticket-price-ticket">
-                <span>Giá từ: <span class="price-ticket">1.000.000 đ</span></span>
+                <span>Giá từ: <span class="price-ticket">@String.Format("{0:N0} VND", @ViewData["min_price"])</span></span>
                 <button class="book-ticket">Book now</button>
             </div>
         </div>
         <div class="right-content-ticket">
-            <img src="https://wallpapercave.com/wp/wp9748824.jpg" alt="Ad" class="ad-banner-ticket">
+            <img src=@Model.event_image alt="Ad" class="ad-banner-ticket">
         </div>
     </section>
 
     <section class="about-event-ticket">
         <h2>Giới thiệu</h2>
-        <p>#Wonder Winter Festival - Siêu hội giáng sinh của Sài Thành!...</p>
+        <p>@Model.description</p>
     </section>
 
     <section class="ticket-info-ticket">
         <h2>Thông tin vé</h2>
         <ul>
-            <li>
-                <div class="ticket-type-ticket">
-                    <h3>Normal</h3>
-                    <p>1.000.000 đ</p>
-                </div>
-                <button>Mua vé ngay</button>
-            </li>
-            <li>
-                <div class="ticket-type-ticket">
-                    <h3>VIP</h3>
-                    <p>5.000.000 đ</p>
-                </div>
-                <button>Mua vé ngay</button>
-            </li>
-            <li>
-                <div class="ticket-type-ticket">
-                    <h3>Premium</h3>
-                    <p>1.000.000 đ</p>
-                </div>
-                <button>Mua vé ngay</button>
-            </li>
+            @foreach (var ticket in (List<Ticket>)ViewData["ticket"]) {
+                <li>
+                    <div class="ticket-type-ticket">
+                        <h3>@ticket.Ticket_type</h3>
+                        <p class="text-white">@String.Format("{0:N0} VND", @ticket.price)</p>
+                    </div>
+                    <button>Mua vé ngay</button>
+                </li>
+            }
         </ul>
     </section>
 </body>
