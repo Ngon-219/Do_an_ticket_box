@@ -1,4 +1,4 @@
-using Do_an_ticket_box.Services;
+﻿using Do_an_ticket_box.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,7 +29,20 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "Home",
+    pattern: "Home/{action}/{id?}",
+    defaults: new { controller = "Home", action = "Index" });
+
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.UseStatusCodePages(async context =>
+{
+    if (context.HttpContext.Response.StatusCode == 404)
+    {
+        context.HttpContext.Response.Redirect("/Home/Error404");
+    }
+});
 
 app.Run();
