@@ -9,18 +9,18 @@ namespace Do_an_ticket_box.Models
         [Key]
         public int Ticket_ID { get; set; }
         [ForeignKey("Event")]
-        public int Event_ID { get; set; }
-        public Event Event { get; set; }
+        public int? Event_ID { get; set; }
+        public Event? Event { get; set; }
         [Column("Ticket_type", TypeName ="nvarchar(50)")]
-        public string Ticket_type { get; set; }
+        public string? Ticket_type { get; set; }
         [Column("Price", TypeName = "Decimal(10,2)")]
-        public decimal price { get; set; }
+        public decimal? price { get; set; }
         [Column("Seat_number", TypeName = "int")]
-        public int seat_number { get; set; }
+        public int? seat_number { get; set; }
         [Column("Status", TypeName = "nvarchar(50)")]
-        public string status { get; set; }
+        public string? status { get; set; }
         [Column("Seat_remain", TypeName = "int")]
-        public int seat_remain { get; set; }
+        public int? seat_remain { get; set; }
 
     }
 }
