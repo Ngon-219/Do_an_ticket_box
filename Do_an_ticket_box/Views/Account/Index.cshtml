@@ -89,8 +89,12 @@
 
         <form>
             <div class="mb-3">
-                <label for="fullName" class="form-label text-start d-block " style="font-weight: bold !important;">Họ và tên</label>
-                <input type="text" class="form-control" id="fullName" placeholder="Nhập họ và tên">
+                <label for="name" class="form-label text-start d-block " style="font-weight: bold !important;">Tên </label>
+                <input type="text" class="form-control" id="name" placeholder="Nhập tên">
+            </div>
+            <div class="mb-3">
+                <label for="Surname" class="form-label text-start d-block " style="font-weight: bold !important;">Họ </label>
+                <input type="text" class="form-control" id="surName" placeholder="Nhập họ">
             </div>
             <div class="mb-3">
                 <label for="phoneNumber" class="form-label text-start d-block" style="font-weight: bold !important;">Số điện thoại</label>
@@ -124,10 +128,29 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-success w-100">Hoàn thành</button>
+            <button type="submit" class="btn btn-success w-100" onclick="SubmitInfo()">Hoàn thành</button>
         </form>
     </div>
 
 
 </body>
 
+@section Scripts{
+    <script>
+        var isNew = true;
+
+        function SubmitInfo(){
+            
+            var url = '';
+            var data = '';
+            var method;
+            if(isNew == true)
+            {
+                url = '/Account/Save';
+                data = "{Name : '" + $('#name').val() + "',Surname : '" + $('#surName').val() + "',Phone : '" + $('#phoneNumber').val() + "',Email : '" + $('#email').val() + "',}"
+            }
+            alert("aaaaaaaa");
+            
+        }
+    </script>
+}
