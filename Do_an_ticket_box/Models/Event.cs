@@ -28,6 +28,10 @@ namespace Do_an_ticket_box.Models
         public DateTime created_at { get; set; }
         [Column("Event_image", TypeName = "nvarchar(max)")]
         public string? event_image { get; set; }
+        [Column("Status", TypeName = "nvarchar(max)")]
+        public string? status { get; set; }
+        [Column("Created_time", TypeName = "datetime")]
+        public DateTime created_at_time { get; set; }
         public List<Ticket>? Ticket { get; set; }
         public List<Report>? Report { get; set; }
     }

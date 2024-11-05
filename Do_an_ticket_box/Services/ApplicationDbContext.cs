@@ -15,13 +15,16 @@ namespace Do_an_ticket_box.Services
         public DbSet<Report> Reports { get; set; }
         public DbSet<Ticket> Ticket { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
+        {     
             modelBuilder.Entity<Event>()
                 .Property(e => e.Event_time)
                 .HasConversion(
                     time => time.ToTimeSpan(),  // Chuyển đổi TimeOnly sang TimeSpan
                     timeSpan => TimeOnly.FromTimeSpan(timeSpan) // Chuyển đổi TimeSpan sang TimeOnly
                 );
+             modelBuilder.Entity<Event>()
+                .Property(e => e.created_at_time)
+                .HasDefaultValueSql("GETDATE()"); // SQL Server; use NOW() for PostgreSQL
         }
     }
 
