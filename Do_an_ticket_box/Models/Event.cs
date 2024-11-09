@@ -16,6 +16,10 @@ namespace Do_an_ticket_box.Models
         public DateTime Event_date { get; set; }
         [Column("Event_time")]
         public TimeOnly Event_time { get; set; }
+        [Column("Event_date_end", TypeName = "Date")]
+        public DateTime Event_date_end { get; set; }
+        [Column("Event_time_end")]
+        public TimeOnly Event_time_end { get; set; }
         [Column("Location", TypeName = "nvarchar(255)")]
         public string? location { get; set; }
         [Column("Description", TypeName = "nvarchar(max)")]

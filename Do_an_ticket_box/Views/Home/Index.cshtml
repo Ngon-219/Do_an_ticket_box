@@ -5,14 +5,14 @@
 <div>
     <div class="d-flex justify-content-center align-items-center text-center box-shadow" style="position: relative">
         <div class="" style="width: 100vw;">
-            <button id="prev" class="d-flex align-content-center align-items-center text-center border-0" style="font-size: 40px; height: 40vh; background-color: rgba(128, 128, 128, 0.3); position: absolute; top: 0%;"><</button>
-            <button id="next" class="d-flex align-content-center align-items-center text-center border-0" style="font-size: 40px; height: 40vh; background-color: rgba(128, 128, 128, 0.3); position: absolute; top: 0%; right: 0%">></button>
-            <div class="banner">
+            <button id="prev" class="d-flex align-content-center align-items-center text-center border-0" style="font-size: 40px; height: 50vh; background-color: rgba(128, 128, 128, 0.3); position: absolute; top: 0%;"><</button>
+            <button id="next" class="d-flex align-content-center align-items-center text-center border-0" style="font-size: 40px; height: 50vh; background-color: rgba(128, 128, 128, 0.3); position: absolute; top: 0%; right: 0%">></button>
+            <div class="banner" style="width: 100vw; height: 50vh;">
                 @foreach(var banner in Model)
                 {
                     if(banner.status == "Banner")
                     {
-                        <img class="d-none" style="width: 100vw; height: 40vh;" src=@banner.event_image alt=@banner.Event_Name />
+                        <a href="@Url.Action("Ticket", "Home", new { id = banner.Event_ID })"><img class="d-none" style="object-fit: cover; width: 100%; height: 100%;;" src=@banner.event_image alt=@banner.Event_Name/></a>
                     }
                 }
             </div>
@@ -169,97 +169,32 @@
                 <div class="col-12">
                     <h3 class="text-white">Sự kiện trong tháng</h3>
                 </div>
-                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
-                    <div class="bg-black" style="height: 35vh;  border-radius: 10px; overflow: hidden; position: relative;">
-                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="Alternate Text" />
-                        <div class="text-white" style="position: absolute; bottom:0; padding-left:0.5vw; background-color: rgba(128, 128, 128, 0.1); width:100%">
-                            <h5>ahihi</h5>
-                            <h6>ngày giờ</h6>
-                            <h6> địa điểm</h6>
+                @foreach(var events in (List<Event>)ViewData["events_in_month"])
+                {
+                    <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
+                        <div class="bg-black" style="height: 35vh;  border-radius: 10px; overflow: hidden; position: relative;">
+                            <a href="@Url.Action("Ticket", "Home", new { id = events.Event_ID })">
+                                <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src=@events.event_image alt="Alternate Text" />
+                                <div class="text-white" style="position: absolute; bottom:0; padding-left:0.5vw; background-color: rgba(128, 128, 128, 0.7); width:100%">
+                                    <h5>@events.Event_Name</h5>
+                                    <h6>@events.Event_date.ToString("dd/MM/yyyy") @events.Event_time</h6>
+                                    <h6>@events.location</h6>
+                                </div>
+                            </a>
                         </div>
                     </div>
+                }
+        @if(((List<Event>)ViewData["events_in_month"])?.Count == 9 )
+        {
+            <a href="@Url.ActionLink("EventInMonth", "Home", new {page = 1})" style="text-decoration: none; color: white;">
+                <div class="col-12" style="display: flex; justify-content:center; align-items:center; margin-bottom: 1vh; margin-top:1vh;">
+                    <button class="p-2" style="width: 20vw; border: none; border-radius: 40px; background-color: rgb(45, 194, 117); font-weight: bold">
+                            Xem Thêm
+                    </button>
                 </div>
-                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
-                    <div class="bg-black" style="height: 35vh;  border-radius: 10px; overflow: hidden; position: relative;">
-                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="Alternate Text" />
-                        <div class="text-white" style="position: absolute; bottom:0; padding-left:0.5vw; background-color: rgba(128, 128, 128, 0.1); width:100%">
-                            <h5>ahihi</h5>
-                            <h6>ngày giờ</h6>
-                            <h6> địa điểm</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
-                    <div class="bg-black" style="height: 35vh;  border-radius: 10px; overflow: hidden; position: relative;">
-                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="Alternate Text" />
-                        <div class="text-white" style="position: absolute; bottom:0; padding-left:0.5vw; background-color: rgba(128, 128, 128, 0.1); width:100%">
-                            <h5>ahihi</h5>
-                            <h6>ngày giờ</h6>
-                            <h6> địa điểm</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
-                    <div class="bg-black" style="height: 35vh;  border-radius: 10px; overflow: hidden; position: relative;">
-                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="Alternate Text" />
-                        <div class="text-white" style="position: absolute; bottom:0; padding-left:0.5vw; background-color: rgba(128, 128, 128, 0.1); width:100%">
-                            <h5>ahihi</h5>
-                            <h6>ngày giờ</h6>
-                            <h6> địa điểm</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
-                    <div class="bg-black" style="height: 35vh;  border-radius: 10px; overflow: hidden; position: relative;">
-                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="Alternate Text" />
-                        <div class="text-white" style="position: absolute; bottom:0; padding-left:0.5vw; background-color: rgba(128, 128, 128, 0.1); width:100%">
-                            <h5>ahihi</h5>
-                            <h6>ngày giờ</h6>
-                            <h6> địa điểm</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
-                    <div class="bg-black" style="height: 35vh;  border-radius: 10px; overflow: hidden; position: relative;">
-                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="Alternate Text" />
-                        <div class="text-white" style="position: absolute; bottom:0; padding-left:0.5vw; background-color: rgba(128, 128, 128, 0.1); width:100%">
-                            <h5>ahihi</h5>
-                            <h6>ngày giờ</h6>
-                            <h6> địa điểm</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
-                    <div class="bg-black" style="height: 35vh;  border-radius: 10px; overflow: hidden; position: relative;">
-                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="Alternate Text" />
-                        <div class="text-white" style="position: absolute; bottom:0; padding-left:0.5vw; background-color: rgba(128, 128, 128, 0.1); width:100%">
-                            <h5>ahihi</h5>
-                            <h6>ngày giờ</h6>
-                            <h6> địa điểm</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
-                    <div class="bg-black" style="height: 35vh;  border-radius: 10px; overflow: hidden; position: relative;">
-                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="Alternate Text" />
-                        <div class="text-white" style="position: absolute; bottom:0; padding-left:0.5vw; background-color: rgba(128, 128, 128, 0.1); width:100%">
-                            <h5>ahihi</h5>
-                            <h6>ngày giờ</h6>
-                            <h6> địa điểm</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
-                    <div class="bg-black" style="height: 35vh;  border-radius: 10px; overflow: hidden; position: relative;">
-                        <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y29uY2VydHxlbnwwfHwwfHx8MA%3D%3D" alt="Alternate Text" />
-                        <div class="text-white" style="position: absolute; bottom:0; padding-left:0.5vw; background-color: rgba(128, 128, 128, 0.1); width:100%">
-                            <h5>ahihi</h5>
-                            <h6>ngày giờ</h6>
-                            <h6> địa điểm</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </a>
+        }
+    </div>
         </div>
     <div>
 </div>

@@ -22,6 +22,9 @@ namespace Do_an_ticket_box.Models
         [Column("Seat_remain", TypeName = "int")]
         public int? seat_remain { get; set; }
 
+        [Column("start_time", TypeName = "datetime2")]
+        public DateTime start_time { get; set; }
+
     }
 }
 
