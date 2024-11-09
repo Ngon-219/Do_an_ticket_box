@@ -26,13 +26,36 @@ namespace Do_an_ticket_box.Controllers
 /*        [Route("/")]*/
         public IActionResult Index(int? id)
         {
-            var ngon = this._context.Events.ToList();
-            return View(ngon);
+            var events = this._context.Events.ToList();
+
+            int currentYear = DateTime.Now.Year;
+            int currentMonth = DateTime.Now.Month;
+            var events_in_month = this._context.Set<Event>()
+                .Where(e => (e.Event_date_end.Month == currentMonth || e.Event_date.Month == currentMonth))
+                .Take(8)
+                .ToList();
+            ViewData["events_in_month"] = events_in_month;
+            return View(events);
         }
 
         public IActionResult Error404()
         {
             return View();
+        }
+
+        public IActionResult EventInMonth(int page) {
+            /* int pageIndex = 1; // Trang đầu tiên
+             int pageSize = 9;
+
+             var paginatedItems = _context.Events
+                 .Skip((pageIndex - 1) * pageSize)
+                 .Take(pageSize)
+                 .ToList();
+ */
+
+            int pageIndex = page;
+            
+            return Content("ahihi");
         }
 
         

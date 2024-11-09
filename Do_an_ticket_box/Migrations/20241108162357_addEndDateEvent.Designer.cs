@@ -4,6 +4,7 @@ using Do_an_ticket_box.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Do_an_ticket_box.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241108162357_addEndDateEvent")]
+    partial class addEndDateEvent
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -220,10 +222,6 @@ namespace Do_an_ticket_box.Migrations
                     b.Property<int?>("seat_remain")
                         .HasColumnType("int")
                         .HasColumnName("Seat_remain");
-
-                    b.Property<DateTime>("start_time")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("start_time");
 
                     b.Property<string>("status")
                         .HasColumnType("nvarchar(50)")

@@ -182,6 +182,7 @@ button:hover {
                     <div class="ticket-type-ticket">
                         <h3>@ticket.Ticket_type</h3>
                         <p class="text-white">@String.Format("{0:N0} VND", @ticket.price)</p>
+                        <a class="navbar-brand text-white fs-3" asp-area="" asp-controller="Checkout" asp-action="Index" style="font-weight: 500;">Ticket Box</a>
                     </div>
                     <button>Mua vé ngay</button>
                 </li>

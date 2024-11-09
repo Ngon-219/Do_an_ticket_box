@@ -29,9 +29,9 @@
                                 </form>
                                 </div> *@
                                 </div>
-                                    <form action="@Url.Action("noSearchResult", "Home")" method="get">
-                                    <button type="submit" class="btn btn-dark">Search</button>
-                                    </form>
+                                    @* <form action="@Url.Action("noSearchResult", "Home")" method="get"> *@
+                                    <button id="btn_search" type="submit" class="btn btn-dark">Search</button>
+                                    @* </form> *@
                                 </div>
                         </li>
                             <li class="nav-item">
@@ -95,7 +95,7 @@
                                     </div> *@
                                 </div>
                                 <form action="@Url.Action("noSearchResult", "Home")" method="get">
-                                    <button type="submit" class="btn btn-dark">Search</button>
+                                    <button id="btn_search_mobile" type="submit" class="btn btn-dark">Search</button>
                                 </form>
                             </div>
                 
@@ -399,6 +399,15 @@
                 modal.style.display = 'none';
             }
         });
+
+        document.getElementById("btn_search").addEventListener('click', () => {
+            console.log("ahihi");
+        });
+        
+        document.getElementById("btn_search_mobile").addEventListener('click', () => {
+            console.log("ahihi");
+        });
+
 
 
     </script>
