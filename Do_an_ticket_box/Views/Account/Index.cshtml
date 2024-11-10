@@ -1,5 +1,5 @@
 ﻿
-@model Do_an_ticket_box.Models.User;
+@model Do_an_ticket_box.ViewModels.UpdateUserViewModel;
 
 <body class="bg-light">
     <div class="profile-container">
@@ -7,7 +7,7 @@
 
         <div class="text-center">
             <div class="position-relative d-inline-block">
-                <img src="@Model.avatarImg" class="profile-img" alt="Avatar">
+                <img src="@Url.Content("~/uploads/" + Model.avatarImg)" class="profile-img" alt="Avatar">
                 <label for="avatarImg" class="avatar-upload-label">
                     <i class="bi bi-camera-fill"></i> 
                 </label>
@@ -36,14 +36,20 @@
                 <label asp-for="Phone" class="form-label text-start d-block" style="font-weight: bold !important;">Số điện thoại</label>
                 <div class="input-group">
                     <span class="input-group-text">+84</span>
-                    <input asp-for="Phone" class="form-control" placeholder="Nhập số điện thoại" />
+                    <input asp-for="Phone" class="form-control" placeholder="Nhập số điện thoại" maxlength="20" inputmode="numeric" />
                 </div>
                 <span asp-validation-for="Phone" class="text-danger"></span>
             </div>
 
+
             <div class="mb-3">
                 <label asp-for="Email" class="form-label text-start d-block" style="font-weight: bold !important;">Email</label>
                 <input asp-for="Email" class="form-control" disabled placeholder="Email" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="birthday" class="form-label text-start d-block" style="font-weight: bold !important;">Ngày tháng năm sinh</label>
+                <input asp-for="birthday" type="date" class="form-control" placeholder="Chọn ngày sinh" />
+                <span asp-validation-for="birthday" class="text-danger"></span>
             </div>
 
             <div class="mb-3">
@@ -64,17 +70,23 @@
                 </div>
                 <span asp-validation-for="gender" class="text-danger"></span>
             </div>
+          
+
 
             <button type="submit" class="btn btn-success w-100">Hoàn thành</button>
         </form>
     </div>
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
 </body>
 
 
 
-@section Scripts{
-  
-}
+
 <style>
     .profile-container {
         max-width: 500px;

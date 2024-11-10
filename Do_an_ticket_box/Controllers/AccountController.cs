@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Do_an_ticket_box.Models;
 using Microsoft.EntityFrameworkCore;
 using System.IO;
+using NuGet.Versioning;
+using Do_an_ticket_box.ViewModels;
 
 namespace Do_an_ticket_box.Controllers
 {
@@ -17,78 +19,66 @@ namespace Do_an_ticket_box.Controllers
             _webHostEnvironment = webHostEnvironment;
         }
 
-        public async Task<IActionResult> Index(int? id)
+        [HttpGet]
+        
+        public async Task<IActionResult> Index(int id)
         {
-            if (id == null)
-            {
-                var firstUser = await _dbContext.User.FirstOrDefaultAsync();
-                if (firstUser == null)
+            var user = await _dbContext.User.FirstOrDefaultAsync(x => x.UserID == id);
+            if (user != null) {
+                var viewModel = new UpdateUserViewModel()
                 {
-                    return NotFound("Không có người dùng nào trong cơ sở dữ liệu.");
-                }
-                id = firstUser.UserID;
-            }
+                    UserID = user.UserID,
+                    UserName = user.UserName,
+                    UserSurname = user.UserSurname,
+                    avatarImg = user.avatarImg,
+                    Email = user.Email,
+                    Phone = user.Phone,
+                    gender = user.gender,
+                    birthday = user.birthday
 
-            var user = await _dbContext.User.FindAsync(id);
-            if (user == null)
-            {
-                return NotFound("Người dùng không tồn tại.");
+                };
+                return await Task.Run(()=>View("Index",viewModel));
             }
-
-            return View(user);
+            return RedirectToAction("Index");
+           
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Index(int id, User user, IFormFile? avatarImg)
+        public async Task<IActionResult> Index(UpdateUserViewModel model, IFormFile avatarImgFile)
         {
-            if (id != user.UserID)
-            {
-                return NotFound();
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return View("Index", model);
+            //}
 
-            if (ModelState.IsValid)
+            var user = await _dbContext.User.FindAsync(model.UserID);
+            if (user != null)
             {
-                try
+                if (avatarImgFile != null && avatarImgFile.Length > 0)
                 {
-                    // Kiểm tra nếu có ảnh mới được upload
-                    if (avatarImg != null && avatarImg.Length > 0)
+
+                    var uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "uploads");
+                    var uniqueFileName = Guid.NewGuid().ToString() + "_" + avatarImgFile.FileName;
+                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
                     {
-                        // Đảm bảo thư mục lưu trữ ảnh tồn tại
-                        var uploadDir = Path.Combine(_webHostEnvironment.WebRootPath, "uploads/avatars");
-                        Directory.CreateDirectory(uploadDir);
-
-                        // Tạo tên file duy nhất
-                        var fileName = $"{Guid.NewGuid()}_{avatarImg.FileName}";
-                        var filePath = Path.Combine(uploadDir, fileName);
-
-                        // Lưu ảnh vào thư mục uploads/avatars
-                        using (var stream = new FileStream(filePath, FileMode.Create))
-                        {
-                            await avatarImg.CopyToAsync(stream);
-                        }
-
-                        // Cập nhật đường dẫn của ảnh đại diện vào thuộc tính AvatarImg
-                        user.avatarImg = $"/uploads/avatars/{fileName}";
+                        await avatarImgFile.CopyToAsync(fileStream);
                     }
 
-                    // Cập nhật dữ liệu người dùng
-                    _dbContext.Entry(user).State = EntityState.Modified;
-                    await _dbContext.SaveChangesAsync();
+                    user.avatarImg = uniqueFileName;
+                }
 
-                    return RedirectToAction("Index", new { id = user.UserID });
-                }
-                catch (DbUpdateConcurrencyException ex)
-                {
-                    ModelState.AddModelError("", "Không thể cập nhật dữ liệu vào DB: " + ex.Message);
-                }
-                catch (Exception ex)
-                {
-                    ModelState.AddModelError("", "Có lỗi xảy ra: " + ex.Message);
-                }
+                user.UserName = model.UserName;
+                user.UserSurname = model.UserSurname;
+                user.Phone = model.Phone;
+                user.gender = model.gender;
+                user.birthday = model.birthday;
+
+                await _dbContext.SaveChangesAsync();
+                return RedirectToAction("Index", new { id = user.UserID });
             }
-
-            return View(user);
+            return RedirectToAction("Index");
         }
+
     }
 }
