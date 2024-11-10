@@ -16,6 +16,10 @@ namespace Do_an_ticket_box.Models
         public DateTime Event_date { get; set; }
         [Column("Event_time")]
         public TimeOnly Event_time { get; set; }
+        [Column("Event_date_end", TypeName = "Date")]
+        public DateTime Event_date_end { get; set; }
+        [Column("Event_time_end")]
+        public TimeOnly Event_time_end { get; set; }
         [Column("Location", TypeName = "nvarchar(255)")]
         public string? location { get; set; }
         [Column("Description", TypeName = "nvarchar(max)")]
@@ -28,6 +32,10 @@ namespace Do_an_ticket_box.Models
         public DateTime created_at { get; set; }
         [Column("Event_image", TypeName = "nvarchar(max)")]
         public string? event_image { get; set; }
+        [Column("Status", TypeName = "nvarchar(max)")]
+        public string? status { get; set; }
+        [Column("Created_time", TypeName = "datetime")]
+        public DateTime created_at_time { get; set; }
         public List<Ticket>? Ticket { get; set; }
         public List<Report>? Report { get; set; }
     }

@@ -11,6 +11,13 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString);
 });
 
+builder.Services.Configure<RouteOptions>(options =>
+{
+    options.LowercaseUrls = true; // nếu cần thiết
+    options.AppendTrailingSlash = false;
+});
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

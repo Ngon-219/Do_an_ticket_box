@@ -4,6 +4,7 @@ using Do_an_ticket_box.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Do_an_ticket_box.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241105030431_AddCreateAtTime")]
+    partial class AddCreateAtTime
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -75,17 +77,9 @@ namespace Do_an_ticket_box.Migrations
                         .HasColumnType("Date")
                         .HasColumnName("Event_date");
 
-                    b.Property<DateTime>("Event_date_end")
-                        .HasColumnType("Date")
-                        .HasColumnName("Event_date_end");
-
                     b.Property<TimeSpan>("Event_time")
                         .HasColumnType("time")
                         .HasColumnName("Event_time");
-
-                    b.Property<TimeSpan>("Event_time_end")
-                        .HasColumnType("time")
-                        .HasColumnName("Event_time_end");
 
                     b.Property<int?>("avaiable_ticket")
                         .HasColumnType("int")
@@ -153,7 +147,9 @@ namespace Do_an_ticket_box.Migrations
 
                     b.HasKey("Payment_ID");
 
-                    b.HasIndex("Booking_ID");
+                    b.HasIndex("Booking_ID")
+                        .IsUnique()
+                        .HasFilter("[Booking_ID] IS NOT NULL");
 
                     b.ToTable("Payment");
                 });
@@ -221,10 +217,6 @@ namespace Do_an_ticket_box.Migrations
                         .HasColumnType("int")
                         .HasColumnName("Seat_remain");
 
-                    b.Property<DateTime>("start_time")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("start_time");
-
                     b.Property<string>("status")
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("Status");
@@ -277,10 +269,6 @@ namespace Do_an_ticket_box.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("AvatarImgUrl");
 
-                    b.Property<DateTime?>("birthday")
-                        .HasColumnType("Date")
-                        .HasColumnName("Birthday");
-
                     b.Property<string>("gender")
                         .HasColumnType("nvarchar(20)")
                         .HasColumnName("Gender");
@@ -310,8 +298,8 @@ namespace Do_an_ticket_box.Migrations
             modelBuilder.Entity("Do_an_ticket_box.Models.Payment", b =>
                 {
                     b.HasOne("Do_an_ticket_box.Models.Booking", "Booking")
-                        .WithMany()
-                        .HasForeignKey("Booking_ID");
+                        .WithOne("Payment")
+                        .HasForeignKey("Do_an_ticket_box.Models.Payment", "Booking_ID");
 
                     b.Navigation("Booking");
                 });
@@ -338,6 +326,11 @@ namespace Do_an_ticket_box.Migrations
                         .HasForeignKey("Event_ID");
 
                     b.Navigation("Event");
+                });
+
+            modelBuilder.Entity("Do_an_ticket_box.Models.Booking", b =>
+                {
+                    b.Navigation("Payment");
                 });
 
             modelBuilder.Entity("Do_an_ticket_box.Models.Event", b =>
