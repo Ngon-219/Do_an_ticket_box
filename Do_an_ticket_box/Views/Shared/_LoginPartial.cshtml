@@ -28,12 +28,13 @@
     }
 
 </style>
-<li class="nav-item">
+<li class="nav-item d-flex align-items-center">
     @if (username != null)
     {
         <div class="nav-item dropdown">
-            <a class="nav-link text-white d-flex align-items-center" style="font-weight: 500;" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Profile
+            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                <span class="d-none d-sm-inline mx-1">Tài khoản</span>
             </a>
             <ul class="dropdown-menu" aria-labelledby="profileDropdown" style="padding:0;">
                 <li class="dropdown-item">

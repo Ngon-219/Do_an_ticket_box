@@ -22,7 +22,15 @@ namespace Do_an_ticket_box.Services
                     time => time.ToTimeSpan(),  // Chuyển đổi TimeOnly sang TimeSpan
                     timeSpan => TimeOnly.FromTimeSpan(timeSpan) // Chuyển đổi TimeSpan sang TimeOnly
                 );
+            modelBuilder.Entity<User>()
+                .Property(u => u.Created_at)
+                .HasColumnName("created_at")
+                .ValueGeneratedOnAdd()
+                .HasDefaultValueSql("CURRENT_TIMESTAMP");
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 
 }
+

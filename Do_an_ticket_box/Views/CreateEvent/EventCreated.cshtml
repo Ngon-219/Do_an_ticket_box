@@ -1,34 +1,80 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "EventCreated";
     Layout = "~/Views/Shared/_CreateEventLayout.cshtml";
 }
 <style>
     .segment-control {
-        width: 550px;
+        width: 100%;
         box-sizing: border-box;
-        margin: 0;
-        padding: 2px;
         color: rgba(0, 0, 0, 0.65);
         font-size: 14px;
-        line-height: 1.5714285714285714;
+        line-height: 1.57;
         list-style: none;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
         display: inline-block;
         background: #f5f5f5;
         border-radius: 6px;
         transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+        flex: auto;
     }
-
+    .ant-segmented-group{
+        display:flex;
+    }
     .ant-segmented-item {
-        position: relative;
         text-align: center;
         cursor: pointer;
         transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-        border-radius: 4px;
-        transform: translateZ(0);
         flex: 1;
-        min-width: 0;
+    }
+
+    .search-bar {
+        display: flex;
+        align-items: center;
+    }
+
+    .search-input {
+        width: 100%;
+        height: 40px;
+        border-radius: 6px 0 0 6px;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        padding: 7px 11px;
+        font-size: 16px;
+    }
+    .search-button {
+        width: 40px;
+        height: 40px;
+        border-radius: 0 6px 6px 0;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f5f5f5;
+    }
+    
+    .ant-row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 24px 60px;
+    }
+
+    .ant-col-4 {
+        flex: 0 0 40%; /* 40% width */
+        padding-left: 15px;
+        padding-right:15px;
+    }
+
+    .ant-col-6 {
+        flex: 0 0 60%; /* 60% width */
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+
+    .ant-segmented-item-label {
+        padding: 8px 16px;
+        font-size: 16px;
+        min-width: 60px;
     }
 
     .ant-segmented-item-input {
@@ -41,144 +87,271 @@
         pointer-events: none;
     }
 
-    .ant-segmented-item::after {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        inset-inline-start: 0;
-        border-radius: inherit;
-        transition: background-color 0.2s;
-        pointer-events: none;
+    .ant-segmented-item:hover{
+        border-radius: 6px;
+        color: rgba(0, 0, 0, 0.88);
+        background-color: #e6e6e6;
     }
 
-    .ant-segmented-item-label {
-        min-height: 36px;
-        line-height: 36px;
-        padding: 0 11px;
-        font-size: 16px;
+    .ant-segmented-item-active{
+        color: #fff;
+        background-color: #2dc275;
     }
 
-    .ant-segmented .ant-segmented-item-label {
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
+    .container {
+        width: 80%;
+        margin: auto;
     }
 
-    .search-bar {
-        flex: auto;
-        padding: 0px 16px;
-    }
-
-    .ant-segmented-group {
-        position: relative;
+    .event-card {
         display: flex;
-        align-items: stretch;
-        justify-items: flex-start;
-        flex-direction: row;
-        width: 100%;
+        align-items: flex-start;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        background-color: #fff;
     }
 
-    .ant-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-flow: row wrap;
-        min-width: 0;
+    .event-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 8px;
+        object-fit: cover;
+        margin-right: 20px;
     }
 
-    .ant-col {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .event-details {
+        flex: 1;
     }
+
+    .event-title {
+        font-size: 1.5em;
+        margin: 0 0 10px;
+    }
+
+    .event-date-time, .event-location, .event-status, .event-description, .event-category, .event-tickets {
+        margin: 5px 0;
+    }
+
+    .event-actions {
+        margin-top: 10px;
+    }
+
+    .btn {
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        color: #fff;
+        margin-right: 10px;
+    }
+
+    .btn-edit {
+        background-color: #4CAF50;
+    }
+
+    .btn-delete {
+        background-color: #f44336;
+    }
+
+    .btn-view {
+        background-color: #008CBA;
+    }
+
 </style>
-<header id="header" class="w-100 d-flex align-items-center h-auto" style="position: fixed; top: 0; left: 345px; right: 0; z-index: 100; background-color: rgb(45, 194, 117);">
-    <nav id="desktop" class="navbar navbar-expand-md navbar-toggleable-sm navbar-light">
+
+<header id="header" class="w-100 d-flex align-items-center" style="background-color: rgb(45, 194, 117);">
+    <!-- Desktop Navbar -->
+    <nav id="desktop" class="navbar navbar-expand-md d-none d-md-flex">
         <div class="container-fluid" style="margin-left: 100px;">
             <a class="navbar-brand text-white fs-3" asp-area="" asp-controller="Home" asp-action="Index" style="font-weight: 500;">Sự kiện đã tạo</a>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-2">
-                    <li id="search_bar" class="nav-item" style="margin-right: 5vw; margin-left: 5vw;">
-                        <div class="input-group">
-                            <div class="form-outline" data-mdb-input-init>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
         </div>
     </nav>
 
-    <nav id="mobile" class="d-none navbar navbar-expand-lg navbar-toggleable-lg bg-success">
+    <!-- Mobile Navbar -->
+    <nav id="mobile" class="d-md-none navbar navbar-expand-lg bg-success">
         <div class="container-fluid">
-            <a class="navbar-brand text-white fs-2" style="font-weight:500;" asp-area="" asp-controller="Home" asp-action="Index">Ticket Box</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="White" class="bi bi-list" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
-                </svg>
-            </button>
-            <div class="navbar-collapse collapse d-lg-inline-flex justify-content-between" id="navbarSupportedContent">
-                <ul class="navbar-nav flex-grow-2">
-                    <li id="search_bar" class="nav-item" style="margin-right: 5vw; margin-left: 5vw;">
-                        <div class="input-group">
-                            <div class="form-outline" data-mdb-input-init>
-                            </div>
-                        </div>
-                    </li>
-
-                </ul>
-            </div>
+            <a class="navbar-brand text-white fs-2" style="font-weight: 500;" asp-area="" asp-controller="Home" asp-action="Index">Sự kiện đã tạo</a>
         </div>
     </nav>
 </header>
-<main class="ant-layout-content">
-    <div class="ant-row" style="margin-top: 48px; flex: auto; color: rgba(0, 0, 0, 0.88); min-height: 0; z-index: 7;padding: 24px; flex: 1 0 30%;">
-        <div class="ant-col search-bar">
-            <input type="text" placeholder="Tìm kiếm sự kiện" style="
-                            width: 100%;
-                            height: 40px;
-                            border-start-start-radius: 6px;
-                            border-end-start-radius: 6px;
-                            color: rgba(0, 0, 0, 0.88);
-                            padding: 7px 11px;
-                            font-size: 16px;
-                            line-height: 1.5;
-                            border: 1px solid rgba(0, 0, 0, 0.15);
-                        ">
-            <button class="search-button" style="width: 40px; height:40px;border-start-end-radius: 6px;
-                            border-end-end-radius: 6px; border: 1px solid rgba(0, 0, 0, 0.15);">
-                <i class="fa-solid fa-magnifying-glass" style="color: rgba(0, 0, 0, 0.45);"></i>
-            </button>
-        </div>
 
-        <div class="ant-col segment-control" role="group" aria-label="Segmented Group" style="flex: 1 0 50%;">
-            <div class="ant-segmented-group">
-                <label class="ant-segmented-item">
-                    <input class="ant-segmented-item-input" type="radio">
-                    <div class="ant-segmented-item-label" title="Tất cả" role="option" aria-selected="false">Tất cả</div>
-                </label>
-                <label class="ant-segmented-item ant-segmented-item-selected">
-                    <input class="ant-segmented-item-input" type="radio" checked>
-                    <div class="ant-segmented-item-label" title="SẮP DIỄN RA" role="option" aria-selected="true">SẮP DIỄN RA</div>
-                </label>
-                <label class="ant-segmented-item">
-                    <input class="ant-segmented-item-input" type="radio">
-                    <div class="ant-segmented-item-label" title="ĐÃ QUA" role="option" aria-selected="false">ĐÃ QUA</div>
-                </label>
-                <label class="ant-segmented-item">
-                    <input class="ant-segmented-item-input" type="radio">
-                    <div class="ant-segmented-item-label" title="CHỜ DUYỆT" role="option" aria-selected="false">CHỜ DUYỆT</div>
-                </label>
-                <label class="ant-segmented-item">
-                    <input class="ant-segmented-item-input" type="radio">
-                    <div class="ant-segmented-item-label" title="NHÁP" role="option" aria-selected="false">NHÁP</div>
-                </label>
+<main class="ant-layout-content" style="background: linear-gradient(90deg, #1c0823, #000000); min-height: 100vh; width: 100%;">
+    <div class="ant-row" style="color: rgba(0, 0, 0, 0.88);">
+        <!-- Search Bar -->
+        <div class="ant-col-4">
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Tìm kiếm sự kiện">
+                <button class="search-button">
+                    <i class="fa-solid fa-magnifying-glass" style="color: rgba(0, 0, 0, 0.45);"></i>
+                </button>
             </div>
         </div>
+        <!-- Segment Control -->
+        <div class="ant-col-6">
+            <div class=" segment-control">
+                <div class="ant-segmented-group">
+                    <label class="ant-segmented-item">
+                        <input type="radio" name="segment" class="ant-segmented-item-input">
+                        <div class="ant-segmented-item-label">TẤT CẢ</div>
+                    </label>
+                    <label class="ant-segmented-item ant-segmented-item-active">
+                        <input type="radio" name="segment" class="ant-segmented-item-input" checked>
+                        <div class="ant-segmented-item-label">SẮP DIỄN RA</div>
+                    </label>
+                    <label class="ant-segmented-item">
+                        <input type="radio" name="segment" class="ant-segmented-item-input">
+                        <div class="ant-segmented-item-label">ĐÃ QUA</div>
+                    </label>
+                    <label class="ant-segmented-item">
+                        <input type="radio" name="segment" class="ant-segmented-item-input">
+                        <div class="ant-segmented-item-label">CHỜ DUYỆT</div>
+                    </label>
+                    <label class="ant-segmented-item">
+                        <input type="radio" name="segment" class="ant-segmented-item-input">
+                        <div class="ant-segmented-item-label">NHÁP</div>
+                    </label>
+                </div>
+            </div>
+        </div>
+        
     </div>
+    <div class="ant-row">
+        <div class="container">
 
+            <!-- Event Card -->
+            <div class="event-card">
+                <img src="path/to/event-image.jpg" alt="Event Thumbnail" class="event-image">
+                <div class="event-details">
+                    <h3 class="event-title">Tên Sự Kiện</h3>
+                    <p class="event-date-time"><strong>Ngày:</strong> 12/11/2024, <strong>Giờ:</strong> 18:00</p>
+                    <p class="event-location"><strong>Địa điểm:</strong> Trung Tâm Hội Nghị Quốc Gia</p>
+                    <p class="event-status"><strong>Trạng thái:</strong> Sắp diễn ra</p>
+                    <p class="event-description">
+                        Đây là mô tả ngắn gọn về sự kiện, nêu bật các điểm chính và lý do nên tham gia.
+                    </p>
+                    <p class="event-category"><strong>Loại sự kiện:</strong> Hội thảo</p>
+                    <p class="event-tickets"><strong>Vé:</strong> 300,000 VND (còn 20 vé)</p>
+
+                    <!-- Action Buttons -->
+                    <div class="event-actions">
+                        <a href="/events/edit/1" class="btn btn-edit">Chỉnh sửa</a>
+                        <a href="/events/delete/1" class="btn btn-delete">Xóa</a>
+                        <a href="/events/view/1" class="btn btn-view">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Event Card -->
+            <div class="event-card">
+                <img src="path/to/event-image.jpg" alt="Event Thumbnail" class="event-image">
+                <div class="event-details">
+                    <h3 class="event-title">Tên Sự Kiện</h3>
+                    <p class="event-date-time"><strong>Ngày:</strong> 12/11/2024, <strong>Giờ:</strong> 18:00</p>
+                    <p class="event-location"><strong>Địa điểm:</strong> Trung Tâm Hội Nghị Quốc Gia</p>
+                    <p class="event-status"><strong>Trạng thái:</strong> Sắp diễn ra</p>
+                    <p class="event-description">
+                        Đây là mô tả ngắn gọn về sự kiện, nêu bật các điểm chính và lý do nên tham gia.
+                    </p>
+                    <p class="event-category"><strong>Loại sự kiện:</strong> Hội thảo</p>
+                    <p class="event-tickets"><strong>Vé:</strong> 300,000 VND (còn 20 vé)</p>
+
+                    <!-- Action Buttons -->
+                    <div class="event-actions">
+                        <a href="/events/edit/1" class="btn btn-edit">Chỉnh sửa</a>
+                        <a href="/events/delete/1" class="btn btn-delete">Xóa</a>
+                        <a href="/events/view/1" class="btn btn-view">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Event Card -->
+            <div class="event-card">
+                <img src="path/to/event-image.jpg" alt="Event Thumbnail" class="event-image">
+                <div class="event-details">
+                    <h3 class="event-title">Tên Sự Kiện</h3>
+                    <p class="event-date-time"><strong>Ngày:</strong> 12/11/2024, <strong>Giờ:</strong> 18:00</p>
+                    <p class="event-location"><strong>Địa điểm:</strong> Trung Tâm Hội Nghị Quốc Gia</p>
+                    <p class="event-status"><strong>Trạng thái:</strong> Sắp diễn ra</p>
+                    <p class="event-description">
+                        Đây là mô tả ngắn gọn về sự kiện, nêu bật các điểm chính và lý do nên tham gia.
+                    </p>
+                    <p class="event-category"><strong>Loại sự kiện:</strong> Hội thảo</p>
+                    <p class="event-tickets"><strong>Vé:</strong> 300,000 VND (còn 20 vé)</p>
+
+                    <!-- Action Buttons -->
+                    <div class="event-actions">
+                        <a href="/events/edit/1" class="btn btn-edit">Chỉnh sửa</a>
+                        <a href="/events/delete/1" class="btn btn-delete">Xóa</a>
+                        <a href="/events/view/1" class="btn btn-view">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Event Card -->
+            <div class="event-card">
+                <img src="path/to/event-image.jpg" alt="Event Thumbnail" class="event-image">
+                <div class="event-details">
+                    <h3 class="event-title">Tên Sự Kiện</h3>
+                    <p class="event-date-time"><strong>Ngày:</strong> 12/11/2024, <strong>Giờ:</strong> 18:00</p>
+                    <p class="event-location"><strong>Địa điểm:</strong> Trung Tâm Hội Nghị Quốc Gia</p>
+                    <p class="event-status"><strong>Trạng thái:</strong> Sắp diễn ra</p>
+                    <p class="event-description">
+                        Đây là mô tả ngắn gọn về sự kiện, nêu bật các điểm chính và lý do nên tham gia.
+                    </p>
+                    <p class="event-category"><strong>Loại sự kiện:</strong> Hội thảo</p>
+                    <p class="event-tickets"><strong>Vé:</strong> 300,000 VND (còn 20 vé)</p>
+
+                    <!-- Action Buttons -->
+                    <div class="event-actions">
+                        <a href="/events/edit/1" class="btn btn-edit">Chỉnh sửa</a>
+                        <a href="/events/delete/1" class="btn btn-delete">Xóa</a>
+                        <a href="/events/view/1" class="btn btn-view">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Event Card -->
+            <div class="event-card">
+                <img src="path/to/event-image.jpg" alt="Event Thumbnail" class="event-image">
+                <div class="event-details">
+                    <h3 class="event-title">Tên Sự Kiện</h3>
+                    <p class="event-date-time"><strong>Ngày:</strong> 12/11/2024, <strong>Giờ:</strong> 18:00</p>
+                    <p class="event-location"><strong>Địa điểm:</strong> Trung Tâm Hội Nghị Quốc Gia</p>
+                    <p class="event-status"><strong>Trạng thái:</strong> Sắp diễn ra</p>
+                    <p class="event-description">
+                        Đây là mô tả ngắn gọn về sự kiện, nêu bật các điểm chính và lý do nên tham gia.
+                    </p>
+                    <p class="event-category"><strong>Loại sự kiện:</strong> Hội thảo</p>
+                    <p class="event-tickets"><strong>Vé:</strong> 300,000 VND (còn 20 vé)</p>
+
+                    <!-- Action Buttons -->
+                    <div class="event-actions">
+                        <a href="/events/edit/1" class="btn btn-edit">Chỉnh sửa</a>
+                        <a href="/events/delete/1" class="btn btn-delete">Xóa</a>
+                        <a href="/events/view/1" class="btn btn-view">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Event Card -->
+            <div class="event-card">
+                <img src="path/to/event-image.jpg" alt="Event Thumbnail" class="event-image">
+                <div class="event-details">
+                    <h3 class="event-title">Tên Sự Kiện</h3>
+                    <p class="event-date-time"><strong>Ngày:</strong> 12/11/2024, <strong>Giờ:</strong> 18:00</p>
+                    <p class="event-location"><strong>Địa điểm:</strong> Trung Tâm Hội Nghị Quốc Gia</p>
+                    <p class="event-status"><strong>Trạng thái:</strong> Sắp diễn ra</p>
+                    <p class="event-description">
+                        Đây là mô tả ngắn gọn về sự kiện, nêu bật các điểm chính và lý do nên tham gia.
+                    </p>
+                    <p class="event-category"><strong>Loại sự kiện:</strong> Hội thảo</p>
+                    <p class="event-tickets"><strong>Vé:</strong> 300,000 VND (còn 20 vé)</p>
+
+                    <!-- Action Buttons -->
+                    <div class="event-actions">
+                        <a href="/events/edit/1" class="btn btn-edit">Chỉnh sửa</a>
+                        <a href="/events/delete/1" class="btn btn-delete">Xóa</a>
+                        <a href="/events/view/1" class="btn btn-view">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </main>
-
