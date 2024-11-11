@@ -1,4 +1,5 @@
 ﻿using Do_an_ticket_box.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +19,15 @@ builder.Services.Configure<RouteOptions>(options =>
 });
 
 
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Account/Login";          // Đường dẫn trang đăng nhập
+        options.LogoutPath = "/Account/Logout";        // Đường dẫn trang đăng xuất
+        options.AccessDeniedPath = "/Account/AccessDenied"; // Đường dẫn truy cập bị từ chối (nếu có)
+        options.ExpireTimeSpan = TimeSpan.FromDays(7); // Thời gian hết hạn cookie
+        options.SlidingExpiration = true;              // Cho phép cookie tự động gia hạn khi người dùng hoạt động
+    });
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

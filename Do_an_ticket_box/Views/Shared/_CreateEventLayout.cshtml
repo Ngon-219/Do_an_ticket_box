@@ -55,14 +55,17 @@
         padding-left:0;
         padding-right:0;
     }
+    .wrapperEvent{
+        background: -webkit-linear-gradient(90deg, #221a25, #1c3227);
+    }
 </style>
 <body>
     <div class="container-fluid">
         <div class="row flex-nowrap">
-            <div class="col-auto col-md-3 col-xl-2 bg-dark " style="width:345px;">
+            <div class="wrapperEvent col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark" style="">
                 <div class="d-flex flex-column align-items-center align-items-sm-start pt-2 text-white min-vh-100 ">
-                    <a asp-controller="Home" asp-action="Index" class="d-flex align-items-center pb-3 mb-md-0 justify-content-center text-white text-decoration-none w-100">
-                        <span class="fs-5 d-none d-sm-inline fs-1" style="font-weight:500;">Trang chủ</span>
+                    <a asp-controller="Home" asp-action="Index" class="d-flex align-items-center pb-3 mb-md-0 justify-content-center text-white text-decoration-none w-100" style="border-bottom: 1px solid #fff;">
+                        <span class="fs-5 d-none d-sm-inline fs-1" style="font-weight:500; ">Trang chủ</span>
                     </a>
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start text-white w-100" id="menu">
                         <li class="nav-item">
@@ -134,7 +137,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col py-3">
+            <div class="col">
                 @RenderBody()
             </div>
         </div>

@@ -31,7 +31,13 @@ namespace Do_an_ticket_box.Services
              modelBuilder.Entity<Event>()
                 .Property(e => e.created_at_time)
                 .HasDefaultValueSql("GETDATE()"); // SQL Server; use NOW() for PostgreSQL
+            modelBuilder.Entity<User>()
+               .Property(u => u.Created_at)
+               .HasColumnName("created_at")
+               .ValueGeneratedOnAdd()
+               .HasDefaultValueSql("CURRENT_TIMESTAMP");
         }
     }
 
 }
+
