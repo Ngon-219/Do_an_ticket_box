@@ -24,17 +24,33 @@ namespace Do_an_ticket_box.Controllers
         }
 
 /*        [Route("/")]*/
-        public IActionResult Index(int? id)
+        public async Task<IActionResult> Index(int? id)
         {
             var events = this._context.Events.ToList();
 
             int currentYear = DateTime.Now.Year;
             int currentMonth = DateTime.Now.Month;
+
+            var count_event_in_month = this._context.Set<Event>()
+                .Where(e => (e.Event_date_end.Month == currentMonth || e.Event_date.Month == currentMonth))
+                .Count();
             var events_in_month = this._context.Set<Event>()
                 .Where(e => (e.Event_date_end.Month == currentMonth || e.Event_date.Month == currentMonth))
                 .Take(8)
                 .ToList();
+            // sự kiện tại hà nội
+            var eventInHaNoi =await this._context.Events
+                .Where(e => EF.Functions.Like(e.location, "%Hà Nội%"))
+                .Take(8)
+                .ToListAsync();
+            var count_event_in_HaNoi = await this._context.Events
+                .Where(e => EF.Functions.Like(e.location, "%Hà Nội%"))
+                .CountAsync();
+
+            ViewData["count_event_in_HaNoi"] = count_event_in_HaNoi;
+            ViewData["events_in_HaNoi"] = eventInHaNoi;
             ViewData["events_in_month"] = events_in_month;
+            ViewData["count_event_in_month"] = count_event_in_month;
             return View(events);
         }
 
@@ -54,8 +70,20 @@ namespace Do_an_ticket_box.Controllers
  */
 
             int pageIndex = page;
+            var totalPage = this._context.Events.ToList().Count;
+            ViewBag.currentPage = pageIndex;
+            ViewBag.TotalPage = (int)totalPage;
+
+            if (pageIndex <= totalPage)
+            {
+                var paginatedEvent =this._context.Events
+                    .Skip((pageIndex - 1) * 1)
+                    .Take(1)
+                    .ToList();
+                return View(paginatedEvent);
+            }
             
-            return Content("ahihi");
+            return NotFound();
         }
 
         
