@@ -1,0 +1,192 @@
+﻿@model Event;
+<style>
+.mal {
+    background-color: #000; /* Đổi màu nền thành màu đen */
+    color: #fff; /* Đổi màu chữ thành màu trắng cho dễ đọc */
+}
+
+.mal h1, h2 {
+    margin-bottom: 20px;
+    color: #218838;
+}
+
+.mal section {
+    margin: 20px auto;
+    max-width: 1300px;
+    /* background-color: #fff; */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(3, 3, 3, 0.1);
+}
+
+.event-info-ticket {
+    display: flex;
+    gap: 20px; 
+    background-color: #333;
+    padding: 20px; 
+    border-radius: 10px;
+}
+
+.left-content-ticket {
+    display: flex;
+    flex-direction: column; 
+    background-color: rgb(56, 56, 61);
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 35%;
+}
+
+.left-content-ticket h1 {
+    color: #fff;
+    padding: 10px 0;
+}
+
+.left-content-ticket p {
+    font-size: 90%;
+    color: #28a745;
+    padding: 10px 0;
+}
+
+.left-content-ticket i {
+    color: #fff;
+}
+
+.ticket-price-ticket {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    gap: 10px; 
+    margin-top: auto; 
+}
+
+.ticket-price-ticket span {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.right-content-ticket {
+    width: 65%;
+}
+
+.ad-banner-ticket {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-info-ticket {
+    margin-top: 20px;
+}
+
+.ticket-info-ticket ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.ticket-info-ticket li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.ticket-type-ticket h3 {
+    font-size: 1.2rem;
+    color:#fff;
+}
+
+.ticket-type-ticket p {
+    font-size: 1.1rem;
+    color: #007bff;
+}
+
+.price-ticket {
+    color: #218838;
+}
+
+    /* .about-event-ticket{
+        background-color:#fff;
+    } */
+
+/* Responsive Design */
+    @@media (max-width: 1100px) {
+        .event-info-ticket {
+            display: flex;
+            flex-direction: column; /* Chuyển thành xếp theo cột */
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .left-content-ticket {
+            order: 2; /* Đưa div1 xuống dưới */
+        }
+
+        .right-content-ticket {
+            order: 1; /* Đưa div2 lên trên */
+        }
+
+        .left-content-ticket hr{
+            display: none;
+        }
+
+        .left-content-ticket, .right-content-ticket {
+            width: 100%; /* Đặt chiều rộng 100% để chiếm toàn bộ chiều ngang */
+        }
+</style>
+
+<body class="mal">
+    <section class="event-info-ticket">
+        <div class="left-content-ticket">
+
+            <h1>@Model.Event_Name</h1>
+            <p><i class="fas fa-calendar"></i> @Model.Event_time @Model.Event_date.ToString("d")</p>
+            <p><i class="fas fa-map-marker-alt"></i> @Model.location</p>
+            <hr style="margin-top: 60px;">
+            <div class="ticket-price-ticket">
+                <span>Giá từ: <span class="price-ticket">@String.Format("{0:N0} VND", @ViewData["min_price"])</span></span>
+                <button class="book-ticket">Book now</button>
+            </div>
+        </div>
+        <div class="right-content-ticket">
+            <img src=@Model.event_image alt="Ad" class="ad-banner-ticket">
+        </div>
+    </section>
+
+    <section class="about-event-ticket">
+        <h2>Giới thiệu</h2>
+        <p>@Model.description</p>
+    </section>
+
+    <section class="ticket-info-ticket">
+        <h2>Thông tin vé</h2>
+        <ul>
+            @foreach (var ticket in (List<Ticket>)ViewData["ticket"]) {
+                <li>
+                    <div class="ticket-type-ticket">
+                        <h3>@ticket.Ticket_type</h3>
+                        <p class="text-white">@String.Format("{0:N0} VND", @ticket.price)</p>
+                        <a class="navbar-brand text-white fs-3" asp-area="" asp-controller="Checkout" asp-action="Index" style="font-weight: 500;">Ticket Box</a>
+                    </div>
+                    <button>Mua vé ngay</button>
+                </li>
+            }
+        </ul>
+    </section>
+</body>

@@ -1,0 +1,159 @@
+﻿
+@model Do_an_ticket_box.ViewModels.UpdateUserViewModel;
+
+<body class="bg-light">
+    <div class="profile-container">
+        <a href="/" class="exit-icon">&times;</a>
+
+        <div class="text-center">
+            <div class="position-relative d-inline-block">
+                <img src="@Url.Content("~/uploads/" + Model.avatarImg)" class="profile-img" alt="Avatar">
+                <label for="avatarImg" class="avatar-upload-label">
+                    <i class="bi bi-camera-fill"></i> 
+                </label>
+                <input type="file" id="avatarImg" asp-for="avatarImg" class="d-none" />
+            </div>
+            <p class="text-muted">Cung cấp thông tin chính xác sẽ hỗ trợ bạn trong quá trình mua vé, hoặc khi cần xác thực vé</p>
+        </div>
+
+        <form asp-action="Index" asp-controller="Account" method="post" enctype="multipart/form-data">
+            @Html.AntiForgeryToken()
+            <input type="hidden" asp-for="UserID" />
+
+            <div class="mb-3">
+                <label asp-for="UserName" class="form-label text-start d-block" style="font-weight: bold !important;">Tên</label>
+                <input asp-for="UserName" class="form-control" placeholder="Nhập tên" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="UserSurname" class="form-label text-start d-block" style="font-weight: bold !important;">Họ</label>
+                <input asp-for="UserSurname" class="form-control" placeholder="Nhập họ" />
+                <span asp-validation-for="UserSurname" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Phone" class="form-label text-start d-block" style="font-weight: bold !important;">Số điện thoại</label>
+                <div class="input-group">
+                    <span class="input-group-text">+84</span>
+                    <input asp-for="Phone" class="form-control" placeholder="Nhập số điện thoại" maxlength="20" inputmode="numeric" />
+                </div>
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label text-start d-block" style="font-weight: bold !important;">Email</label>
+                <input asp-for="Email" class="form-control" disabled placeholder="Email" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="birthday" class="form-label text-start d-block" style="font-weight: bold !important;">Ngày tháng năm sinh</label>
+                <input asp-for="birthday" type="date" class="form-control" placeholder="Chọn ngày sinh" />
+                <span asp-validation-for="birthday" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label text-start d-block" style="font-weight: bold !important;">Giới tính</label>
+                <div class="gender-options">
+                    <div class="form-check">
+                        <input asp-for="gender" class="form-check-input" type="radio" value="Nam" id="male" name="gender" />
+                        <label class="form-check-label" for="male">Nam</label>
+                    </div>
+                    <div class="form-check">
+                        <input asp-for="gender" class="form-check-input" type="radio" value="Nữ" id="female" name="gender" />
+                        <label class="form-check-label" for="female">Nữ</label>
+                    </div>
+                    <div class="form-check">
+                        <input asp-for="gender" class="form-check-input" type="radio" value="Khác" id="other" name="gender" />
+                        <label class="form-check-label" for="other">Khác</label>
+                    </div>
+                </div>
+                <span asp-validation-for="gender" class="text-danger"></span>
+            </div>
+          
+
+
+            <button type="submit" class="btn btn-success w-100">Hoàn thành</button>
+        </form>
+    </div>
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+</body>
+
+
+
+
+<style>
+    .profile-container {
+        max-width: 500px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    .exit-icon {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #000;
+        text-decoration: none;
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .avatar-upload-label {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: #28a745; /* Green background */
+        color: white;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .avatar-upload-label:hover {
+        background-color: #218838; /* Darker green on hover */
+    }
+
+    .gender-options {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+
+    @@media (max-width: 576px) {
+        .profile-container {
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .camera-icon {
+            top: 50px;
+            left: 50px;
+        }
+    }
+</style>
