@@ -1,0 +1,82 @@
+﻿<div class="" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="text-white">Sự kiện trong tháng</h3>
+            </div>
+            @* @foreach (var events in Model)
+            {
+                <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
+                    <div class="bg-black" style="height: 35vh;  border-radius: 10px; overflow: hidden; position: relative;">
+                        <a href="@Url.Action("Ticket", "Home", new { id = events.Event_ID })">
+                            <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src=@events.event_image alt="Alternate Text" />
+                            <div class="text-white" style="position: absolute; bottom:0; padding-left:0.5vw; background-color: rgba(128, 128, 128, 0.7); width:100%">
+                                <h5>@events.Event_Name</h5>
+                                <h6>@events.Event_date.ToString("dd/MM/yyyy") @events.Event_time</h6>
+                                <h6>@events.location</h6>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            } *@
+        </div>
+        <div class="" style="display: flex; flex-direction: row; justify-content:center; align-items:center; margin-bottom: 2vh;">
+            <div class="" style="border: 1px solid white; border-radius: 10px; padding: 3px;">
+                <button id="Prev" class="" style="border:none; background-color: #121212; color: white;"> < Prev </button>
+                <select id="selectPage" name="page" style="background-color: #121212; border: none; color: white; appearance: none; cursor: pointer;">
+                    @for (int i = 1; i <= ViewBag.TotalPage; i++)
+                    {
+                        @if (@i == ViewBag.currentPage)
+                        {
+                            <option value="@i" selected> @i </option>
+                        }
+                        else
+                        {
+                            <option value="@i"> @i </option>
+                        }
+                    }
+                </select>
+
+                <button id="Next" style="border:none; background-color: #121212; color: white;"> Next > </button>
+            </div>
+        </div>
+        <script>
+
+            const resolve = () => {
+                const urlParams = new URLSearchParams(window.location.search);
+                const currPage = urlParams.get('page');
+                if (currPage == 1) {
+                    document.getElementById("Prev").style.display = "none";
+                    console.log("ahihi");
+                }
+                if (currPage == @ViewBag.TotalPage) {
+                    document.getElementById("Next").style.display = "none";
+                    console.log("ahihi");
+                }
+            }
+
+            let selectPage = document.getElementById("selectPage");
+            selectPage.addEventListener("change", () => {
+                let pageIndex = selectPage.value;
+                window.location.href = '@Url.Action("EventInMonth", "Home")' + '?page=' + pageIndex;
+            });
+
+            document.getElementById("Prev").addEventListener("click", () => {
+                const urlParams = new URLSearchParams(window.location.search);
+                const prevPage = Number(urlParams.get('page')) - 1;
+
+                window.location.href = '@Url.Action("EventInMonth", "Home")' + '?page=' + prevPage;
+            });
+
+            document.getElementById("Next").addEventListener("click", () => {
+                const urlParams = new URLSearchParams(window.location.search);
+                const nextPage = Number(urlParams.get('page')) + 1;
+                console.log(nextPage);
+
+                window.location.href = '@Url.Action("EventInMonth", "Home")' + '?page=' + nextPage;
+            });
+
+            resolve();
+        </script>
+
+    </div>

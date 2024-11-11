@@ -20,7 +20,6 @@ namespace Do_an_ticket_box.Models
         public decimal? total_amout { get; set; }
         [Column("Status", TypeName = "nvarchar(20)")]
         public string? status { get; set; }
-        public Payment? Payment { get; set; }
         public User? User { get; set; }
     }
 }

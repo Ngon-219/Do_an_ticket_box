@@ -3,20 +3,96 @@ using Do_an_ticket_box.Services;
 using Do_an_ticket_box.ViewModels;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
+using Do_an_ticket_box.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using System.Text;
+using Do_an_ticket_box.Models;
+using Microsoft.EntityFrameworkCore;
+using System.IO;
+using NuGet.Versioning;
+using Do_an_ticket_box.ViewModels;
 
 namespace Do_an_ticket_box.Controllers
 {
     public class AccountController : Controller
     {
+        private readonly ApplicationDbContext _dbContext;
+        private readonly IWebHostEnvironment _webHostEnvironment;
         public readonly ApplicationDbContext _context;
-        public AccountController (ApplicationDbContext context)
+
+        public AccountController(ApplicationDbContext dbContext, IWebHostEnvironment webHostEnvironment)
         {
-            _context = context;
+            _dbContext = dbContext;
+            _webHostEnvironment = webHostEnvironment;
+            _context = dbContext;
         }
+
+        [HttpGet]
+        
+        public async Task<IActionResult> Index(int ?id)
+        {
+            var userEmail = Request.Cookies["UserEmail"];
+            var user = await _dbContext.User.FirstOrDefaultAsync(x => x.Email == userEmail);
+            if (user != null) {
+                var viewModel = new UpdateUserViewModel()
+                {
+                    UserID = user.UserID,
+                    UserName = user.UserName,
+                    UserSurname = user.UserSurname,
+                    avatarImg = user.avatarImg,
+                    Email = user.Email,
+                    Phone = user.Phone,
+                    gender = user.gender,
+                    birthday = user.birthday
+
+                };
+                await _dbContext.SaveChangesAsync();
+                return await Task.Run(()=>View("Index",viewModel));
+            }
+            return RedirectToAction("Index");
+            
+
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Index(UpdateUserViewModel model, IFormFile avatarImgFile)
+        {
+            //if (!ModelState.IsValid)
+            //{
+            //    return View("Index", model);
+            //}
+
+            var user = await _dbContext.User.FindAsync(model.UserID);
+            if (user != null)
+            {
+                if (avatarImgFile != null && avatarImgFile.Length > 0)
+                {
+
+                    var uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "uploads");
+                    var uniqueFileName = Guid.NewGuid().ToString() + "_" + avatarImgFile.FileName;
+                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await avatarImgFile.CopyToAsync(fileStream);
+                    }
+
+                    user.avatarImg = uniqueFileName;
+                }
+
+                user.UserName = model.UserName;
+                user.UserSurname = model.UserSurname;
+                user.Phone = model.Phone;
+                user.gender = model.gender;
+                user.birthday = model.birthday;
+
+                await _dbContext.SaveChangesAsync();
+                return RedirectToAction("Index", new { id = user.UserID });
+            }
+            return RedirectToAction("Index");
+        }
+        
         public IActionResult Index()
         {
             return View();
@@ -62,9 +138,13 @@ namespace Do_an_ticket_box.Controllers
                         Secure = true,
                         SameSite = SameSiteMode.Lax
                     });
+                    
+                    var checkUser = await _dbContext.User.FirstOrDefaultAsync(x => x.Email == user.Email);
 
-                    // Chuyển hướng đến trang Home/Index sau khi đăng nhập thành công
-                    return RedirectToAction("Index", "Home");
+                    if(string.IsNullOrEmpty(checkUser.UserName) || string.IsNullOrEmpty(checkUser.UserSurname))
+                    {
+                        return RedirectToAction("Index", "Account");
+                    } else return RedirectToAction("Index", "Home");
                 }
                 else
                 {
@@ -192,5 +272,6 @@ namespace Do_an_ticket_box.Controllers
             return View(model);
         }
     
+
     }
 }

@@ -11,6 +11,14 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     var connectionString = builder.Configuration.GetConnectionString("defaultString");
     options.UseSqlServer(connectionString);
 });
+
+builder.Services.Configure<RouteOptions>(options =>
+{
+    options.LowercaseUrls = true; // nếu cần thiết
+    options.AppendTrailingSlash = false;
+});
+
+
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
