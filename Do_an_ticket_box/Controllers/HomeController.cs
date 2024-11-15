@@ -87,15 +87,15 @@ namespace Do_an_ticket_box.Controllers
         }
 
         
-        public IActionResult SearchResult()
-        {
-            return View();
-        }
+        //public IActionResult SearchResult()
+        //{
+        //    return View();
+        //}
 /*
         [Route("/search")]*/
-        public IActionResult noSearchResult() { 
-            return View();
-        }
+        //public IActionResult noSearchResult() { 
+        //    return View();
+        //}
         public async Task<IActionResult> Ticket (int id)
         {
             var EventInfor = await this._context.Events.FindAsync(id);
