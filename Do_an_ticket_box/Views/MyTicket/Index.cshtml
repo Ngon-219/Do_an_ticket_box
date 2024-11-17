@@ -17,15 +17,15 @@
             <div class="col-2 d-none d-md-block">
                 <nav class="navTicketPage">
                     <div class="navTicketPage__AccountInfor">
-                        <img src="" alt="" class="AccountImgMyTicket">
+                        <img src="@ViewData["userAvt"]" alt="" class="AccountImgMyTicket">
                         <div class="AccountInfor">
                             <span class="AccountInfor__Text">Tài khoản của</span>
-                            <span class="AccountInfor__Name">Nguyễn Văn A @* Model.Name *@</span>
+                            <span class="AccountInfor__Name">@ViewData["user"]</span>
                         </div>
                     </div>
                     <ul class="NavigationList">
                         <li class="NavigationItem">
-                            <a href="" class="NavigationLink">
+                            <a href="@Url.Action("Index", "Account")" class="">
                                 <i class="fa-regular fa-user NavigationIcon"></i>
                                 <span title="" class="NavigationText">Thông tin tài khoản</span>
                             </a>
@@ -49,7 +49,7 @@
                 <div class="ticketPageContainer">
                     <div class="headerContainer">Vé đã mua</div>
                     <div class="divider"></div>
-                    <div class="Wrapper">
+                    @* <div class="Wrapper">
                         <div class="TabList">
                             <div class="TabItem">
                                 <a href="@Url.Action("Index", new { status = "All", filter = ViewBag.CurrentFilter })" title="Tất cả"
@@ -64,7 +64,7 @@
                                    class="TabItemLink @(ViewBag.CurrentStatus == "Processing" ? "TabItemActive" : "")">Đang xử lý</a>
                             </div>
 
-                        </div>
+                        </div> *@
                         <div class="EventList" style="display: flex; position: relative;">
                             <a href="@Url.Action("Index", new { status = ViewBag.CurrentStatus, filter = "Upcoming" })"
                                class="EventItem @(ViewBag.CurrentFilter == "Upcoming" ? "active" : "")" 

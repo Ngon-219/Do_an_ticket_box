@@ -15,7 +15,19 @@ namespace Do_an_ticket_box.Controllers
        
         public IActionResult Index(int? id, string status = "All", string? filter = null)
         {
-           
+            var userEmail = Request.Cookies["UserEmail"];
+            Console.WriteLine("useremai la: " + userEmail);
+            if (userEmail == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                var user = this._context.User.FirstOrDefault(x => x.Email == userEmail);
+                Console.WriteLine(user.UserName);
+                @ViewData["user"] = user.UserSurname + " " + user.UserName;
+                @ViewData["userAvt"] = user.avatarImg;
+            }
             filter ??= "Upcoming";
             var ticketQuery = from Booking in _context.Bookings
                               join Event in _context.Events on Booking.Event_ID equals Event.Event_ID

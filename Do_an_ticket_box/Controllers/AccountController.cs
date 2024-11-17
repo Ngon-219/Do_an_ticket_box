@@ -189,11 +189,20 @@ namespace Do_an_ticket_box.Controllers
                     {
                         Email = model.Email,
                         Password = hashedPassword,
+                        avatarImg = "https://media.istockphoto.com/id/1341046662/vector/picture-profile-icon-human-or-people-sign-and-symbol-for-template-design.jpg?s=612x612&w=0&k=20&c=A7z3OK0fElK3tFntKObma-3a7PyO8_2xxW0jtmjzT78=",
+                        status = "unvertify"
                         // Gán các thuộc tính khác nếu cần
                     };
+                Response.Cookies.Append("userStatus", newUser.status, new CookieOptions
+                {
+                    Expires = DateTime.UtcNow.AddDays(7),
+                    HttpOnly = true,
+                    Secure = true,
+                    SameSite = SameSiteMode.Lax
+                });
 
-                    // Thêm người dùng vào database
-                    _context.User.Add(newUser);
+                // Thêm người dùng vào database
+                _context.User.Add(newUser);
                     await _context.SaveChangesAsync();
 
                     // Chuyển hướng tới trang đăng nhập

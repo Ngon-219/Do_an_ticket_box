@@ -4,7 +4,7 @@
 @{
 }
 
-@model List<Do_an_ticket_box.Models.EventTicketViewModel>;
+@model List<Do_an_ticket_box.Models.Event>;
 @{
     ViewBag.Title = "Kết quả tìm kiếm";
 }
@@ -12,111 +12,109 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <style>
-.body-search {
-    background-color: #000000; /*212529*/
-    color: white;
-}
+    .body-search {
+        background-color: #121212; /* Nền tối */
+        color: #f1f1f1; /* Màu chữ sáng */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+    }
 
-.title-search{
-    font-size: 20px;
-    font-weight: bold;
-    padding-top: 20px;
-    padding-left: 30px;
-    color: #28a745;
-}
+    .title-search {
+        font-size: 24px;
+        font-weight: bold;
+        padding: 20px 30px;
+        color: #00c851;
+        border-bottom: 1px solid #444;
+    }
 
-.result-error {
-    display: flex;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
-    width: 100%;
-    color: white;
-}
+    .container-search {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Tự động điều chỉnh số cột */
+        gap: 20px;
+        padding: 20px;
+    }
 
-.recomment-search{
-    padding-left: 40px;
-    padding-right: 40px;
-}
+    .event-card {
+        background-color: #1e1e1e;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Bóng mờ */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        position: relative;
+    }
 
-.recomment-content{
-    display: flex;;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    align-items: center;
-    width: 100%;
-    padding-top: 20px;
-}
+        .event-card:hover {
+            transform: translateY(-5px); /* Hiệu ứng nổi khi hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+        }
 
+        .event-card img {
+            width: 100%;
+            height: 200px; /* Đảm bảo chiều cao cố định */
+            object-fit: cover; /* Ảnh vừa khung */
+        }
+
+    .event-info {
+        padding: 15px;
+        background-color: rgba(0, 0, 0, 0.8); /* Nền mờ nhẹ */
+        color: #f1f1f1;
+        text-align: left;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        backdrop-filter: blur(8px); /* Hiệu ứng làm mờ */
+    }
+
+        .event-info h2 {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 5px 0;
+            color: #00c851;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap; /* Giới hạn dòng */
+        }
+
+        .event-info p {
+            font-size: 14px;
+            color: #bbbbbb;
+            margin: 3px 0;
+        }
+
+        .event-info .event-location {
+            font-size: 14px;
+            font-weight: 600;
+            color: #00c851; /* Màu xanh lá */
+        }
 .container-search {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Tối đa 4 cột */
-    gap: 5px;
-    padding: 15px;
+    grid-template-columns: repeat(4, 1fr); /* 4 cột cố định */
+    gap: 20px; /* Khoảng cách giữa các thẻ */
+    padding: 20px;
 }
 
-/* Media query cho màn hình nhỏ */
-@@media (max-width: 650px) {
+@@media (max-width: 1200px) { /* Với màn hình nhỏ hơn 1200px */
     .container-search {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr); /* 3 cột */
     }
 }
 
-.result {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-}
-
-.event-card {
-    cursor: pointer;
-    background-color: black;
-    border-radius: 10px;
-    overflow: hidden;
-    width: 100%;
-    max-width: 250px;
-    text-align: center;
-}
-
-.event-card img {
-    width: 100%;
-    height: 150px;
-    display: block;
-}
-
-.event-info {
-    padding: 15px;
-    background-color: #303030;
-    text-align: left;
-}
-
-.event-info h2 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 5px 0 3px 0;
-    color: #ffffff;
-}
-
-.event-info p {
-    font-size: 1rem;
-    color: #ffffff;
-    margin: 3px 0;
-    font-weight: 600 !important;
-}
-
-p.price-search {
-    font-weight: 600 !important;
-    color: #28a745;
-}
-
-    a {
-        text-decoration: none;
+@@media (max-width: 800px) { /* Với màn hình nhỏ hơn 800px */
+    .container-search {
+        grid-template-columns: repeat(2, 1fr); /* 2 cột */
     }
+}
+
+@@media (max-width: 500px) { /* Với màn hình nhỏ hơn 500px */
+    .container-search {
+        grid-template-columns: 1fr; /* 1 cột */
+    }
+}
+
+
 </style>
 
 
@@ -136,11 +134,9 @@ p.price-search {
                     <div class="result">
                         <div class="event-card" style="cursor: pointer;" id="item-card">
                             <a href="@Url.Action("Ticket", "Home", new { id = item.Event_ID })">
-                            <img src="@item.Event_image" alt="8WONDER Winter 2024">
+                            <img src="@item.event_image" alt="@item.Event_Name">
                             <div class="event-info">
                                 <h2>@item.Event_Name</h2>
-                                <p class="price-search">Từ @(item.Price.HasValue ? item.Price.Value.ToString("N0") : "N/A") VND</p>
-                                <p><i class="fas fa-calendar-alt"></i> @item.Event_Date.ToString("dd MMM, yyyy")</p>
                             </div>
                             </a>
                         </div>
@@ -151,28 +147,6 @@ p.price-search {
         </div>
         <div class="result-error">
         <hr style="width: 70%; height: 2px">
-        </div>
-        <div class="recomment-search">
-            <div class="recomment-content">
-                Gợi ý dành cho bạn
-            </div>
-            <div class="container-search">
-                @foreach (var ticket in ViewBag.AllTickets)
-                {
-                    <a href="@Url.Action("Ticket", "Home", new { id = ticket.Event_ID })">
-                    <div class="result">
-                        <div class="event-card" style="cursor: pointer;" id="item-card">
-                            <img src="@ticket.Event_image" alt="@ticket.Event_Name">
-                            <div class="event-info">
-                                <h2>@ticket.Event_Name</h2>
-                                    <p class="price-search">Từ @(ticket.Price.ToString("N0")) VND</p>
-                                <p><i class="fas fa-calendar-alt"></i> @ticket.Event_Date.ToString("dd MMM, yyyy")</p>
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                }
-            </div>
         </div>
     }
     else
@@ -188,28 +162,6 @@ p.price-search {
                 Vui lòng thử lại với từ khóa khác!
             </div>
             <hr style="width: 70%; height: 2px">
-        </div>
-        <div class="recomment-search">
-            <div class="recomment-content">
-                Gợi ý dành cho bạn
-            </div>
-             <div class="container-search">
-                 @foreach (var ticket in ViewBag.AllTickets)
-                 {         
-                     <a href="@Url.Action("Ticket", "Home", new { id = ticket.Event_ID })">
-                         <div class="result">
-                             <div class="event-card" style="cursor: pointer;" id="item-card">
-                            <img src="@ticket.Event_image" alt="@ticket.Event_Name">
-                                 <div class="event-info">
-                                     <h2>@ticket.Event_Name</h2>
-                                    <p class="price-search">Từ @(ticket.Price.ToString("N0")) VND</p>
-                                     <p><i class="fas fa-calendar-alt"></i> @ticket.Event_Date.ToString("dd MMM, yyyy")</p>
-                                 </div>
-                             </div>
-                         </div> 
-                    </a>
-                 }
-             </div>
         </div>
     }
 </body>
