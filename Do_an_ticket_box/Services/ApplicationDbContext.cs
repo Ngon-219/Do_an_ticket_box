@@ -14,6 +14,7 @@ namespace Do_an_ticket_box.Services
         public DbSet<Payment> Payment { get; set; }
         public DbSet<Report> Reports { get; set; }
         public DbSet<Ticket> Ticket { get; set; }
+        public DbSet<EmailVerificationToken> EmailVerificationTokens { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {     
             modelBuilder.Entity<Event>()
@@ -33,9 +34,14 @@ namespace Do_an_ticket_box.Services
                 .HasDefaultValueSql("GETDATE()"); // SQL Server; use NOW() for PostgreSQL
             modelBuilder.Entity<User>()
                .Property(u => u.Created_at)
-               .HasColumnName("created_at")
+               .HasColumnName("Created_at")
                .ValueGeneratedOnAdd()
                .HasDefaultValueSql("CURRENT_TIMESTAMP");
+            modelBuilder.Entity<Booking>()
+                .Property(b => b.booking_time)
+                .HasColumnName("Booking_time")
+                .ValueGeneratedOnAdd()
+                .HasDefaultValueSql("CURRENT_TIMESTAMP");
         }
     }
 

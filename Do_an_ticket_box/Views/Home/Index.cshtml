@@ -2,6 +2,15 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+
+@if(ViewData["userStatus"].ToString() == "unvertify")
+{
+    <div class="alert alert-danger text-center" style="" role="alert">
+        Vui lòng xác minh Email để mua vé
+        <a href="@Url.ActionLink("Index", "Email")"><button style="border: none; border-radius: 25%;">Vertify Email Here</button></a>
+    </div>
+}
+
 <div>
     <div class="d-flex justify-content-center align-items-center text-center box-shadow" style="position: relative">
         <div class="" style="width: 100vw;">
@@ -201,7 +210,7 @@
                         </div>
                     </div>
                 }
-        @if( (int)ViewData["count_event_in_month"] > 8 )
+        @if( (int)ViewData["count_event_in_month"] < 8 )
         {
             <a href="@Url.ActionLink("EventInMonth", "Home", new {page = 1})" style="text-decoration: none; color: white;">
                 <div class="col-12" style="display: flex; justify-content:center; align-items:center; margin-bottom: 1vh; margin-top:1vh;">

@@ -46,7 +46,6 @@ namespace Do_an_ticket_box.Controllers
                     Phone = user.Phone,
                     gender = user.gender,
                     birthday = user.birthday
-
                 };
                 await _dbContext.SaveChangesAsync();
                 return await Task.Run(()=>View("Index",viewModel));
@@ -141,10 +140,20 @@ namespace Do_an_ticket_box.Controllers
                     
                     var checkUser = await _dbContext.User.FirstOrDefaultAsync(x => x.Email == user.Email);
 
-                    if(string.IsNullOrEmpty(checkUser.UserName) || string.IsNullOrEmpty(checkUser.UserSurname))
+                    if (string.IsNullOrEmpty(checkUser.UserName) || string.IsNullOrEmpty(checkUser.UserSurname))
                     {
                         return RedirectToAction("Index", "Account");
-                    } else return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        var checkUserToPayment = await _dbContext.User.FirstOrDefaultAsync(x => x.Email == model.Email);
+                        Console.WriteLine("event id" + CheckoutController.EventId);
+                        if (checkUserToPayment.status == "vertify" && CheckoutController.EventId != -1)
+                        {
+                            return RedirectToAction("Booking", "Checkout", new { eventId = CheckoutController.EventId });
+                        }
+                        return RedirectToAction("Index", "Home");
+                    }
                 }
                 else
                 {
@@ -202,6 +211,7 @@ namespace Do_an_ticket_box.Controllers
 
             // Xóa cookie "UserEmail"
             Response.Cookies.Delete("UserEmail");
+            Response.Cookies.Delete("sendEmailStatus");
 
             // Chuyển hướng người dùng đến trang đăng nhập (hoặc trang khác tùy ý)
             return RedirectToAction("Index", "Home");

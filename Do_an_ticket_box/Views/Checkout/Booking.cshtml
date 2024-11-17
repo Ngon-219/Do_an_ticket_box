@@ -1,0 +1,74 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<Ticket>
+
+<div class="" style="margin: 1vh;">
+    <div class="text-center text-white">
+        <h1>@ViewData["eventName"]</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-10 mx-auto text-center d-flex align-items-center justify-content-center">
+                <form method="post" action="@Url.Action("Create", "Checkout")" class="p-5 text-white text-center bg-success rounded shadow-lg" style="max-width: 800px;">
+                    <h2 class="mb-5">Đặt vé</h2>
+                    @foreach (var ticket in Model)
+                    {
+                        <input type="hidden" value="@ticket.Ticket_ID" name="ticketId" />
+                        <input type="hidden" value="@ticket.price" name="ticketPrice" />
+                        <input type="hidden" value="@ticket.Event_ID" name="eventId" />
+                        <div class="input-group mb-4" style="font-size: 1.25rem;">
+                            <span class="input-group-text bg-light text-success border-0" style="min-width: 150px;">@ticket.Ticket_type</span>
+                            <button type="button" class="btn btn-outline-light btn-lg" onclick="decrease(this, @ticket.price)">-</button>
+                            <input type="text" class="form-control text-center border-0 fs-4" value="0" name="ticketQuanlity" style="max-width: 80px;" readonly />
+                            <button type="button" class="btn btn-outline-light btn-lg" onclick="increase(this, @ticket.price)">+</button>
+                        </div>
+                    }
+                    <input id="amount" type="hidden" value="0" name="amount" />
+                    <p class="mt-4 fs-4">Tổng giá trị đơn hàng là:<br /> <span id="showTotal" class="fw-bold text-warning">0</span></p>
+                    <button type="submit" class="btn btn-light text-success fw-bold w-100 py-3 mt-4" style="border-radius: 50px; font-size: 1.5rem;">Thanh toán</button>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script>
+    function decrease(button, ticketPrice) {
+        const ticketQuanlity = button.closest('.input-group').querySelector('input[name="ticketQuanlity"]');
+        if (ticketQuanlity.value > 0) {
+            ticketQuanlity.value--;
+            updateTotal();
+        }
+    }
+
+    function increase(button, ticketPrice) {
+        const ticketQuanlity = button.closest('.input-group').querySelector('input[name="ticketQuanlity"]');
+        ticketQuanlity.value++;
+        updateTotal();
+    }
+
+    function updateTotal() {
+        const total = document.querySelectorAll('input[name = "ticketQuanlity"]');
+        const ticketPrice = document.querySelectorAll('input[name = "ticketPrice"]');
+        let valueAmount = document.getElementById("amount").value;
+        valueAmount = 0;
+        console.log(total)
+        console.log(ticketPrice)
+        for (let i = 0; i < total.length; i++) {
+            valueAmount = Number(valueAmount) + total[i].value * ticketPrice[i].value
+        }
+        console.log(valueAmount);
+        document.getElementById("amount").value = valueAmount;
+        const formatter = new Intl.NumberFormat('vi-VN', {
+            style: 'currency',
+            currency: 'VND'
+        });
+        document.getElementById("showTotal").textContent = formatter.format(valueAmount);
+    }
+
+</script>
