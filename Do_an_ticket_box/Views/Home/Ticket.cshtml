@@ -161,7 +161,7 @@ button:hover {
             <hr style="margin-top: 60px;">
             <div class="ticket-price-ticket">
                 <span>Giá từ: <span class="price-ticket">@String.Format("{0:N0} VND", @ViewData["min_price"])</span></span>
-                <button class="book-ticket">Book now</button>
+                <a href="@Url.Action("Booking", "Checkout", new {eventId = Model.Event_ID})"><button class="book-ticket">Book now</button></a>
             </div>
         </div>
         <div class="right-content-ticket">
@@ -184,7 +184,7 @@ button:hover {
                         <p class="text-white">@String.Format("{0:N0} VND", @ticket.price)</p>
                         <a class="navbar-brand text-white fs-3" asp-area="" asp-controller="Checkout" asp-action="Index" style="font-weight: 500;">Ticket Box</a>
                     </div>
-                    <button>Mua vé ngay</button>
+                    <a href="@Url.Action("Booking", "Checkout", new {eventId = Model.Event_ID})"><button class="book-ticket">Mua vé ngay</button></a>
                 </li>
             }
         </ul>

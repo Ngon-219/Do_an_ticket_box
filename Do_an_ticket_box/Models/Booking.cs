@@ -14,12 +14,17 @@ namespace Do_an_ticket_box.Models
         public int? Event_ID { get; set; }
         [ForeignKey("Ticket")]
         public int? Ticket_ID { get; set; }
-        [Column("Booking_time", TypeName =  "timestamp")]
+        [Column("Booking_time", TypeName = "timestamp")]
         public DateTime booking_time { get; set; }
+        [Column("Quanlity", TypeName = "int")]
+        public int Quanlity {  get; set; }
+        [Column("total", TypeName = "int")]
+        public int total {  get; set; }
         [Column("Total_amout", TypeName = "decimal")]
         public decimal? total_amout { get; set; }
         [Column("Status", TypeName = "nvarchar(20)")]
         public string? status { get; set; }
+        public Guid OrderId { get; set; }
         public User? User { get; set; }
     }
 }
