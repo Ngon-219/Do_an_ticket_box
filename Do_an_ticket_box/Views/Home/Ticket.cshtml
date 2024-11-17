@@ -156,7 +156,7 @@ button:hover {
         <div class="left-content-ticket">
 
             <h1>@Model.Event_Name</h1>
-            <p><i class="fas fa-calendar"></i> @Model.Event_time @Model.Event_date.ToString("d")</p>
+            <p><i class="fas fa-calendar"></i> @Model.Event_time @Model.Event_date.ToString("d") - @Model.Event_time_end @Model.Event_date_end.ToString("d")</p>
             <p><i class="fas fa-map-marker-alt"></i> @Model.location</p>
             <hr style="margin-top: 60px;">
             <div class="ticket-price-ticket">
