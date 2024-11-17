@@ -20,20 +20,13 @@
                         <ul class="navbar-nav flex-grow-2">
                         <li id="search_bar" class="nav-item" style="margin-right: 5vw; margin-left: 5vw;">
                                 <div class="input-group">
-                                    <div class="form-outline" data-mdb-input-init>
-                                        <input type="search" id="form1" class="form-control" placeholder="Bạn tìm gì hôm nay" />
-                                        @* <label class="form-label" for="form1">Search</label> *@
-                               @*  </div>
-                                <form action="@Url.Action("SearchResult", "Home")" method="get">
-                                    <button type="submit" class="btn btn-dark">Search</button>
-                                </form>
-                                </div> *@
-                                </div>
-                                    @* <form action="@Url.Action("noSearchResult", "Home")" method="get"> *@
+                                <form asp-controller="Search" asp-action="Index" method="get" class="d-flex">
+                                    <div class="form-outline d-flex align-items-center" data-mdb-input-init>
+                                        <input type="search" name="query" id="form1" class="form-control" placeholder="Bạn tìm gì hôm nay" value="@ViewBag.Query" />
+                                    </div>
                                     <button id="btn_search" type="submit" class="btn btn-dark">Search</button>
-                                    @* </form> *@
-                                </div>
-                        </li>
+                                </form>
+
                             <li class="nav-item">
                                 <a class="nav-link text-white border border-light rounded-pill" style="padding-left:20px; padding-right:20px; font-weight: 500; margin-right: 1vw;" asp-area="" asp-controller="CreateEvent" asp-action="EventCreated">Tạo sự kiện</a>
                             </li>
@@ -66,18 +59,15 @@
                         <li id="search_bar" class="nav-item" style="margin-right: 5vw; margin-left: 5vw;">
                             <div class="input-group">
                                 <div class="form-outline" data-mdb-input-init>
-                                    <input type="search" id="form1" class="form-control" placeholder="Bạn tìm gì hôm nay" />
-                                    @* <label class="form-label" for="form1">Search</label> *@
-                                    @*  </div>
-                                    <form action="@Url.Action("SearchResult", "Home")" method="get">
-                                    <button type="submit" class="btn btn-dark">Search</button>
+                                    
+                                    <form asp-controller="Search" asp-action="Index" method="get" class="d-flex">
+                                        <div class="form-outline d-flex align-items-center" data-mdb-input-init>
+                                            <input type="search" name="query" id="form1" class="form-control" placeholder="Bạn tìm gì hôm nay" value="@ViewBag.Query" />
+                                        </div>
+                                        <button id="btn_search_mobile" type="submit" class="btn btn-dark">Search</button>
                                     </form>
-                                    </div> *@
+                                    
                                 </div>
-                                <form action="@Url.Action("noSearchResult", "Home")" method="get">
-                                    <button id="btn_search_mobile" type="submit" class="btn btn-dark">Search</button>
-                                </form>
-                            </div>
                 
                         </li>
                         <li class="nav-item">
@@ -239,4 +229,13 @@
     });
     window.dispatchEvent(new Event('resize'));
 </script>
+<style>
+    .form-outline {
+        margin-right: 0; /* Đặt khoảng cách bên phải của ô input thành 0 */
+    }
+
+    .ms-2{
+        margin-left: 0;
+    }
+</style>
 </html>
