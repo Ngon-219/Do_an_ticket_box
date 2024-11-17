@@ -3,48 +3,31 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Do_an_ticket_box</title>
+    <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/account.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="~/Do_an_ticket_box.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <header id="header" class="w-100 bg-success d-flex justify-content-center align-items-center h-auto">
-     @*    <div class="d-flex justify-content-center align-items-center"> *@
-            <nav id="desktop" class="navbar navbar-expand-md navbar-toggleable-sm navbar-light bg-success">
-            <div class="container-fluid">
-                <a class="navbar-brand text-white fs-3" asp-area="" asp-controller="Home" asp-action="Index" style="font-weight: 500;">Ticket Box</a>
-                    <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                        <ul class="navbar-nav flex-grow-2">
+    <header id="header" class="w-100 d-flex align-items-center h-auto" style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; background-color: rgb(45, 194, 117);">
+        <nav id="desktop" class="navbar navbar-expand-md navbar-toggleable-sm navbar-light">
+            <div class="container-fluid" style="margin-left: 100px;">
+                <a class="navbar-brand text-white fs-1" asp-area="" asp-controller="Home" asp-action="Index" style="font-weight: 500;">Ticket Box</a>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-2">
                         <li id="search_bar" class="nav-item" style="margin-right: 5vw; margin-left: 5vw;">
-                                <div class="input-group">
-                                <form asp-controller="Search" asp-action="Index" method="get" class="d-flex">
-                                    <div class="form-outline d-flex align-items-center" data-mdb-input-init>
-                                        <input type="search" name="query" id="form1" class="form-control" placeholder="Bạn tìm gì hôm nay" value="@ViewBag.Query" />
-                                    </div>
-                                    <button id="btn_search" type="submit" class="btn btn-dark">Search</button>
-                                </form>
-
-                            <li class="nav-item">
-                                <a class="nav-link text-white border border-light rounded-pill" style="padding-left:20px; padding-right:20px; font-weight: 500; margin-right: 1vw;" asp-area="" asp-controller="CreateEvent" asp-action="EventCreated">Tạo sự kiện</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white align-content-center align-items-center d-flex" style="margin-left:1vw; margin-right:1vw; font-weight: 500;" asp-area="" asp-controller="MyTicket" asp-action="Index">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-ticket-detailed" style="margin-right:5px;" viewBox="0 0 16 16">
-                                                <path d="M4 5.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5M5 7a1 1 0 0 0 0 2h6a1 1 0 1 0 0-2z" />
-                                                <path d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
-                                            </svg>
-                                            Vé của bạn
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                            <partial name="_LoginPartial" />
-                        </ul>
-                    </div>
+                            <div class="input-group">
+                                <div class="form-outline" data-mdb-input-init>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-            </nav>
+            </div>
+        </nav>
 
         <nav id="mobile" class="d-none navbar navbar-expand-lg navbar-toggleable-lg bg-success">
             <div class="container-fluid">
@@ -60,31 +43,14 @@
                             <div class="input-group">
                                 <div class="form-outline" data-mdb-input-init>
                                     
-                                    <form asp-controller="Search" asp-action="Index" method="get" class="d-flex">
-                                        <div class="form-outline d-flex align-items-center" data-mdb-input-init>
-                                            <input type="search" name="query" id="form1" class="form-control" placeholder="Bạn tìm gì hôm nay" value="@ViewBag.Query" />
-                                        </div>
-                                        <button id="btn_search_mobile" type="submit" class="btn btn-dark">Search</button>
-                                    </form>
-                                    
                                 </div>
-                
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" style="font-weight: 500;" asp-area="" asp-controller="Home" asp-action="Index">Tạo sự kiện</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white align-content-center align-items-center d-flex" style="margin-left:1vw; margin-right:1vw; font-weight: 500;" asp-area="" asp-controller="MyTicket" asp-action="Index">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-ticket-detailed" style="margin-right:5px;" viewBox="0 0 16 16">
-                                    <path d="M4 5.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5m0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5M5 7a1 1 0 0 0 0 2h6a1 1 0 1 0 0-2z" />
-                                    <path d="M0 4.5A1.5 1.5 0 0 1 1.5 3h13A1.5 1.5 0 0 1 16 4.5V6a.5.5 0 0 1-.5.5 1.5 1.5 0 0 0 0 3 .5.5 0 0 1 .5.5v1.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 11.5V10a.5.5 0 0 1 .5-.5 1.5 1.5 0 1 0 0-3A.5.5 0 0 1 0 6zM1.5 4a.5.5 0 0 0-.5.5v1.05a2.5 2.5 0 0 1 0 4.9v1.05a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-1.05a2.5 2.5 0 0 1 0-4.9V4.5a.5.5 0 0 0-.5-.5z" />
-                                </svg>
-                                Vé của bạn
-                            </a>
-                        </li>
-                        <partial name="_LoginPartial" />
-                     </ul>
+                       
+                    </ul>
                 </div>
+            </div>
+        </nav>
     </header>
     <div style="width: 100vw;">
         <main role="main">
@@ -213,9 +179,10 @@
     <!-- Footer -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/Validator.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 <script>
     window.addEventListener('resize', function () {
         var myDiv = document.getElementById('desktop');
@@ -229,13 +196,7 @@
     });
     window.dispatchEvent(new Event('resize'));
 </script>
-<style>
-    .form-outline {
-        margin-right: 0; /* Đặt khoảng cách bên phải của ô input thành 0 */
-    }
-
-    .ms-2{
-        margin-left: 0;
-    }
-</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@3.0.0/dist/jquery.validate.unobtrusive.min.js"></script>
 </html>

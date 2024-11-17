@@ -4,6 +4,7 @@ using Do_an_ticket_box.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Do_an_ticket_box.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241115032639_Booking")]
+    partial class Booking
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,9 +34,6 @@ namespace Do_an_ticket_box.Migrations
 
                     b.Property<int?>("Event_ID")
                         .HasColumnType("int");
-
-                    b.Property<Guid>("OrderId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Quanlity")
                         .HasColumnType("int")
@@ -57,7 +56,7 @@ namespace Do_an_ticket_box.Migrations
 
                     b.Property<int>("total")
                         .HasColumnType("int")
-                        .HasColumnName("total");
+                        .HasColumnName("Price");
 
                     b.Property<decimal?>("total_amout")
                         .HasColumnType("decimal")
@@ -67,7 +66,7 @@ namespace Do_an_ticket_box.Migrations
 
                     b.HasIndex("User_ID");
 
-                    b.ToTable("Booking", (string)null);
+                    b.ToTable("Booking");
                 });
 
             modelBuilder.Entity("Do_an_ticket_box.Models.Event", b =>
@@ -135,7 +134,7 @@ namespace Do_an_ticket_box.Migrations
 
                     b.HasKey("Event_ID");
 
-                    b.ToTable("Event", (string)null);
+                    b.ToTable("Event");
                 });
 
             modelBuilder.Entity("Do_an_ticket_box.Models.Payment", b =>
@@ -166,7 +165,7 @@ namespace Do_an_ticket_box.Migrations
 
                     b.HasIndex("Booking_ID");
 
-                    b.ToTable("Payment", (string)null);
+                    b.ToTable("Payment");
                 });
 
             modelBuilder.Entity("Do_an_ticket_box.Models.Report", b =>
@@ -202,7 +201,7 @@ namespace Do_an_ticket_box.Migrations
 
                     b.HasIndex("User_ID");
 
-                    b.ToTable("Report", (string)null);
+                    b.ToTable("Report");
                 });
 
             modelBuilder.Entity("Do_an_ticket_box.Models.Ticket", b =>
@@ -244,7 +243,7 @@ namespace Do_an_ticket_box.Migrations
 
                     b.HasIndex("Event_ID");
 
-                    b.ToTable("Ticket", (string)null);
+                    b.ToTable("Ticket");
                 });
 
             modelBuilder.Entity("Do_an_ticket_box.Models.User", b =>
@@ -311,7 +310,7 @@ namespace Do_an_ticket_box.Migrations
 
                     b.HasIndex("EmailVerificationTokenId");
 
-                    b.ToTable("User", (string)null);
+                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("Do_an_ticket_box.Services.EmailVerificationToken", b =>
@@ -331,7 +330,7 @@ namespace Do_an_ticket_box.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("EmailVerificationTokens", (string)null);
+                    b.ToTable("EmailVerificationTokens");
                 });
 
             modelBuilder.Entity("Do_an_ticket_box.Models.Booking", b =>

@@ -1,5 +1,8 @@
 ﻿using Do_an_ticket_box.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
+using System.Net.Mail;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +20,26 @@ builder.Services.Configure<RouteOptions>(options =>
     options.AppendTrailingSlash = false;
 });
 
+builder.Services.AddFluentEmail(builder.Configuration["Email:SenderEmail"], builder.Configuration["Email:Sender"])
+    .AddSmtpSender(new SmtpClient(builder.Configuration["Email:Host"])
+    {
+        Port = builder.Configuration.GetValue<int>("Email:Port"),
+        EnableSsl = false,
+        Credentials = new NetworkCredential(
+            builder.Configuration["Email:SenderEmail"],  
+            "Hanhtinhsongsong219@" // Nhập password Email của m ở đây
+        )
+    });
 
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Account/Login";          // Đường dẫn trang đăng nhập
+        options.LogoutPath = "/Account/Logout";        // Đường dẫn trang đăng xuất
+        options.AccessDeniedPath = "/Account/AccessDenied"; // Đường dẫn truy cập bị từ chối (nếu có)
+        options.ExpireTimeSpan = TimeSpan.FromDays(7); // Thời gian hết hạn cookie
+        options.SlidingExpiration = true;              // Cho phép cookie tự động gia hạn khi người dùng hoạt động
+    });
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
