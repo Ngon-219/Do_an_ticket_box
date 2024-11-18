@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Do_an_ticket_box.ViewModels.MyTicketVM>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,7 +8,7 @@
     <div class="grid wide">
         <div class="row d-none d-md-flex headerTicketPage">
             <div class="col-12">
-                <a href="/" target="" class="headerText headerLink">Trang chủ</a>
+                <a href="/" target="" class="headerText headerLink text-white">Trang chủ</a>
                 <i class="fa-solid fa-angle-right" class="headerIcon"></i>
                 <span class="headerText">Vé đã mua</span>
             </div>
@@ -17,15 +17,15 @@
             <div class="col-2 d-none d-md-block">
                 <nav class="navTicketPage">
                     <div class="navTicketPage__AccountInfor">
-                        <img src="" alt="" class="AccountImgMyTicket">
+                        <img src="@ViewData["userAvt"]" alt="" class="AccountImgMyTicket">
                         <div class="AccountInfor">
                             <span class="AccountInfor__Text">Tài khoản của</span>
-                            <span class="AccountInfor__Name">Nguyễn Văn A @* Model.Name *@</span>
+                            <span class="AccountInfor__Name">@ViewData["user"]</span>
                         </div>
                     </div>
                     <ul class="NavigationList">
                         <li class="NavigationItem">
-                            <a href="" class="NavigationLink">
+                            <a href="@Url.Action("Index", "Account")" class="">
                                 <i class="fa-regular fa-user NavigationIcon"></i>
                                 <span title="" class="NavigationText">Thông tin tài khoản</span>
                             </a>
@@ -49,57 +49,65 @@
                 <div class="ticketPageContainer">
                     <div class="headerContainer">Vé đã mua</div>
                     <div class="divider"></div>
-                    <div class="Wrapper">
+                    @* <div class="Wrapper">
                         <div class="TabList">
                             <div class="TabItem">
-                                <a title="Tất cả" class="TabItemLink TabItemActive" onclick="activeTab(this)">Tất cả</a>
+                                <a href="@Url.Action("Index", new { status = "All", filter = ViewBag.CurrentFilter })" title="Tất cả"
+                                   class="TabItemLink @(ViewBag.CurrentStatus == "All" ? "TabItemActive" : "")">Tất cả</a>
                             </div>
                             <div class="TabItem">
-                                <a title="Thành công" class="TabItemLink" onclick="activeTab(this)">Thành công</a>
+                                <a href ="@Url.Action("Index", new { status = "Success", filter = ViewBag.CurrentFilter })" title="Thành công"
+                                       class="TabItemLink @(ViewBag.CurrentStatus == "Success" ? "TabItemActive" : "")">Thành công</a>
                             </div>
                             <div class="TabItem">
-                                <a title="Đang xử lý" class="TabItemLink" onclick="activeTab(this)">Đang xử lý</a>
+                                <a href="@Url.Action("Index", new { status = "Processing", filter = ViewBag.CurrentFilter })" title="Đang xử lí"
+                                   class="TabItemLink @(ViewBag.CurrentStatus == "Processing" ? "TabItemActive" : "")">Đang xử lý</a>
                             </div>
-                            <div class="TabItem">
-                                <a title="Đã hủy" class="TabItemLink" onclick="activeTab(this)">Đã hủy</a>
-                            </div>
-                        </div>
-                       <div class="EventList" style="display: flex; position: relative;">
-                                <a href="#" class="EventItem active" onclick="activeUnderline(this); return false;" style="position: relative; padding-bottom: 5px; margin-right: 15px;">
-                                    Sắp diễn ra
-                                </a>
-                                <a href="#" class="EventItem" onclick="activeUnderline(this); return false;" style="position: relative; padding-bottom: 5px;">
-                                    Đã kết thúc
-                                </a>
+
+                        </div> *@
+                        <div class="EventList" style="display: flex; position: relative;">
+                            <a href="@Url.Action("Index", new { status = ViewBag.CurrentStatus, filter = "Upcoming" })"
+                               class="EventItem @(ViewBag.CurrentFilter == "Upcoming" ? "active" : "")" 
+                               style="position: relative; padding-bottom: 5px; margin-right: 15px;">
+                                Sắp diễn ra
+                            </a>
+                            <a href="@Url.Action("Index", new { status = ViewBag.CurrentStatus, filter = "Completed" })"
+                               class="EventItem @(ViewBag.CurrentFilter == "Completed" ? "active" : "")"
+                               style="position: relative; padding-bottom: 5px;">
+                                Đã kết thúc
+                            </a>
                         </div>
                     </div>
-                    @if (true)
+
+                    @if (Model != null && Model.Any())
                     {
-                        <div class="TicketList">
-                            <div class="TicketItem">
-                                <div class="TicketDate">
-                                    <span class="TicketDay">26</span>
-                                    <span class="TicketMonthYear">
-                                        Tháng <br>10<br>2024
-                                    </span>
-                                </div>
-                                <div class="TicketContent">
-                                    <h3 class="TicketEventTitle">[Hà Nội] Vũ. - "Bảo Tàng của Nuối Tiếc" Live Concert 2024</h3>
-                                    <div class="TicketStatus">
-                                        <span class="StatusLabel success">Thành công</span>
-                                        <span class="StatusLabel digital-ticket">Vé điện tử</span>
+                        @foreach (var item in Model)
+                        {
+                            <div class="TicketList">
+                                <div class="TicketItem">
+                                    <div class="TicketDate">
+                                        <span class="TicketDay">@item.Day</span>
+                                        <span class="TicketMonthYear">
+                                            Tháng <br> @item.Month <br> @item.Year
+                                        </span>
                                     </div>
-                                    <div class="TicketDetails">
-                                        <p class="TicketOrderCode">Order code: 753090200</p>
-                                        <p class="TicketTime">20:00 - 22:00, 26 tháng 10, 2024</p>
-                                        <p class="TicketLocation">
-                                            Công viên Yên Sở (sự kiện ngoài trời)<br>
-                                            QL1A Công viên, Phường Yên Sở, Quận Hoàng Mai, Thành Phố Hà Nội
-                                        </p>
+                                    <div class="TicketContent">
+                                        <h3 class="TicketEventTitle">@item.EventName</h3>
+                                        <div class="TicketStatus">
+                                            <span class="StatusLabel success">@item.status</span>
+                                            <span class="StatusLabel digital-ticket">Vé điện tử</span>
+                                        </div>
+                                        <div class="TicketDetails">
+                                            <p class="TicketOrderCode">Order code: @item.Ordercode</p>
+                                            <p class="TicketTime">@item.timeStart - @item.timeEnd, @item.Day tháng @item.Month, @item.Year</p>
+                                            <p class="TicketLocation">
+                                                @item.location
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        }
 
                         <div style="padding-bottom: 100px;"></div>
 
@@ -139,6 +147,7 @@
                             </div>
                         </div>
                     }
+                   
                     <div class="NavigationMobile d-block d-sm-none">
                         <ul class="NavListMobile">
                             <li class="NavItemMobile">
@@ -312,8 +321,8 @@
         flex: 0 0 auto; /* Không cho tab co giãn */
 
         margin: 0 2px 0;
-        width: 210px;
-        height: 29px;
+        width: 300px;
+        height: 30px;
     }
 
     a.TabItemLink {
@@ -416,7 +425,7 @@
         background-color: rgb(45, 194, 117);
         margin-top: 80px;
         border-radius: 4px;
-    }
+    }   
 
     .TicketList {
         margin-top: 20px;

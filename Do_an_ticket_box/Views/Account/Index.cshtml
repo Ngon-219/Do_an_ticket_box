@@ -2,6 +2,23 @@
 @model Do_an_ticket_box.ViewModels.UpdateUserViewModel;
 
 <body class="bg-light">
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success text-center fw-bolder">
+            @TempData["SuccessMessage"] 
+            <br/>
+            <a href="@Url.ActionLink("Index", "Home")" style="">Trở về HomePage</a>
+            
+        </div>
+    }
+
+    <!-- Kiểm tra và hiển thị thông báo lỗi (nếu có) -->
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger text-center fw-bolder">
+            @TempData["ErrorMessage"]
+        </div>
+    }
     <div class="profile-container">
         <a href="/" class="exit-icon">&times;</a>
 
@@ -22,13 +39,13 @@
 
             <div class="mb-3">
                 <label asp-for="UserName" class="form-label text-start d-block" style="font-weight: bold !important;">Tên</label>
-                <input asp-for="UserName" class="form-control" placeholder="Nhập tên" />
+                <input asp-for="UserName" required class="form-control" placeholder="Nhập tên"/>
                 <span asp-validation-for="UserName" class="text-danger"></span>
             </div>
 
             <div class="mb-3">
                 <label asp-for="UserSurname" class="form-label text-start d-block" style="font-weight: bold !important;">Họ</label>
-                <input asp-for="UserSurname" class="form-control" placeholder="Nhập họ" />
+                <input asp-for="UserSurname" required class="form-control" placeholder="Nhập họ" />
                 <span asp-validation-for="UserSurname" class="text-danger"></span>
             </div>
 
@@ -36,7 +53,7 @@
                 <label asp-for="Phone" class="form-label text-start d-block" style="font-weight: bold !important;">Số điện thoại</label>
                 <div class="input-group">
                     <span class="input-group-text">+84</span>
-                    <input asp-for="Phone" class="form-control" placeholder="Nhập số điện thoại" maxlength="20" inputmode="numeric" />
+                    <input asp-for="Phone" class="form-control" required placeholder="Nhập số điện thoại" maxlength="20" inputmode="numeric" />
                 </div>
                 <span asp-validation-for="Phone" class="text-danger"></span>
             </div>
@@ -48,7 +65,7 @@
             </div>
             <div class="mb-3">
                 <label asp-for="birthday" class="form-label text-start d-block" style="font-weight: bold !important;">Ngày tháng năm sinh</label>
-                <input asp-for="birthday" type="date" class="form-control" placeholder="Chọn ngày sinh" />
+                <input asp-for="birthday" type="date" required class="form-control" placeholder="Chọn ngày sinh" />
                 <span asp-validation-for="birthday" class="text-danger"></span>
             </div>
 
@@ -56,7 +73,7 @@
                 <label class="form-label text-start d-block" style="font-weight: bold !important;">Giới tính</label>
                 <div class="gender-options">
                     <div class="form-check">
-                        <input asp-for="gender" class="form-check-input" type="radio" value="Nam" id="male" name="gender" />
+                        <input asp-for="gender" class="form-check-input" required type="radio" value="Nam" id="male" name="gender" />
                         <label class="form-check-label" for="male">Nam</label>
                     </div>
                     <div class="form-check">
@@ -74,6 +91,7 @@
 
 
             <button type="submit" class="btn btn-success w-100">Hoàn thành</button>
+            <a href="@Url.ActionLink("Index", "Home")" style="">Trở về HomePage</a>
         </form>
     </div>
 
@@ -81,6 +99,7 @@
         @{
             await Html.RenderPartialAsync("_ValidationScriptsPartial");
         }
+
     }
 </body>
 

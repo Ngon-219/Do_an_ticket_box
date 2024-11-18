@@ -1,5 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Do_an_ticket_box.DTOs;
+using Do_an_ticket_box.Models;
+using Do_an_ticket_box.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.DotNet.MSIdentity.Shared;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Logging;
 using System.Text;
 using System.Text.Json.Nodes;
 
@@ -10,24 +16,149 @@ namespace Do_an_ticket_box.Controllers
         private string PaypalClientId { get; set; } = "";
         private string PaypalSecret { get; set; } = "";
         private string PaypalUrl { get; set; } = "";
+        private readonly ApplicationDbContext _context;
+        public static int EventId { get; set; } = -1;
 
-        public CheckoutController(IConfiguration configuration) {
+        public CheckoutController(IConfiguration configuration, ApplicationDbContext context) {
             this.PaypalClientId = configuration["PaypalSettings:ClientId"];
             this.PaypalSecret = configuration["PaypalSettings:Secret"];
             this.PaypalUrl = configuration["PaypalSettings:Url"];
+            this._context = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index(int eventId, string? amount)
         {
             ViewBag.PaypalClientId = this.PaypalClientId;
-            return View();
+            var orderId = Request.Cookies["orderId"];
+            if (orderId == null)
+            {
+                return Content("hết thời hạn thanh toán");
+            }
+            var userEmail = Request.Cookies["UserEmail"];
+            if (userEmail == null)
+            {
+                EventId = eventId;
+                return RedirectToAction("Login", "Account");
+            }
+
+            var bookings = await (from booking in _context.Bookings
+                                  join ticket in _context.Ticket on booking.Ticket_ID equals ticket.Ticket_ID
+                                  join evnt in _context.Events on booking.Event_ID equals evnt.Event_ID
+                                  where booking.OrderId.ToString() == orderId
+                                  select new BookingDtos
+                                  {  
+                                       TicketName = ticket.Ticket_type,
+                                       Quanlity = booking.Quanlity,
+                                       location = evnt.location,
+                                       eventTime = evnt.Event_time,
+                                       eventDate = evnt.Event_date,
+                                  }).ToListAsync();
+
+            var eventName = this._context.Events.Where(e => e.Event_ID == eventId).FirstOrDefault().Event_Name;
+            ViewData["eventName"] = eventName;
+            ViewData["amount"] = amount;
+            return View(bookings);
         }
+
 
         /*        public async Task<string> Token()
                 {
                     return await GetPaypalAccessToken();
                 }
         */
+        static Guid CreateGuidFromString(string input)
+        {
+            // Hash chuỗi để tạo byte array
+            using (var provider = System.Security.Cryptography.MD5.Create())
+            {
+                byte[] hashBytes = provider.ComputeHash(System.Text.Encoding.UTF8.GetBytes(input));
+                return new Guid(hashBytes);
+            }
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Create(int[] ticketId, int[] eventId, decimal amount, int[] ticketQuanlity)
+        {
+            DateTime now = DateTime.Now;
+            string dateString = now.ToString("yyyyMMddHHmmssfff");
+            Guid guid = CreateGuidFromString(dateString);
+            Response.Cookies.Append("orderId", guid.ToString(), new CookieOptions
+            {
+                Expires = DateTime.UtcNow.AddMinutes(3),
+                HttpOnly = true,
+                Secure = true,
+                SameSite = SameSiteMode.Lax
+            });
+            var userEmail = Request.Cookies["UserEmail"];
+            var user = this._context.User.FirstOrDefault(x => x.Email == userEmail);
+            List<Booking> data = new List<Booking>();
+            if (user != null)
+            {
+                for (int i = 0; i < ticketId.Length; i++)
+                {
+                    if (ticketQuanlity[i] != 0)
+                    {
+                        var bookings = new Booking
+                        {
+                            User_ID = user.UserID,
+                            Event_ID = eventId[i],
+                            Ticket_ID = ticketId[i],
+                            total_amout = amount / 25000,
+                            status = "Unpaid",
+                            Quanlity = ticketQuanlity[i],
+                            OrderId = guid,
+                        };
+                        data.Add(bookings);
+                        Console.WriteLine("luc submit form nay" + ticketId[i] + " " + eventId[i] + " " + amount);
+                    }
+                }
+                try
+                {
+                    // Thêm các Booking vào cơ sở dữ liệu và lưu thay đổi
+                    await this._context.Bookings.AddRangeAsync(data);
+                    await this._context.SaveChangesAsync();
+                    return RedirectToAction("Index", new { eventId = eventId[0], amount = amount.ToString() });
+                }
+                catch (Exception ex)
+                {
+                    // Xử lý lỗi nếu có
+                    Console.WriteLine($"Error when saving bookings: {ex.Message}");
+                    return Content("An error occurred while saving your bookings.");
+                }
+            } else
+            {
+                EventId = eventId[0];
+                return RedirectToAction("Login", "Account");
+            }
+        }
+
+        public ActionResult Booking(int eventId)
+        {
+            var userEmail = Request.Cookies["UserEmail"];
+            var user = this._context.User.FirstOrDefault(x => x.Email == userEmail);
+            if (user == null) {
+                EventId = eventId;
+                return RedirectToAction("Login", "Account"); 
+            }
+            if (user.status == "vertify" && !string.IsNullOrEmpty(userEmail))
+            {
+                var ticket = this._context.Ticket.Where(x => x.Event_ID == eventId).ToList();
+                var eventOfTicket = this._context.Events.FirstOrDefault(e => e.Event_ID == eventId);
+                if (eventOfTicket != null)
+                {
+                    ViewData["eventName"] = eventOfTicket.Event_Name;
+                }
+                return View(ticket);
+            }
+            return  RedirectToAction("VertifyEmailNow");
+        }
+
+
+        public ActionResult VertifyEmailNow()
+        {
+            return View();
+        }
+
         [HttpPost]
         public async Task<JsonResult> CreateOrder([FromBody] JsonObject data)
         {
@@ -88,6 +219,7 @@ namespace Do_an_ticket_box.Controllers
         [HttpPost]
         public async Task<JsonResult> CompleteOrder([FromBody] JsonObject data)
         {
+            Console.WriteLine("completeOrrder");
             var orderId = data["orderID"]?.ToString();
             Console.WriteLine(orderId);
             if (orderId == null)
@@ -118,7 +250,21 @@ namespace Do_an_ticket_box.Controllers
                         string paypalOrderStatus = jsonResponse["status"]?.ToString() ?? "";
                         if(paypalOrderStatus == "COMPLETED")
                         {
-                            return new JsonResult("success");
+                            var order = Request.Cookies["orderId"];
+                            if (order != null)
+                            {
+                                var bookingData = this._context.Bookings.Where(b => b.OrderId.ToString() == order).ToList();
+                                foreach (var item in bookingData)
+                                {
+                                    item.status = paypalOrderStatus;
+                                    this._context.SaveChanges();
+                                }
+                                Response.Cookies.Delete("orderId");
+                                return new JsonResult("success");
+                            } else
+                            {
+                                return new JsonResult("error");
+                            }
                         }
                     }
                 }
@@ -128,6 +274,24 @@ namespace Do_an_ticket_box.Controllers
         }
 
 
+        [HttpPost]
+        public async Task<JsonResult> SaveBooking([FromBody] JsonObject data)
+        {
+            var userEmail = Request.Cookies["UserEmail"];
+            var userId = this._context.User.FirstOrDefault(u => u.Email == userEmail).UserID;
+            var bookingObj = new Booking
+            {
+                User_ID = userId,
+                Event_ID = int.Parse(data["ticketId"]?.ToString()),
+                Ticket_ID = int.Parse(data["eventId"]?.ToString()),
+                total_amout = decimal.Parse(data["amount"]?.ToString()),
+                status = "complete",
+                booking_time = DateTime.Now,
+            };
+            this._context.Bookings.Add(bookingObj);
+            await this._context.SaveChangesAsync();
+            return new JsonResult("ahihi");
+        }
         public async Task<string> GetPaypalAccessToken()
         {
             string accessToken = "";

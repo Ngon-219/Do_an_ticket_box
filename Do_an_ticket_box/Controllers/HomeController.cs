@@ -1,6 +1,7 @@
 ﻿using Do_an_ticket_box.Models;
 using Do_an_ticket_box.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -47,6 +48,15 @@ namespace Do_an_ticket_box.Controllers
                 .Where(e => EF.Functions.Like(e.location, "%Hà Nội%"))
                 .CountAsync();
 
+            var userEmail = Request.Cookies["UserEmail"];
+            var user = this._context.User.FirstOrDefault(u => u.Email == userEmail);
+
+            if (user != null)
+            {
+                ViewData["userStatus"] = user.status;
+            }
+            else ViewData["userStatus"] = "";
+
             ViewData["count_event_in_HaNoi"] = count_event_in_HaNoi;
             ViewData["events_in_HaNoi"] = eventInHaNoi;
             ViewData["events_in_month"] = events_in_month;
@@ -60,15 +70,6 @@ namespace Do_an_ticket_box.Controllers
         }
 
         public IActionResult EventInMonth(int page) {
-            /* int pageIndex = 1; // Trang đầu tiên
-             int pageSize = 9;
-
-             var paginatedItems = _context.Events
-                 .Skip((pageIndex - 1) * pageSize)
-                 .Take(pageSize)
-                 .ToList();
- */
-
             int pageIndex = page;
             var totalPage = this._context.Events.ToList().Count;
             ViewBag.currentPage = pageIndex;
@@ -87,15 +88,15 @@ namespace Do_an_ticket_box.Controllers
         }
 
         
-        public IActionResult SearchResult()
-        {
-            return View();
-        }
+        //public IActionResult SearchResult()
+        //{
+        //    return View();
+        //}
 /*
         [Route("/search")]*/
-        public IActionResult noSearchResult() { 
-            return View();
-        }
+        //public IActionResult noSearchResult() { 
+        //    return View();
+        //}
         public async Task<IActionResult> Ticket (int id)
         {
             var EventInfor = await this._context.Events.FindAsync(id);
