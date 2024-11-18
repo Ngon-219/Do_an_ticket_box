@@ -193,13 +193,6 @@ namespace Do_an_ticket_box.Controllers
                         status = "unvertify"
                         // Gán các thuộc tính khác nếu cần
                     };
-                Response.Cookies.Append("userStatus", newUser.status, new CookieOptions
-                {
-                    Expires = DateTime.UtcNow.AddDays(7),
-                    HttpOnly = true,
-                    Secure = true,
-                    SameSite = SameSiteMode.Lax
-                });
 
                 // Thêm người dùng vào database
                 _context.User.Add(newUser);
