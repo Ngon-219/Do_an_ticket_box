@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Diagnostics;
+using System.Security.Principal;
 
 namespace Do_an_ticket_box.Controllers
 {
@@ -27,18 +28,22 @@ namespace Do_an_ticket_box.Controllers
 /*        [Route("/")]*/
         public async Task<IActionResult> Index(int? id)
         {
-            var events = this._context.Events.ToList();
+            var events = await this._context.Events
+            .OrderByDescending(e => e.countClick) 
+            .Take(10) 
+            .ToListAsync();
+
 
             int currentYear = DateTime.Now.Year;
             int currentMonth = DateTime.Now.Month;
 
-            var count_event_in_month = this._context.Set<Event>()
+            var count_event_in_month = await this._context.Set<Event>()
                 .Where(e => (e.Event_date_end.Month == currentMonth || e.Event_date.Month == currentMonth))
-                .Count();
-            var events_in_month = this._context.Set<Event>()
+                .CountAsync();
+            var events_in_month = await this._context.Set<Event>()
                 .Where(e => (e.Event_date_end.Month == currentMonth || e.Event_date.Month == currentMonth))
                 .Take(8)
-                .ToList();
+                .ToListAsync();
             // sự kiện tại hà nội
             var eventInHaNoi =await this._context.Events
                 .Where(e => EF.Functions.Like(e.location, "%Hà Nội%"))
@@ -47,15 +52,19 @@ namespace Do_an_ticket_box.Controllers
             var count_event_in_HaNoi = await this._context.Events
                 .Where(e => EF.Functions.Like(e.location, "%Hà Nội%"))
                 .CountAsync();
+            var count_events_in_month = await this._context.Set<Event>()
+            .Where(e => (e.Event_date_end.Month == currentMonth || e.Event_date.Month == currentMonth))
+            .CountAsync();
 
             var userEmail = Request.Cookies["UserEmail"];
-            var user = this._context.User.FirstOrDefault(u => u.Email == userEmail);
+            var user = await this._context.User.FirstOrDefaultAsync(u => u.Email == userEmail);
 
             if (user != null)
             {
                 ViewData["userStatus"] = user.status;
+                Console.WriteLine(ViewData["userStatus"]);
             }
-            else ViewData["userStatus"] = "";
+            else ViewData["userStatus"] = "unlogin";
 
             ViewData["count_event_in_HaNoi"] = count_event_in_HaNoi;
             ViewData["events_in_HaNoi"] = eventInHaNoi;
@@ -69,22 +78,25 @@ namespace Do_an_ticket_box.Controllers
             return View();
         }
 
-        public IActionResult EventInMonth(int page) {
+        public async Task<IActionResult> EventInMonth(int page) {
+            int currentYear = DateTime.Now.Year;
+            int currentMonth = DateTime.Now.Month;
             int pageIndex = page;
-            var totalPage = this._context.Events.ToList().Count;
+            var totalPage = await this._context.Events.Where(e => (e.Event_date_end.Month == currentMonth || e.Event_date.Month == currentMonth)).CountAsync();
+            totalPage = totalPage / 10 + 1;
             ViewBag.currentPage = pageIndex;
             ViewBag.TotalPage = (int)totalPage;
 
             if (pageIndex <= totalPage)
             {
-                var paginatedEvent =this._context.Events
-                    .Skip((pageIndex - 1) * 1)
-                    .Take(1)
-                    .ToList();
-                return View(paginatedEvent);
-            }
-            
-            return NotFound();
+                var paginatedEvent = await this._context.Set<Event>()
+                    .Where(e => (e.Event_date_end.Month == currentMonth || e.Event_date.Month == currentMonth))
+                    .Skip((pageIndex - 1) * 10)
+                    .Take(10)
+                    .ToListAsync();
+
+            return View(paginatedEvent);
+            } return NotFound();
         }
 
         
@@ -100,6 +112,10 @@ namespace Do_an_ticket_box.Controllers
         public async Task<IActionResult> Ticket (int id)
         {
             var EventInfor = await this._context.Events.FindAsync(id);
+            if (EventInfor != null) { 
+                EventInfor.countClick += 1;
+            }
+            await this._context.SaveChangesAsync();
             var ticket = this._context.Ticket
             .Include(t => t.Event)
                 .Where(t => t.Event_ID == id)

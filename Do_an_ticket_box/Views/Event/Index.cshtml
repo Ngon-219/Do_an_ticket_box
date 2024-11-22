@@ -1,10 +1,12 @@
-﻿<div class="" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+﻿@model List<Event>
+
+<div class="" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h3 class="text-white">Sự kiện trong tháng</h3>
+                <h3 class="text-white">Sự kiện tại @ViewData["location"]</h3>
             </div>
-            @* @foreach (var events in Model)
+            @foreach (var events in Model)
             {
                 <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
                     <div class="bg-black" style="height: 35vh;  border-radius: 10px; overflow: hidden; position: relative;">
@@ -18,7 +20,7 @@
                         </a>
                     </div>
                 </div>
-            } *@
+            }
         </div>
         <div class="" style="display: flex; flex-direction: row; justify-content:center; align-items:center; margin-bottom: 2vh;">
             <div class="" style="border: 1px solid white; border-radius: 10px; padding: 3px;">
