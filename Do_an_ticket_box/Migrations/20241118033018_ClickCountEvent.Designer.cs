@@ -4,6 +4,7 @@ using Do_an_ticket_box.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Do_an_ticket_box.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241118033018_ClickCountEvent")]
+    partial class ClickCountEvent
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -83,11 +85,11 @@ namespace Do_an_ticket_box.Migrations
                         .HasColumnName("Event_name");
 
                     b.Property<DateTime>("Event_date")
-                        .HasColumnType("datetime2")
+                        .HasColumnType("Date")
                         .HasColumnName("Event_date");
 
                     b.Property<DateTime>("Event_date_end")
-                        .HasColumnType("datetime2")
+                        .HasColumnType("Date")
                         .HasColumnName("Event_date_end");
 
                     b.Property<TimeSpan>("Event_time")
@@ -97,9 +99,6 @@ namespace Do_an_ticket_box.Migrations
                     b.Property<TimeSpan>("Event_time_end")
                         .HasColumnType("time")
                         .HasColumnName("Event_time_end");
-
-                    b.Property<int>("UserID")
-                        .HasColumnType("int");
 
                     b.Property<int?>("avaiable_ticket")
                         .HasColumnType("int")
@@ -140,8 +139,6 @@ namespace Do_an_ticket_box.Migrations
                         .HasColumnName("Total_tickets");
 
                     b.HasKey("Event_ID");
-
-                    b.HasIndex("UserID");
 
                     b.ToTable("Event");
                 });
@@ -347,17 +344,6 @@ namespace Do_an_ticket_box.Migrations
                     b.HasOne("Do_an_ticket_box.Models.User", "User")
                         .WithMany("Bookings")
                         .HasForeignKey("User_ID");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Do_an_ticket_box.Models.Event", b =>
-                {
-                    b.HasOne("Do_an_ticket_box.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
 
                     b.Navigation("User");
                 });

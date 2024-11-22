@@ -1,10 +1,16 @@
-﻿using Do_an_ticket_box.Services;
+﻿using CloudinaryDotNet;
+using Do_an_ticket_box.Services;
+using dotenv.net;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
 using System.Net.Mail;
 
 var builder = WebApplication.CreateBuilder(args);
+
+DotEnv.Load(options: new DotEnvOptions(probeForEnv: true));
+Cloudinary cloudinary = new Cloudinary(Environment.GetEnvironmentVariable("CLOUDINARY_URL"));
+cloudinary.Api.Secure = true;
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

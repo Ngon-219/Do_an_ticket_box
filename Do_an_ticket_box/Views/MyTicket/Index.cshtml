@@ -95,7 +95,8 @@
                                         <h3 class="TicketEventTitle">@item.EventName</h3>
                                         <div class="TicketStatus">
                                             <span class="StatusLabel success">@item.status</span>
-                                            <span class="StatusLabel digital-ticket">Vé điện tử</span>
+                                            <span class="StatusLabel digital-ticket">@item.ticket_type</span>
+                                            <span class="StatusLabel success">Số lượng: @item.Quanlity</span>
                                         </div>
                                         <div class="TicketDetails">
                                             <p class="TicketOrderCode">Order code: @item.Ordercode</p>

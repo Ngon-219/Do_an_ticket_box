@@ -1,357 +1,128 @@
 ﻿@{
-    ViewData["Title"] = "EventCreated";
-    Layout = "~/Views/Shared/_CreateEventLayout.cshtml";
+    ViewData["Title"] = "Upload Sự Kiện";
 }
-<style>
-    .segment-control {
-        width: 100%;
-        box-sizing: border-box;
-        color: rgba(0, 0, 0, 0.65);
-        font-size: 14px;
-        line-height: 1.57;
-        list-style: none;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
-        display: inline-block;
-        background: #f5f5f5;
-        border-radius: 6px;
-        transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-        flex: auto;
-    }
-    .ant-segmented-group{
-        display:flex;
-    }
-    .ant-segmented-item {
-        text-align: center;
-        cursor: pointer;
-        transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-        flex: 1;
-    }
 
-    .search-bar {
-        display: flex;
-        align-items: center;
-    }
-
-    .search-input {
-        width: 100%;
-        height: 40px;
-        border-radius: 6px 0 0 6px;
-        border: 1px solid rgba(0, 0, 0, 0.15);
-        padding: 7px 11px;
-        font-size: 16px;
-    }
-    .search-button {
-        width: 40px;
-        height: 40px;
-        border-radius: 0 6px 6px 0;
-        border: 1px solid rgba(0, 0, 0, 0.15);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #f5f5f5;
-    }
-    
-    .ant-row {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        padding: 24px 60px;
-    }
-
-    .ant-col-4 {
-        flex: 0 0 40%; /* 40% width */
-        padding-left: 15px;
-        padding-right:15px;
-    }
-
-    .ant-col-6 {
-        flex: 0 0 60%; /* 60% width */
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    
-
-    .ant-segmented-item-label {
-        padding: 8px 16px;
-        font-size: 16px;
-        min-width: 60px;
-    }
-
-    .ant-segmented-item-input {
-        position: absolute;
-        inset-block-start: 0;
-        inset-inline-start: 0;
-        width: 0;
-        height: 0;
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    .ant-segmented-item:hover{
-        border-radius: 6px;
-        color: rgba(0, 0, 0, 0.88);
-        background-color: #e6e6e6;
-    }
-
-    .ant-segmented-item-active{
-        color: #fff;
-        background-color: #2dc275;
-    }
-
-    .container {
-        width: 80%;
-        margin: auto;
-    }
-
-    .event-card {
-        display: flex;
-        align-items: flex-start;
-        padding: 20px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        margin-bottom: 20px;
-        background-color: #fff;
-    }
-
-    .event-image {
-        width: 150px;
-        height: 150px;
-        border-radius: 8px;
-        object-fit: cover;
-        margin-right: 20px;
-    }
-
-    .event-details {
-        flex: 1;
-    }
-
-    .event-title {
-        font-size: 1.5em;
-        margin: 0 0 10px;
-    }
-
-    .event-date-time, .event-location, .event-status, .event-description, .event-category, .event-tickets {
-        margin: 5px 0;
-    }
-
-    .event-actions {
-        margin-top: 10px;
-    }
-
-    .btn {
-        text-decoration: none;
-        padding: 8px 12px;
-        border-radius: 4px;
-        color: #fff;
-        margin-right: 10px;
-    }
-
-    .btn-edit {
-        background-color: #4CAF50;
-    }
-
-    .btn-delete {
-        background-color: #f44336;
-    }
-
-    .btn-view {
-        background-color: #008CBA;
-    }
-
-</style>
-
-<header id="header" class="w-100 d-flex align-items-center" style="background-color: rgb(45, 194, 117);">
-    <!-- Desktop Navbar -->
-    <nav id="desktop" class="navbar navbar-expand-md d-none d-md-flex">
-        <div class="container-fluid" style="margin-left: 100px;">
-            <a class="navbar-brand text-white fs-3" asp-area="" asp-controller="Home" asp-action="Index" style="font-weight: 500;">Sự kiện đã tạo</a>
-        </div>
-    </nav>
-
-    <!-- Mobile Navbar -->
-    <nav id="mobile" class="d-md-none navbar navbar-expand-lg bg-success">
-        <div class="container-fluid">
-            <a class="navbar-brand text-white fs-2" style="font-weight: 500;" asp-area="" asp-controller="Home" asp-action="Index">Sự kiện đã tạo</a>
-        </div>
-    </nav>
-</header>
-
-<main class="ant-layout-content" style="background: linear-gradient(90deg, #1c0823, #000000); min-height: 100vh; width: 100%;">
-    <div class="ant-row" style="color: rgba(0, 0, 0, 0.88);">
-        <!-- Search Bar -->
-        <div class="ant-col-4">
-            <div class="search-bar">
-                <input type="text" class="search-input" placeholder="Tìm kiếm sự kiện">
-                <button class="search-button">
-                    <i class="fa-solid fa-magnifying-glass" style="color: rgba(0, 0, 0, 0.45);"></i>
-                </button>
+<form method="post" action="@Url.Action("CreateTicket", "CreateEvent")" enctype="multipart/form-data">
+    <div class="container py-5">
+    <div class="row g-4">
+        <div class="col-md-12">
+            <div class="border rounded-3 p-4 text-center bg-dark text-white">
+                <label id="label_event" for="event-background" class="form-label d-block">
+                    <i class="bi bi-upload display-4"></i>
+                    <p class="mb-1">Thêm ảnh nền sự kiện</p>
+                    <small>(1280x720)</small>
+                </label>
+                <input id="event-background" type="file" class="form-control d-none" name="event_img" onchange="previewImg(event)"/>
+                <img id="profileImg" src="" class="d-none" alt="EventImg" style="object-fit: contains; width: 100%; height: 100%;"/>
             </div>
         </div>
-        <!-- Segment Control -->
-        <div class="ant-col-6">
-            <div class=" segment-control">
-                <div class="ant-segmented-group">
-                    <label class="ant-segmented-item">
-                        <input type="radio" name="segment" class="ant-segmented-item-input">
-                        <div class="ant-segmented-item-label">TẤT CẢ</div>
-                    </label>
-                    <label class="ant-segmented-item ant-segmented-item-active">
-                        <input type="radio" name="segment" class="ant-segmented-item-input" checked>
-                        <div class="ant-segmented-item-label">SẮP DIỄN RA</div>
-                    </label>
-                    <label class="ant-segmented-item">
-                        <input type="radio" name="segment" class="ant-segmented-item-input">
-                        <div class="ant-segmented-item-label">ĐÃ QUA</div>
-                    </label>
-                    <label class="ant-segmented-item">
-                        <input type="radio" name="segment" class="ant-segmented-item-input">
-                        <div class="ant-segmented-item-label">CHỜ DUYỆT</div>
-                    </label>
-                    <label class="ant-segmented-item">
-                        <input type="radio" name="segment" class="ant-segmented-item-input">
-                        <div class="ant-segmented-item-label">NHÁP</div>
-                    </label>
-                </div>
-            </div>
-        </div>
-        
     </div>
-    <div class="ant-row">
-        <div class="container">
-
-            <!-- Event Card -->
-            <div class="event-card">
-                <img src="path/to/event-image.jpg" alt="Event Thumbnail" class="event-image">
-                <div class="event-details">
-                    <h3 class="event-title">Tên Sự Kiện</h3>
-                    <p class="event-date-time"><strong>Ngày:</strong> 12/11/2024, <strong>Giờ:</strong> 18:00</p>
-                    <p class="event-location"><strong>Địa điểm:</strong> Trung Tâm Hội Nghị Quốc Gia</p>
-                    <p class="event-status"><strong>Trạng thái:</strong> Sắp diễn ra</p>
-                    <p class="event-description">
-                        Đây là mô tả ngắn gọn về sự kiện, nêu bật các điểm chính và lý do nên tham gia.
-                    </p>
-                    <p class="event-category"><strong>Loại sự kiện:</strong> Hội thảo</p>
-                    <p class="event-tickets"><strong>Vé:</strong> 300,000 VND (còn 20 vé)</p>
-
-                    <!-- Action Buttons -->
-                    <div class="event-actions">
-                        <a href="/events/edit/1" class="btn btn-edit">Chỉnh sửa</a>
-                        <a href="/events/delete/1" class="btn btn-delete">Xóa</a>
-                        <a href="/events/view/1" class="btn btn-view">Xem chi tiết</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Event Card -->
-            <div class="event-card">
-                <img src="path/to/event-image.jpg" alt="Event Thumbnail" class="event-image">
-                <div class="event-details">
-                    <h3 class="event-title">Tên Sự Kiện</h3>
-                    <p class="event-date-time"><strong>Ngày:</strong> 12/11/2024, <strong>Giờ:</strong> 18:00</p>
-                    <p class="event-location"><strong>Địa điểm:</strong> Trung Tâm Hội Nghị Quốc Gia</p>
-                    <p class="event-status"><strong>Trạng thái:</strong> Sắp diễn ra</p>
-                    <p class="event-description">
-                        Đây là mô tả ngắn gọn về sự kiện, nêu bật các điểm chính và lý do nên tham gia.
-                    </p>
-                    <p class="event-category"><strong>Loại sự kiện:</strong> Hội thảo</p>
-                    <p class="event-tickets"><strong>Vé:</strong> 300,000 VND (còn 20 vé)</p>
-
-                    <!-- Action Buttons -->
-                    <div class="event-actions">
-                        <a href="/events/edit/1" class="btn btn-edit">Chỉnh sửa</a>
-                        <a href="/events/delete/1" class="btn btn-delete">Xóa</a>
-                        <a href="/events/view/1" class="btn btn-view">Xem chi tiết</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Event Card -->
-            <div class="event-card">
-                <img src="path/to/event-image.jpg" alt="Event Thumbnail" class="event-image">
-                <div class="event-details">
-                    <h3 class="event-title">Tên Sự Kiện</h3>
-                    <p class="event-date-time"><strong>Ngày:</strong> 12/11/2024, <strong>Giờ:</strong> 18:00</p>
-                    <p class="event-location"><strong>Địa điểm:</strong> Trung Tâm Hội Nghị Quốc Gia</p>
-                    <p class="event-status"><strong>Trạng thái:</strong> Sắp diễn ra</p>
-                    <p class="event-description">
-                        Đây là mô tả ngắn gọn về sự kiện, nêu bật các điểm chính và lý do nên tham gia.
-                    </p>
-                    <p class="event-category"><strong>Loại sự kiện:</strong> Hội thảo</p>
-                    <p class="event-tickets"><strong>Vé:</strong> 300,000 VND (còn 20 vé)</p>
-
-                    <!-- Action Buttons -->
-                    <div class="event-actions">
-                        <a href="/events/edit/1" class="btn btn-edit">Chỉnh sửa</a>
-                        <a href="/events/delete/1" class="btn btn-delete">Xóa</a>
-                        <a href="/events/view/1" class="btn btn-view">Xem chi tiết</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Event Card -->
-            <div class="event-card">
-                <img src="path/to/event-image.jpg" alt="Event Thumbnail" class="event-image">
-                <div class="event-details">
-                    <h3 class="event-title">Tên Sự Kiện</h3>
-                    <p class="event-date-time"><strong>Ngày:</strong> 12/11/2024, <strong>Giờ:</strong> 18:00</p>
-                    <p class="event-location"><strong>Địa điểm:</strong> Trung Tâm Hội Nghị Quốc Gia</p>
-                    <p class="event-status"><strong>Trạng thái:</strong> Sắp diễn ra</p>
-                    <p class="event-description">
-                        Đây là mô tả ngắn gọn về sự kiện, nêu bật các điểm chính và lý do nên tham gia.
-                    </p>
-                    <p class="event-category"><strong>Loại sự kiện:</strong> Hội thảo</p>
-                    <p class="event-tickets"><strong>Vé:</strong> 300,000 VND (còn 20 vé)</p>
-
-                    <!-- Action Buttons -->
-                    <div class="event-actions">
-                        <a href="/events/edit/1" class="btn btn-edit">Chỉnh sửa</a>
-                        <a href="/events/delete/1" class="btn btn-delete">Xóa</a>
-                        <a href="/events/view/1" class="btn btn-view">Xem chi tiết</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Event Card -->
-            <div class="event-card">
-                <img src="path/to/event-image.jpg" alt="Event Thumbnail" class="event-image">
-                <div class="event-details">
-                    <h3 class="event-title">Tên Sự Kiện</h3>
-                    <p class="event-date-time"><strong>Ngày:</strong> 12/11/2024, <strong>Giờ:</strong> 18:00</p>
-                    <p class="event-location"><strong>Địa điểm:</strong> Trung Tâm Hội Nghị Quốc Gia</p>
-                    <p class="event-status"><strong>Trạng thái:</strong> Sắp diễn ra</p>
-                    <p class="event-description">
-                        Đây là mô tả ngắn gọn về sự kiện, nêu bật các điểm chính và lý do nên tham gia.
-                    </p>
-                    <p class="event-category"><strong>Loại sự kiện:</strong> Hội thảo</p>
-                    <p class="event-tickets"><strong>Vé:</strong> 300,000 VND (còn 20 vé)</p>
-
-                    <!-- Action Buttons -->
-                    <div class="event-actions">
-                        <a href="/events/edit/1" class="btn btn-edit">Chỉnh sửa</a>
-                        <a href="/events/delete/1" class="btn btn-delete">Xóa</a>
-                        <a href="/events/view/1" class="btn btn-view">Xem chi tiết</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Event Card -->
-            <div class="event-card">
-                <img src="path/to/event-image.jpg" alt="Event Thumbnail" class="event-image">
-                <div class="event-details">
-                    <h3 class="event-title">Tên Sự Kiện</h3>
-                    <p class="event-date-time"><strong>Ngày:</strong> 12/11/2024, <strong>Giờ:</strong> 18:00</p>
-                    <p class="event-location"><strong>Địa điểm:</strong> Trung Tâm Hội Nghị Quốc Gia</p>
-                    <p class="event-status"><strong>Trạng thái:</strong> Sắp diễn ra</p>
-                    <p class="event-description">
-                        Đây là mô tả ngắn gọn về sự kiện, nêu bật các điểm chính và lý do nên tham gia.
-                    </p>
-                    <p class="event-category"><strong>Loại sự kiện:</strong> Hội thảo</p>
-                    <p class="event-tickets"><strong>Vé:</strong> 300,000 VND (còn 20 vé)</p>
-
-                    <!-- Action Buttons -->
-                    <div class="event-actions">
-                        <a href="/events/edit/1" class="btn btn-edit">Chỉnh sửa</a>
-                        <a href="/events/delete/1" class="btn btn-delete">Xóa</a>
-                        <a href="/events/view/1" class="btn btn-view">Xem chi tiết</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+    <div class="mt-4">
+        <label for="event-name" class="form-label text-black"><h3>Tên sự kiện</h3></label>
+        <input id="event-name" name="event_name" type="text" maxlength="100" class="form-control" placeholder="Tên sự kiện" required/>
     </div>
-</main>
+</div>
+
+<div class="container py-5">
+    <h3>Thông tin về địa chỉ</h3>
+    <div class="row g-4">
+        <div class="col-md-6">
+            <label for="event-location" class="form-label text-black">Tên địa điểm cụ thể <span class="text-danger">*</span></label>
+            <input id="event-location" name="event_location" type="text" class="form-control" placeholder="Tên địa điểm" maxlength="80" />
+        </div>
+        <div class="col-md-6">
+            <label for="event-location" class="form-label text-black">Ghi chú</label>
+            <input id="event-note" name="event_note" type="text" class="form-control" placeholder="Ghi chú về địa điểm" maxlength="80" />
+        </div>
+            <div class="col-md-6 mb-3">
+                <label for="StartTime" class="form-label">Thời gian bắt đầu</label>
+                <input type="datetime-local" class="form-control" id="StartTimeEvent" name="StartTimeEvent" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="StartTime" class="form-label">Thời gian kết thúc</label>
+                <input type="datetime-local" class="form-control" id="EndTimeEvent" name="EndTimeEvent" required>
+            </div>
+    </div>
+</div>
+
+    <div class="container py-5">
+        <h3>Thông tin về sự kiện</h3>
+        <div class="row g-4">
+            <div class="col-md-12">
+                <textarea id="ngonEditor" name="description" class="form-control"></textarea>
+            </div>
+    </div>
+
+<div class="container py-5" id="ticket_container">
+    <h2 class="text-center mb-4">Thêm Vé</h2>
+    <div class="row ticket-item" style="background-color: #f0f0f0; padding: 3vh; border-radius: 10px; margin: 2vh;">
+        <div class="col-md-6 mb-3">
+            <label for="TicketType" class="form-label">Loại vé</label>
+            <input type="text" class="form-control" id="TicketType" name="TicketType" placeholder="Normal, VIP..." required>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="Price" class="form-label">Giá vé</label>
+            <input type="number" class="form-control" id="Price" name="Price" placeholder="Nhập giá vé" required>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="SeatNumber" class="form-label">Số ghế</label>
+            <input type="number" class="form-control" id="SeatNumber" name="SeatNumber" placeholder="Nhập số ghế" required>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="StartTime" class="form-label">Thời gian bắt đầu</label>
+            <input type="datetime-local" class="form-control" id="StartTime" name="StartTime" required>
+        </div>
+    </div>
+    <div class="text-center">
+            <button type="button" class="btn btn-success btn-lg" id="addTicketBtn" style="width: 100%;">Thêm Vé</button>
+    </div>
+</div>
+
+
+
+<div class="container py-5">
+        <button type="submit" class="btn btn-success btn-lg" style="width: 100%;">Submit</button>
+</div>
+</form>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function previewImg(event) {
+        var file = event.target.files[0];
+        if (file) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                let label = document.getElementById("label_event");
+                label.classList.remove("d-block");
+                label.classList.add("d-none")
+                
+
+                let img = document.getElementById('profileImg');
+                img.src = e.target.result;
+                img.classList.remove("d-none");
+                console.log("ahihi")
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+
+    document.getElementById("addTicketBtn").addEventListener("click", () => {
+        const ticketTemplate = document.querySelector(".ticket-item");
+        const newTicket = ticketTemplate.cloneNode(true);
+
+        const inputs = newTicket.querySelectorAll("input");
+        inputs.forEach(input => {
+            input.value = '';
+        });
+
+        document.getElementById("ticket_container").appendChild(newTicket);
+        const addTicketBtn = document.getElementById("addTicketBtn");
+        document.getElementById("ticket_container").appendChild(addTicketBtn);
+    });
+
+</script>
