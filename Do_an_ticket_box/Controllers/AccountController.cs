@@ -13,6 +13,9 @@ using Microsoft.EntityFrameworkCore;
 using System.IO;
 using NuGet.Versioning;
 using Do_an_ticket_box.ViewModels;
+using CloudinaryDotNet.Actions;
+using CloudinaryDotNet;
+using dotenv.net;
 
 namespace Do_an_ticket_box.Controllers
 {
@@ -56,42 +59,64 @@ namespace Do_an_ticket_box.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Index(UpdateUserViewModel model, IFormFile avatarImgFile)
+        public async Task<IActionResult> Index(UpdateUserViewModel model, IFormFile? avatarImgFile)
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    return View("Index", model);
-            //}
-
-            var user = await _dbContext.User.FindAsync(model.UserID);
-            if (user != null)
+            if (!ModelState.IsValid)
             {
-                if (avatarImgFile != null && avatarImgFile.Length > 0)
-                {
+                TempData["ErrorMessage"] = "Thông tin không hợp lệ.";
+                return View(model);
+            }
 
-                    var uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "uploads");
-                    var uniqueFileName = Guid.NewGuid().ToString() + "_" + avatarImgFile.FileName;
-                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
-                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+            var user = await _context.User.FindAsync(model.UserID);
+            if (user == null)
+            {
+                TempData["ErrorMessage"] = "Người dùng không tồn tại.";
+                return RedirectToAction("Index", "Home");
+            }
+
+            // Xử lý upload ảnh
+            if (avatarImgFile != null && avatarImgFile.Length > 0)
+            {
+                try
+                {
+                    string wwwRootPath = _webHostEnvironment.WebRootPath;
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(avatarImgFile.FileName);
+                    string userPath = Path.Combine(wwwRootPath, "Images", "userAvt");
+
+                    if (!Directory.Exists(userPath))
+                    {
+                        Directory.CreateDirectory(userPath);
+                    }
+
+                    string fullPath = Path.Combine(userPath, fileName);
+                    using (var fileStream = new FileStream(fullPath, FileMode.Create))
                     {
                         await avatarImgFile.CopyToAsync(fileStream);
                     }
 
-                    user.avatarImg = uniqueFileName;
+                    user.avatarImg = $"/Images/userAvt/{fileName}";
                 }
-
-                user.UserName = model.UserName;
-                user.UserSurname = model.UserSurname;
-                user.Phone = model.Phone;
-                user.gender = model.gender;
-                user.birthday = model.birthday;
-
-                await _dbContext.SaveChangesAsync();
-                return RedirectToAction("Index", new { id = user.UserID });
+                catch (Exception ex)
+                {
+                    TempData["ErrorMessage"] = $"Lỗi khi upload ảnh: {ex.Message}";
+                    return View(model);
+                }
             }
-            return RedirectToAction("Index");
+
+            // Cập nhật thông tin người dùng
+            user.UserName = model.UserName;
+            user.UserSurname = model.UserSurname;
+            user.Phone = model.Phone;
+            user.gender = model.gender;
+            user.birthday = model.birthday;            
+
+            await _dbContext.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Cập nhật thông tin thành công!";
+            return RedirectToAction("Index", new { id = user.UserID });
         }
-        
+
+
         public IActionResult Index()
         {
             return View();

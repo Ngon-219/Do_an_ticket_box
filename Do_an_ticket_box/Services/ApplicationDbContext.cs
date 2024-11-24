@@ -16,7 +16,7 @@ namespace Do_an_ticket_box.Services
         public DbSet<Ticket> Ticket { get; set; }
         public DbSet<EmailVerificationToken> EmailVerificationTokens { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {     
+        {
             modelBuilder.Entity<Event>()
                 .Property(e => e.Event_time)
                 .HasConversion(
@@ -42,6 +42,16 @@ namespace Do_an_ticket_box.Services
                 .HasColumnName("Booking_time")
                 .ValueGeneratedOnAdd()
                 .HasDefaultValueSql("CURRENT_TIMESTAMP");
+            modelBuilder.Entity<Event>()
+                .Property(b => b.created_at)
+                .HasColumnName("Created_at")
+                .ValueGeneratedOnAdd()
+                .HasDefaultValueSql("CURRENT_TIMESTAMP");
+            modelBuilder.Entity<Report>()
+              .Property(u => u.Created)
+              .HasColumnName("Created")
+              .ValueGeneratedOnAdd()
+              .HasDefaultValueSql("CURRENT_TIMESTAMP");
         }
     }
 

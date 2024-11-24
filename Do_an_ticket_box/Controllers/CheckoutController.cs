@@ -135,6 +135,7 @@ namespace Do_an_ticket_box.Controllers
         public ActionResult Booking(int eventId)
         {
             var userEmail = Request.Cookies["UserEmail"];
+            Console.WriteLine(userEmail);
             var user = this._context.User.FirstOrDefault(x => x.Email == userEmail);
             if (user == null) {
                 EventId = eventId;

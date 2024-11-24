@@ -12,11 +12,11 @@ namespace Do_an_ticket_box.Models
         public int Event_ID { get; set; }
         [Column("Event_name", TypeName = "nvarchar(150)")]
         public string? Event_Name { get; set;  }
-        [Column("Event_date", TypeName = "Date")]
+        [Column("Event_date", TypeName = "datetime2")]
         public DateTime Event_date { get; set; }
         [Column("Event_time")]
         public TimeOnly Event_time { get; set; }
-        [Column("Event_date_end", TypeName = "Date")]
+        [Column("Event_date_end", TypeName = "datetime2")]
         public DateTime Event_date_end { get; set; }
         [Column("Event_time_end")]
         public TimeOnly Event_time_end { get; set; }
@@ -36,6 +36,10 @@ namespace Do_an_ticket_box.Models
         public string? status { get; set; }
         [Column("Created_time", TypeName = "datetime")]
         public DateTime created_at_time { get; set; }
+        public int countClick {  get; set; }
+
+        public int UserID { get; set; }
+        public User? User { get; set; }
         public List<Ticket>? Ticket { get; set; }
         public List<Report>? Report { get; set; }
     }
