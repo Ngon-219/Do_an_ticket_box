@@ -43,6 +43,10 @@ namespace Do_an_ticket_box.Controllers
 
                 var userEmail = Request.Cookies["UserEmail"];
                 var userId = await this._context.User.FirstOrDefaultAsync(e => e.Email == userEmail);
+                if (userId == null)
+                {
+                    return RedirectToAction("Login", "Account");
+                }
 
                 var newEvent = new Event
                 {

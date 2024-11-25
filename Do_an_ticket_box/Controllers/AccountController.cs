@@ -95,6 +95,13 @@ namespace Do_an_ticket_box.Controllers
                     }
 
                     user.avatarImg = $"/Images/userAvt/{fileName}";
+                    Response.Cookies.Append("avtImg", $"/Images/userAvt/{fileName}", new CookieOptions
+                    {
+                        Expires = DateTime.UtcNow.AddDays(7),
+                        HttpOnly = false,
+                        Secure = false,
+                        SameSite = SameSiteMode.Lax
+                    });
                 }
                 catch (Exception ex)
                 {
@@ -111,6 +118,7 @@ namespace Do_an_ticket_box.Controllers
             user.birthday = model.birthday;            
 
             await _dbContext.SaveChangesAsync();
+
 
             TempData["SuccessMessage"] = "Cập nhật thông tin thành công!";
             return RedirectToAction("Index", new { id = user.UserID });
@@ -162,7 +170,14 @@ namespace Do_an_ticket_box.Controllers
                         Secure = true,
                         SameSite = SameSiteMode.Lax
                     });
-                    
+
+                    Response.Cookies.Append("avtImg", user.avatarImg, new CookieOptions
+                    {
+                        Expires = DateTime.UtcNow.AddDays(7),
+                        HttpOnly = false,
+                        Secure = false, 
+                        SameSite = SameSiteMode.Lax
+                    });
                     var checkUser = await _dbContext.User.FirstOrDefaultAsync(x => x.Email == user.Email);
 
                     if (string.IsNullOrEmpty(checkUser.UserName) || string.IsNullOrEmpty(checkUser.UserSurname))
@@ -238,7 +253,7 @@ namespace Do_an_ticket_box.Controllers
 
             // Xóa cookie "UserEmail"
             Response.Cookies.Delete("UserEmail");
-            Response.Cookies.Delete("sendEmailStatus");
+            Response.Cookies.Delete("avtImg");
 
             // Chuyển hướng người dùng đến trang đăng nhập (hoặc trang khác tùy ý)
             return RedirectToAction("Index", "Home");

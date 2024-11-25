@@ -83,12 +83,6 @@ namespace Do_an_ticket_box.Controllers
                     .Subject("Email Verification for TicketBox")
                     .Body($"To verify your email address, <a href='{verificationLink}'>Click here</a>", isHtml: true)
                     .SendAsync();
-                Response.Cookies.Append("sendEmailStatus", "yes", new CookieOptions
-                {
-                    Expires = DateTime.Now.AddDays(7),
-                    HttpOnly = true,
-                    Secure = true
-                });
             }
             return View();
         }
