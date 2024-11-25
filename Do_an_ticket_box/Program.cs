@@ -1,6 +1,6 @@
-﻿using CloudinaryDotNet;
+﻿/*using CloudinaryDotNet;*/
 using Do_an_ticket_box.Services;
-using dotenv.net;
+/*using dotenv.net;*/
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
@@ -8,9 +8,9 @@ using System.Net.Mail;
 
 var builder = WebApplication.CreateBuilder(args);
 
-DotEnv.Load(options: new DotEnvOptions(probeForEnv: true));
+/*DotEnv.Load(options: new DotEnvOptions(probeForEnv: true));
 Cloudinary cloudinary = new Cloudinary(Environment.GetEnvironmentVariable("CLOUDINARY_URL"));
-cloudinary.Api.Secure = true;
+cloudinary.Api.Secure = true;*/
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -60,7 +60,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
@@ -70,7 +70,7 @@ app.MapControllerRoute(
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}" );
 
 app.UseStatusCodePages(async context =>
 {

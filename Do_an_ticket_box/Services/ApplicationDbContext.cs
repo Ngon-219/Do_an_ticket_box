@@ -47,6 +47,11 @@ namespace Do_an_ticket_box.Services
                 .HasColumnName("Created_at")
                 .ValueGeneratedOnAdd()
                 .HasDefaultValueSql("CURRENT_TIMESTAMP");
+            modelBuilder.Entity<Report>()
+              .Property(u => u.Created)
+              .HasColumnName("Created")
+              .ValueGeneratedOnAdd()
+              .HasDefaultValueSql("CURRENT_TIMESTAMP");
         }
     }
 

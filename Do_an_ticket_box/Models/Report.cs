@@ -17,7 +17,7 @@ namespace Do_an_ticket_box.Models
         [Column("Comment", TypeName = "nvarchar(max)")]
         public string? comment { get; set; }
         [Column("Created", TypeName = "timestamp")]
-        public DateTime Created { get; set; } = DateTime.Now;
+        public DateTime Created { get; set; } 
         public User? User { get; set; }
         public Event? Event { get; set; }
     }
