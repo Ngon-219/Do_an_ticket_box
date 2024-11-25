@@ -1,0 +1,96 @@
+﻿@model Do_an_ticket_box.ViewModels.ReportViewModel;
+
+<body class="bg-light">
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success text-center">
+            @TempData["Success"]
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger text-center">
+            @TempData["Error"]
+        </div>
+    }
+
+    <div class="report-container">
+        <h2 class="text-center mb-4">Tạo Báo Cáo</h2>
+        <form asp-action="Index" method="post">
+            @Html.AntiForgeryToken()
+
+            <!-- Chọn sự kiện -->
+            <div class="mb-3">
+                <label asp-for="Event_ID" class="form-label">Chọn sự kiện</label>
+                <select asp-for="Event_ID" class="form-select">
+                    @foreach (var item in Model.EventList)
+                    {
+                        <option value="@item.Value">@item.Text</option>
+                    }
+                </select>
+                <span asp-validation-for="Event_ID" class="text-danger"></span>
+            </div>
+
+            <!-- Nội dung đánh giá -->
+            <div class="mb-3">
+                <label asp-for="Comment" class="form-label">Nội dung đánh giá</label>
+                <textarea asp-for="Comment" class="form-control" rows="4" placeholder="Nhập nội dung đánh giá..." required></textarea>
+                <span asp-validation-for="Comment" class="text-danger"></span>
+            </div>
+
+            <!-- Đánh giá -->
+            <div class="mb-3">
+                <label asp-for="Rate" class="form-label">Đánh giá</label>
+                <select asp-for="Rate" class="form-select" required>
+                    <option value="1">1 Sao</option>
+                    <option value="2">2 Sao</option>
+                    <option value="3">3 Sao</option>
+                    <option value="4">4 Sao</option>
+                    <option value="5">5 Sao</option>
+                </select>
+                <span asp-validation-for="Rate" class="text-danger"></span>
+            </div>
+
+            <!-- Nút gửi -->
+            <button type="submit" class="btn btn-primary w-100">Gửi Báo Cáo</button>
+        </form>
+    </div>
+</body>
+
+
+<style>
+    .report-container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+    .alert {
+        margin: 20px auto;
+        max-width: 600px;
+    }
+</style>

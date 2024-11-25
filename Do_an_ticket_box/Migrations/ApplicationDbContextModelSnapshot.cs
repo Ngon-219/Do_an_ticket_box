@@ -67,7 +67,7 @@ namespace Do_an_ticket_box.Migrations
 
                     b.HasIndex("User_ID");
 
-                    b.ToTable("Booking");
+                    b.ToTable("Booking", (string)null);
                 });
 
             modelBuilder.Entity("Do_an_ticket_box.Models.Event", b =>
@@ -143,7 +143,7 @@ namespace Do_an_ticket_box.Migrations
 
                     b.HasIndex("UserID");
 
-                    b.ToTable("Event");
+                    b.ToTable("Event", (string)null);
                 });
 
             modelBuilder.Entity("Do_an_ticket_box.Models.Payment", b =>
@@ -174,7 +174,7 @@ namespace Do_an_ticket_box.Migrations
 
                     b.HasIndex("Booking_ID");
 
-                    b.ToTable("Payment");
+                    b.ToTable("Payment", (string)null);
                 });
 
             modelBuilder.Entity("Do_an_ticket_box.Models.Report", b =>
@@ -210,7 +210,7 @@ namespace Do_an_ticket_box.Migrations
 
                     b.HasIndex("User_ID");
 
-                    b.ToTable("Report");
+                    b.ToTable("Report", (string)null);
                 });
 
             modelBuilder.Entity("Do_an_ticket_box.Models.Ticket", b =>
@@ -252,7 +252,7 @@ namespace Do_an_ticket_box.Migrations
 
                     b.HasIndex("Event_ID");
 
-                    b.ToTable("Ticket");
+                    b.ToTable("Ticket", (string)null);
                 });
 
             modelBuilder.Entity("Do_an_ticket_box.Models.User", b =>
@@ -319,7 +319,7 @@ namespace Do_an_ticket_box.Migrations
 
                     b.HasIndex("EmailVerificationTokenId");
 
-                    b.ToTable("User");
+                    b.ToTable("User", (string)null);
                 });
 
             modelBuilder.Entity("Do_an_ticket_box.Services.EmailVerificationToken", b =>
@@ -339,7 +339,7 @@ namespace Do_an_ticket_box.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("EmailVerificationTokens");
+                    b.ToTable("EmailVerificationTokens", (string)null);
                 });
 
             modelBuilder.Entity("Do_an_ticket_box.Models.Booking", b =>
