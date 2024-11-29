@@ -83,7 +83,7 @@ namespace Do_an_ticket_box.Controllers
             int currentMonth = DateTime.Now.Month;
             int pageIndex = page;
             var totalPage = await this._context.Events.Where(e => (e.Event_date_end.Month == currentMonth || e.Event_date.Month == currentMonth)).CountAsync();
-            totalPage = totalPage / 10 + 1;
+            totalPage = (int)Math.Ceiling(totalPage / 10.0);
             ViewBag.currentPage = pageIndex;
             ViewBag.TotalPage = (int)totalPage;
 
@@ -128,6 +128,12 @@ namespace Do_an_ticket_box.Controllers
             ViewData["min_price"] = minPriceForEvent;
 
             return View(EventInfor);
+        }
+
+        public IActionResult AllEvent(int page)
+        {
+            var events = this._context.Events.ToList();
+            return View(events);
         }
 
         public IActionResult Privacy()

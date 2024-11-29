@@ -121,6 +121,13 @@ button:hover {
     color: #218838;
 }
 
+
+    .book-ticket:disabled {
+        background-color: #ccc; /* Màu nền xám */
+        color: #777; /* Màu chữ xám */
+        cursor: not-allowed; /* Đổi con trỏ chuột thành hình bàn tay cấm */
+    }
+
     /* .about-event-ticket{
         background-color:#fff;
     } */
@@ -149,7 +156,15 @@ button:hover {
         .left-content-ticket, .right-content-ticket {
             width: 100%; /* Đặt chiều rộng 100% để chiếm toàn bộ chiều ngang */
         }
+
 </style>
+
+@if(Model.Event_date_end < DateTime.Now)
+{
+    <div class="alert alert-danger text-center" role="alert">
+        <h3>Sự kiện đã kết thúc</h3>
+    </div>
+}
 
 <body class="mal">
     <section class="event-info-ticket">
@@ -161,7 +176,7 @@ button:hover {
             <hr style="margin-top: 60px;">
             <div class="ticket-price-ticket">
                 <span>Giá từ: <span class="price-ticket">@String.Format("{0:N0} VND", @ViewData["min_price"])</span></span>
-                <a href="@Url.Action("Booking", "Checkout", new {eventId = Model.Event_ID})"><button class="book-ticket">Book now</button></a>
+                <a href="@Url.Action("Booking", "Checkout", new {eventId = Model.Event_ID})" class="link-booking"><button class="book-ticket">Book now</button></a>
             </div>
         </div>
         <div class="right-content-ticket">
@@ -178,15 +193,51 @@ button:hover {
         <h2>Thông tin vé</h2>
         <ul>
             @foreach (var ticket in (List<Ticket>)ViewData["ticket"]) {
-                <li>
-                    <div class="ticket-type-ticket">
-                        <h3>@ticket.Ticket_type</h3>
-                        <p class="text-white">@String.Format("{0:N0} VND", @ticket.price)</p>
-                        <a class="navbar-brand text-white fs-3" asp-area="" asp-controller="Checkout" asp-action="Index" style="font-weight: 500;">Ticket Box</a>
-                    </div>
-                    <a href="@Url.Action("Booking", "Checkout", new {eventId = Model.Event_ID})"><button class="book-ticket">Mua vé ngay</button></a>
-                </li>
+                @if(ticket.seat_remain == 0)
+                {
+                    <li>
+                        <div class="ticket-type-ticket">
+                            <h3>@ticket.Ticket_type</h3>
+                            <p class="text-white">@String.Format("{0:N0} VND", @ticket.price)</p>
+                            <a class="navbar-brand text-white fs-3" asp-area="" asp-controller="Checkout" asp-action="Index" style="font-weight: 500;">Ticket Box</a>
+                        </div>
+                        <a href="@Url.Action("Booking", "Checkout", new {eventId = Model.Event_ID})" class="link-booking">
+                            <button class="book-ticket" disabled>Mua vé ngay</button>
+                        </a>
+                    </li>
+
+                } else
+                {
+                    <li>
+                        <div class="ticket-type-ticket">
+                            <h3>@ticket.Ticket_type</h3>
+                            <p class="text-white">@String.Format("{0:N0} VND", @ticket.price)</p>
+                            <a class="navbar-brand text-white fs-3" asp-area="" asp-controller="Checkout" asp-action="Index" style="font-weight: 500;">Ticket Box</a>
+                        </div>
+                        <a href="@Url.Action("Booking", "Checkout", new {eventId = Model.Event_ID})" class="link-booking"><button class="book-ticket">Mua vé ngay</button></a>
+                    </li>
+                }
             }
         </ul>
     </section>
 </body>
+
+<script>
+    const eventDateEnd = new Date('@Model.Event_date_end.ToString("yyyy-MM-ddTHH:mm:ss")');
+
+    if (eventDateEnd < Date.now()) {
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttons = document.querySelectorAll('.link-booking');
+
+            buttons.forEach(function (button) {
+                const btn = button.querySelector('.book-ticket');
+                if (btn) {
+                    btn.disabled = true;  
+                    button.style.pointerEvents = 'none';  
+                    button.style.color = 'gray'; 
+                }
+            });
+        });
+    }
+</script>
+

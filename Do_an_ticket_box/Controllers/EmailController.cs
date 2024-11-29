@@ -69,7 +69,7 @@ namespace Do_an_ticket_box.Controllers
                     ExpiresOnUtc = DateTime.UtcNow.AddMinutes(10)
                 };
                 this._context.EmailVerificationTokens.Add(verificationToken);
-                this._context.SaveChangesAsync();
+                await this._context.SaveChangesAsync();
 
                 var verificationLink = Url.Action(
                     "vertifyEmail",

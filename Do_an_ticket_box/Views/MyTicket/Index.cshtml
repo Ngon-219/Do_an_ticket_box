@@ -37,7 +37,7 @@
                             </a>
                         </li>
                         <li class="NavigationItem">
-                            <a href="" class="NavigationLink">
+                            <a href="@Url.Action("Index", "MyEvent")" class="NavigationLink">
                                 <i class="fa-regular fa-calendar-days NavigationIcon"></i>
                                 <span class="NavigationText">Sự kiện của tôi</span>
                             </a>
@@ -83,6 +83,7 @@
                     {
                         @foreach (var item in Model)
                         {
+                        <a href="@Url.Action("TicketDetails", "MyTicket", new {id = item.OrderId})" style="text-decoration: none;">
                             <div class="TicketList">
                                 <div class="TicketItem">
                                     <div class="TicketDate">
@@ -95,11 +96,11 @@
                                         <h3 class="TicketEventTitle">@item.EventName</h3>
                                         <div class="TicketStatus">
                                             <span class="StatusLabel success">@item.status</span>
-                                            <span class="StatusLabel digital-ticket">@item.ticket_type</span>
+                                            @* <span class="StatusLabel digital-ticket">@item.ticket_type</span> *@
                                             <span class="StatusLabel success">Số lượng: @item.Quanlity</span>
                                         </div>
                                         <div class="TicketDetails">
-                                            <p class="TicketOrderCode">Order code: @item.Ordercode</p>
+                                            <p class="TicketOrderCode">Order code: @item.OrderId</p>
                                             <p class="TicketTime">@item.timeStart - @item.timeEnd, @item.Day tháng @item.Month, @item.Year</p>
                                             <p class="TicketLocation">
                                                 @item.location
@@ -108,6 +109,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </a>
                         }
 
                         <div style="padding-bottom: 100px;"></div>

@@ -10,6 +10,7 @@
         public string location { get; set; }
         public TimeOnly timeEnd { get; set; }
         public string ticket_type { get; set; }
+        public Guid OrderId { get; set; }
         public int Day => date.Day;
         public int Quanlity { get; set; }
         public int Month => date.Month;
