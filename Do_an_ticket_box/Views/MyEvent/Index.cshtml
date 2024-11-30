@@ -29,7 +29,17 @@
                     <td style="border: 1px solid white; padding: 8px;">@item.Event_date</td>
                     <td style="border: 1px solid white; padding: 8px;">@item.location</td>
                     <td style="border: 1px solid white; padding: 8px;">@item.created_at_time</td>
-                    <td style="border: 1px solid white; padding: 8px;">@item.status</td>
+                    <td style="border: 1px solid white; padding: 8px;">
+                        @if (item.Event_date_end < DateTime.Now)
+                        {
+                            @:Finish
+                        }
+                        else
+                        {
+                            @item.status
+                        }
+                    </td>
+
                     <td style="border: 1px solid white; padding: 8px;">
                         <a href="@Url.Action("Details", "MyEvent", new {id = item.Event_ID})">Detail</a>
                     </td>

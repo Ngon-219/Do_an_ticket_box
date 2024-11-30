@@ -18,7 +18,7 @@ namespace Do_an_ticket_box.Controllers
             int pageIndex = page;
             string searchPattern = $"%{location}%"; // Chuỗi cho LIKE
             var totalPage = await this._context.Events
-                .Where(e => EF.Functions.Like(e.location, searchPattern))
+                .Where(e => EF.Functions.Like(e.location, searchPattern.ToString()))
                 .CountAsync();
             totalPage = totalPage / 10 + 1;
             ViewBag.currentPage = pageIndex;

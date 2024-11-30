@@ -17,8 +17,19 @@ namespace Do_an_ticket_box.Controllers
             _webHostEnvironment = webHostEnvironment;
             _context = dbContext;
         }
-        public IActionResult EventCreated()
+        public async Task<IActionResult> EventCreated()
         {
+            var userEmail = Request.Cookies["UserEmail"];
+            var userId = await this._context.User.FirstOrDefaultAsync(e => e.Email == userEmail);
+            if (userId == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            Console.WriteLine("ahihi " + userId.status);
+            if (userId.status == "unvertify")
+            {
+                return Content("Bạn chưa vertify email");
+            }
             return View();
         }
         [HttpPost]
@@ -46,6 +57,11 @@ namespace Do_an_ticket_box.Controllers
                 if (userId == null)
                 {
                     return RedirectToAction("Login", "Account");
+                }
+                Console.WriteLine("ahihi " + userId.status);
+                if(userId.status == "unvertify")
+                {
+                    return Content("Bạn chưa vertify email");
                 }
 
                 var newEvent = new Event

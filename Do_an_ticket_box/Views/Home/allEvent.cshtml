@@ -3,14 +3,43 @@
 <div class="" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
     <div class="container">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12" style="margin-bottom: 2vh;">
                 <h3 class="text-white">Tất cả sự kiện</h3>
                 <br />
                 <div class="d-inline-block position-relative" style="width: auto;">
                     <select id="select-sort" class="form-select border rounded-pill px-4 py-3 pe-5 shadow-sm" style="min-width: 250px;">
-                        <option value="default" selected>Sắp xếp theo ngày tổ chức sự kiện</option>
-                        <option value="asc">Mới - Cũ</option>
-                        <option value="desc">Cũ - Mới</option>
+                        <option value="null">Sắp xếp theo ngày tổ chức sự kiện</option>
+                        <option value="asc">Cũ - Mới</option>
+                        <option value="desc">Mới - Cũ</option>
+                    </select>
+                    <i class="bi bi-chevron-down position-absolute top-50 end-0 translate-middle-y me-3 text-secondary"></i>
+                </div>
+
+                <div class="d-inline-block position-relative" style="width: auto;">
+                    <select id="select-province" class="form-select border rounded-pill px-4 py-3 pe-5 shadow-sm" style="min-width: 250px;">
+                        <option value="null">Lọc theo tỉnh thành</option>
+                        <option value="Hà Nội">Hà Nội</option>
+                        <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+                        <option value="Đà Nẵng">Đà Nẵng</option>
+                        <option value="Cần Thơ">Cần Thơ</option>
+                        <option value="Hải Phòng">Hải Phòng</option>
+                        <option value="Hải Dương">Hải Dương</option>
+                        <option value="Quảng Ninh">Quảng Ninh</option>
+                        <option value="Bình Dương">Bình Dương</option>
+                        <option value="An Giang">An Giang</option>
+                        <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option>
+                        <option value="Thanh Hóa">Thanh Hóa</option>
+                        <option value="Nghệ An">Nghệ An</option>
+                        <option value="Thái Nguyên">Thái Nguyên</option>
+                        <option value="Bắc Ninh">Bắc Ninh</option>
+                        <option value="Lâm Đồng">Lâm Đồng</option>
+                        <option value="Kiên Giang">Kiên Giang</option>
+                        <option value="Bắc Giang">Bắc Giang</option>
+                        <option value="Vĩnh Phúc">Vĩnh Phúc</option>
+                        <option value="Cà Mau">Cà Mau</option>
+                        <option value="Nam Định">Nam Định</option>
+                        <option value="Phú Thọ">Phú Thọ</option>
+                        <option value="Vũng Tàu">Vũng Tàu</option>
                     </select>
                     <i class="bi bi-chevron-down position-absolute top-50 end-0 translate-middle-y me-3 text-secondary"></i>
                 </div>
@@ -79,7 +108,11 @@
                 const urlParams = new URLSearchParams(window.location.search);
                 const prevPage = Number(urlParams.get('page')) - 1;
 
-                window.location.href = '@Url.Action("AllEvent", "Home")' + '?page=' + prevPage;
+                const sortValue = localStorage.getItem('sort_Event');
+                const getprovince = localStorage.getItem('select-province');
+
+                const url = `/home/allevent?page=${prevPage}&filter=${getprovince}&sorting=${sortValue}`;
+                window.location.href = url;
             });
 
             document.getElementById("Next").addEventListener("click", () => {
@@ -87,14 +120,55 @@
                 const nextPage = Number(urlParams.get('page')) + 1;
                 console.log(nextPage);
 
-                window.location.href = '@Url.Action("AllEvent", "Home")' + '?page=' + nextPage;
+                const sortValue = localStorage.getItem('sort_Event');
+                const getprovince = localStorage.getItem('select-province');
+
+                const url = `/home/allevent?page=${nextPage}&filter=${getprovince}&sorting=${sortValue}`;
+                window.location.href = url;
             });
 
             resolve();
 
             document.getElementById("select-sort").addEventListener("change", () => {
-                window.location.href = '@Url.Action("AllEvent", "Home", new {page = 1})';
+                let province = document.getElementById("select-province").value;
+                let sorting = document.getElementById("select-sort").value;
+                localStorage.setItem('sort_Event', sorting);
+
+                const sortValue = localStorage.getItem('sort_Event');
+                const getprovince = localStorage.getItem('select-province');
+
+
+                const url = `/home/allevent?page=1&filter=${getprovince}&sorting=${sortValue}`;
+                window.location.href = url;
+            });
+
+            document.getElementById("select-province").addEventListener("change", () => {
+                let province = document.getElementById("select-province").value;
+                let sorting = document.getElementById("select-sort").value;
+                localStorage.setItem('select-province', province);
+
+                const getprovince = localStorage.getItem('select-province');
+                const sortValue = localStorage.getItem('sort_Event');
+
+                const url = `/home/allevent?page=1&filter=${getprovince}&sorting=${sortValue}`;
+                province = getprovince;
+                sorting = sortValue;
+                
+                window.location.href = url;
             })
+
+            window.addEventListener('load', () => {
+                const province = localStorage.getItem('select-province');
+                const sorting = localStorage.getItem('sort_Event');
+
+                // Cập nhật lại giá trị cho các dropdown nếu có giá trị trong localStorage
+                if (province) {
+                    document.getElementById("select-province").value = province;
+                }
+                if (sorting) {
+                    document.getElementById("select-sort").value = sorting;
+                }
+            });
         </script>
 
     </div>
