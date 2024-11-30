@@ -28,14 +28,16 @@ namespace Do_an_ticket_box.Controllers
 /*        [Route("/")]*/
         public async Task<IActionResult> Index(int? id)
         {
+            int currentYear = DateTime.Now.Year;
+            int currentMonth = DateTime.Now.Month;
             var events = await this._context.Events
-            .OrderByDescending(e => e.countClick) 
+            .OrderByDescending(e => e.countClick)
+            .Where(e => (e.Event_date_end.Month == currentMonth || e.Event_date.Month == currentMonth))
             .Take(10) 
             .ToListAsync();
 
 
-            int currentYear = DateTime.Now.Year;
-            int currentMonth = DateTime.Now.Month;
+
 
             var count_event_in_month = await this._context.Set<Event>()
                 .Where(e => (e.Event_date_end.Month == currentMonth || e.Event_date.Month == currentMonth))
@@ -83,7 +85,7 @@ namespace Do_an_ticket_box.Controllers
             int currentMonth = DateTime.Now.Month;
             int pageIndex = page;
             var totalPage = await this._context.Events.Where(e => (e.Event_date_end.Month == currentMonth || e.Event_date.Month == currentMonth)).CountAsync();
-            totalPage = totalPage / 10 + 1;
+            totalPage = (int)Math.Ceiling(totalPage / 10.0);
             ViewBag.currentPage = pageIndex;
             ViewBag.TotalPage = (int)totalPage;
 
@@ -128,6 +130,60 @@ namespace Do_an_ticket_box.Controllers
             ViewData["min_price"] = minPriceForEvent;
 
             return View(EventInfor);
+        }
+
+        public async Task<IActionResult> AllEvent(int page, string? filter, string? sorting)
+        {
+            Console.WriteLine("Ở trang all event " + filter + " " + sorting);
+            int pageIndex = page;
+            var totalPage = await this._context.Events.CountAsync();
+            totalPage = (int)Math.Ceiling(totalPage / 10.0);
+            ViewBag.currentPage = pageIndex;
+            ViewBag.TotalPage = (int)totalPage;
+
+            var query = this._context.Events.AsQueryable();
+
+            if (!string.IsNullOrEmpty(filter) && filter != "null")
+            {
+                query = query.Where(e => e.location.Contains(filter));
+            }
+
+            if (!string.IsNullOrEmpty(sorting) && sorting != "null")
+            {
+                query = sorting switch
+                {
+                    "asc" => query.OrderBy(e => e.Event_date),
+                    "desc" => query.OrderByDescending(e => e.Event_date),
+                    _ => query.OrderBy(e => e.Event_date)
+                };
+            }
+
+
+            if (pageIndex <= totalPage)
+            {
+                var paginatedEvent = await query
+                    .Skip((pageIndex - 1) * 10)
+                    .Take(10)
+                    .ToListAsync();
+
+                if (paginatedEvent.Count > 0)
+                {
+                    return View(paginatedEvent);
+
+                }
+                else
+                {
+                    /*return Content("Không tìm thấy bất kì sự kiện nào");*/
+                    return RedirectToAction("EventNull", "Home");
+                }
+
+            }
+            return NotFound();
+        }
+
+        public IActionResult EventNull()
+        {
+            return View();
         }
 
         public IActionResult Privacy()

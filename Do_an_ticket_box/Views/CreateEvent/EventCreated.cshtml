@@ -70,7 +70,7 @@
         </div>
         <div class="col-md-6 mb-3">
             <label for="StartTime" class="form-label">Thời gian bắt đầu</label>
-            <input type="datetime-local" class="form-control" id="StartTime" name="StartTime" required>
+            <input type="datetime-local" class="form-control" id="StartTime" name="StartTime" readonly>
         </div>
     </div>
     <div class="text-center">
@@ -123,6 +123,20 @@
         document.getElementById("ticket_container").appendChild(newTicket);
         const addTicketBtn = document.getElementById("addTicketBtn");
         document.getElementById("ticket_container").appendChild(addTicketBtn);
+
+        let startTimeTicket = document.querySelectorAll('[name="StartTime"]');
+        const timeEvent = document.getElementById("StartTimeEvent").value;
+        startTimeTicket.forEach(item => {
+            item.value = timeEvent;
+        })
+    });
+
+    document.getElementById("StartTimeEvent").addEventListener("change", () => {
+        let startTimeTicket = document.querySelectorAll('[name="StartTime"]');
+        const timeEvent = document.getElementById("StartTimeEvent").value;
+        startTimeTicket.forEach(item => {
+            item.value = timeEvent;
+        })
     });
 
 </script>

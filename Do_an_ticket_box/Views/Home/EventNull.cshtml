@@ -1,0 +1,16 @@
+﻿<div class="text-center" style="margin-top: 20vh; margin-bottom: 20vh;">
+    <h3 class="text-white">Không có sự kiện nào được tìm thấy</h3>
+    <a href="javascript:void(0);" class="btn btn-primary" style="background-color: green; text-decoration: none; border-radius: 8px; padding: 10px 20px; text-decoration: none;" id="go-back-btn">
+        Quay lại trang sự kiện
+    </a>
+</div>
+
+<script>
+    document.getElementById("go-back-btn").addEventListener("click", function () {
+        event.preventDefault();
+        localStorage.removeItem('sort_Event');
+        localStorage.removeItem('select-province');
+
+        window.location.href = '@Url.Action("AllEvent", "Home", new { page = 1 })';
+    });
+</script>

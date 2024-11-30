@@ -1,0 +1,140 @@
+﻿@model IEnumerable<Do_an_ticket_box.ViewModels.MyTicketVM>
+
+<div class="ticket-container">
+    <h3 class="ticket-title">Thông tin hoá đơn</h3>
+    <div class="ticket-row">
+        @foreach (var item in Model)
+        {
+            <div class="ticket-card">
+                <div class="ticket-header">
+                    <h4 class="ticket-day">@item.Day</h4>
+                    <small>Tháng @item.Month, @item.Year</small>
+                </div>
+                <div class="ticket-body">
+                    <h5 class="ticket-event">@item.EventName</h5>
+                    <div class="ticket-badge">
+                        <span class="status success">Trạng thái: @item.status</span>
+                        <span class="quantity">Số lượng: @item.Quanlity</span>
+                    </div>
+                    <p><strong>Mã hoá đơn:</strong> @item.OrderId</p>
+                    <p>
+                        <strong>Thời gian:</strong> @item.timeStart - @item.timeEnd<br>
+                        @item.Day tháng @item.Month, @item.Year
+                    </p>
+                    <p><strong>Địa điểm:</strong> @item.location</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    /* Nền toàn trang */
+    body {
+        background-color: #1c1e22; /* Màu tối sang trọng */
+        color: #f8f9fa; /* Chữ sáng dễ nhìn */
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+    }
+
+    /* Container chính */
+    .ticket-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Tiêu đề chính */
+    .ticket-title {
+        color: #fff;
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    /* Dòng chứa các card */
+    .ticket-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    /* Card */
+    .ticket-card {
+        background-color: #2a2d34;
+        border-radius: 12px;
+        width: 100%;
+        max-width: 350px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+        .ticket-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+    /* Header của card */
+    .ticket-header {
+        background: linear-gradient(90deg, #007bff, #6610f2);
+        padding: 15px;
+        text-align: center;
+        color: #fff;
+    }
+
+    .ticket-day {
+        font-size: 24px;
+        margin: 0;
+    }
+
+    .ticket-header small {
+        font-size: 14px;
+    }
+
+    /* Nội dung card */
+    .ticket-body {
+        padding: 20px;
+        text-align: left;
+    }
+
+    .ticket-event {
+        color: #00c6ff;
+        font-size: 20px;
+        margin: 0 0 15px 0;
+    }
+
+    /* Badge trạng thái và số lượng */
+    .ticket-badge {
+        margin-bottom: 15px;
+    }
+
+    .status, .quantity {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 6px;
+        font-size: 14px;
+        margin-right: 5px;
+        color: #fff;
+    }
+
+        .status.success {
+            background-color: #28a745;
+        }
+
+    .quantity {
+        background-color: #ffc107;
+        color: #333;
+    }
+
+    /* Nội dung chi tiết */
+    p {
+        margin: 5px 0;
+        font-size: 14px;
+    }
+
+        p strong {
+            font-weight: bold;
+        }
+</style>

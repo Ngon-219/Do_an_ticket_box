@@ -1,45 +1,196 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-@model List<Ticket>
-
-<div class="" style="margin: 1vh;">
-    <div class="text-center text-white">
-        <h1>@ViewData["eventName"]</h1>
+﻿<div class="order-wrapper">
+    <div class="order-header">
+        <h1 class="event-name">@ViewData["eventName"]</h1>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-10 mx-auto text-center d-flex align-items-center justify-content-center">
-                <form method="post" action="@Url.Action("Create", "Checkout")" class="p-5 text-white text-center bg-success rounded shadow-lg" style="max-width: 800px;">
-                    <h2 class="mb-5">Đặt vé</h2>
-                    @foreach (var ticket in Model)
-                    {
-                        <input type="hidden" value="@ticket.Ticket_ID" name="ticketId" />
-                        <input type="hidden" value="@ticket.price" name="ticketPrice" />
-                        <input type="hidden" value="@ticket.Event_ID" name="eventId" />
-                        <div class="input-group mb-4" style="font-size: 1.25rem;">
-                            <span class="input-group-text bg-light text-success border-0" style="min-width: 150px;">@ticket.Ticket_type</span>
-                            <button type="button" class="btn btn-outline-light btn-lg" onclick="decrease(this, @ticket.price)">-</button>
-                            <input type="text" class="form-control text-center border-0 fs-4" value="0" name="ticketQuanlity" style="max-width: 80px;" readonly />
-                            <button type="button" class="btn btn-outline-light btn-lg" onclick="increase(this, @ticket.price)">+</button>
-                        </div>
-                    }
-                    <input id="amount" type="hidden" value="0" name="amount" />
-                    <p class="mt-4 fs-4">Tổng giá trị đơn hàng là:<br /> <span id="showTotal" class="fw-bold text-warning">0</span></p>
-                    <button type="submit" class="btn btn-light text-success fw-bold w-100 py-3 mt-4" style="border-radius: 50px; font-size: 1.5rem;">Thanh toán</button>
-                </form>
-            </div>
-
-
-        </div>
+    <div class="order-container">
+        <form method="post" action="@Url.Action("Create", "Checkout")" class="order-form">
+            <h2 class="form-title">Đặt vé ngay</h2>
+            @foreach (var ticket in Model)
+            {
+                <input type="hidden" value="@ticket.Ticket_ID" name="ticketId" />
+                <input type="hidden" value="@ticket.price" name="ticketPrice" />
+                <input type="hidden" value="@ticket.Event_ID" name="eventId" />
+                <div class="ticket-group">
+                    <span class="ticket-type">@ticket.Ticket_type</span>
+                    <div class="ticket-actions">
+                        <button type="button" class="btn-decrease" onclick="decrease(this, @ticket.price)">-</button>
+                        <input type="text" class="ticket-quantity" value="0" name="ticketQuanlity" readonly />
+                        <input type="hidden" name="ticketRemain" value="@ticket.seat_remain" />
+                        <button type="button" class="btn-increase" onclick="increase(this, @ticket.price)">+</button>
+                    </div>
+                </div>
+            }
+            <input id="amount" type="hidden" value="0" name="amount" />
+            <p class="total-display">
+                Tổng giá trị đơn hàng: <span id="showTotal" class="total-amount">0</span>
+            </p>
+            <button type="submit" class="btn-submit">Thanh toán</button>
+        </form>
     </div>
 </div>
 
+<style>
+    /* Tổng thể */
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #121212; /* Nền đen */
+        color: #fff; /* Màu chữ trắng */
+        margin: 0;
+        padding: 0;
+    }
+
+    .order-wrapper {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Header */
+    .order-header {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .event-name {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #fff; /* Chữ trắng */
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Form */
+    .order-container {
+        background: #2c3e50; /* Nền xám tối */
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        max-width: 700px;
+        width: 100%;
+    }
+
+    .order-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+        color: #fff; /* Chữ trắng */
+        font-weight: bold;
+    }
+
+    /* Ticket row */
+    .ticket-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        padding: 10px;
+        background: #34495e; /* Màu xám đậm */
+        border-radius: 8px;
+        width: 100%;
+    }
+
+    .ticket-type {
+        flex: 2;
+        font-size: 1.2rem;
+        color: #fff; /* Chữ trắng */
+        font-weight: bold;
+    }
+
+    .ticket-actions {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .ticket-quantity {
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+        width: 60px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background: #fff;
+        color: #333;
+    }
+
+    .btn-decrease,
+    .btn-increase {
+        background-color: #fff;
+        border: 1px solid #f39c12; /* Viền vàng */
+        color: #f39c12;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .btn-decrease:hover,
+    .btn-increase:hover {
+        background-color: #f39c12;
+        color: #fff;
+        transform: scale(1.1);
+    }
+
+    /* Total display */
+    .total-display {
+        margin-top: 20px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #fff; /* Chữ trắng */
+    }
+
+    .total-amount {
+        color: #f39c12; /* Màu vàng ánh kim */
+    }
+
+    /* Submit button */
+    .btn-submit {
+        margin-top: 30px;
+        background: #f39c12; /* Màu vàng ánh kim */
+        color: #fff;
+        padding: 15px 30px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s;
+        width: 100%;
+    }
+
+    .btn-submit:hover {
+        background: #e67e22; /* Màu cam */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Responsive */
+    @@media (max-width: 768px) {
+        .order-container {
+            padding: 20px;
+        }
+
+        .form-title {
+            font-size: 1.5rem;
+        }
+
+        .ticket-type {
+            font-size: 1rem;
+        }
+    }
+</style>
+
 <script>
     function decrease(button, ticketPrice) {
-        const ticketQuanlity = button.closest('.input-group').querySelector('input[name="ticketQuanlity"]');
+        const ticketQuanlity = button.closest('.ticket-group').querySelector('input[name="ticketQuanlity"]');
         if (ticketQuanlity.value > 0) {
             ticketQuanlity.value--;
             updateTotal();
@@ -47,9 +198,16 @@
     }
 
     function increase(button, ticketPrice) {
-        const ticketQuanlity = button.closest('.input-group').querySelector('input[name="ticketQuanlity"]');
-        ticketQuanlity.value++;
-        updateTotal();
+        const ticketRemain = button.closest('.ticket-group').querySelector('input[name="ticketRemain"]');
+        const ticketQuanlity = button.closest('.ticket-group').querySelector('input[name="ticketQuanlity"]');
+        console.log(ticketRemain, ticketQuanlity)
+        if (ticketQuanlity.value < ticketRemain.value) {
+            ticketQuanlity.value++;
+            updateTotal();
+        } else {
+            alert("Vé này đã hết!");
+            button.disabled = true;
+        }
     }
 
     function updateTotal() {
@@ -57,12 +215,9 @@
         const ticketPrice = document.querySelectorAll('input[name = "ticketPrice"]');
         let valueAmount = document.getElementById("amount").value;
         valueAmount = 0;
-        console.log(total)
-        console.log(ticketPrice)
         for (let i = 0; i < total.length; i++) {
             valueAmount = Number(valueAmount) + total[i].value * ticketPrice[i].value
         }
-        console.log(valueAmount);
         document.getElementById("amount").value = valueAmount;
         const formatter = new Intl.NumberFormat('vi-VN', {
             style: 'currency',
@@ -70,5 +225,14 @@
         });
         document.getElementById("showTotal").textContent = formatter.format(valueAmount);
     }
+    document.querySelector(".order-form").addEventListener("submit", function (event) {
+        const totalAmount = parseFloat(document.getElementById("showTotal").textContent);
+
+        if (totalAmount === 0) {
+            event.preventDefault();
+            alert("Bạn chưa chọn vé nào. Vui lòng chọn trước khi thanh toán!");
+            location.reload();
+        }
+    });
 
 </script>

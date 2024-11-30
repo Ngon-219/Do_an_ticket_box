@@ -278,4 +278,24 @@ else
                 }
             </div>
         </div>
+
+<div class="text-center" style="margin: 4vh;">
+    <a href="@Url.Action("AllEvent", "Home", new {page = 1})"
+       id="view-all-events"
+       class="btn btn-success"
+       style="text-decoration: none; border-radius: 8px; padding: 10px 20px;">
+        <h3>Xem tất cả sự kiện</h3>
+    </a>
+</div>
+
+<script>
+    document.getElementById("view-all-events").addEventListener("click", function(event) {
+        event.preventDefault();
+        localStorage.removeItem('sort_Event');
+        localStorage.removeItem('select-province');
+
+        window.location.href = this.href;
+    });
+</script>
+
 </div>
