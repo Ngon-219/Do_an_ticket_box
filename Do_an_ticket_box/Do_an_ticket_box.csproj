@@ -8,12 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Admin\**" />
     <Compile Remove="Views\NewFolder1\**" />
     <Compile Remove="Views\NewFolder\**" />
+    <Content Remove="Areas\Admin\**" />
     <Content Remove="Views\NewFolder1\**" />
     <Content Remove="Views\NewFolder\**" />
+    <EmbeddedResource Remove="Areas\Admin\**" />
     <EmbeddedResource Remove="Views\NewFolder1\**" />
     <EmbeddedResource Remove="Views\NewFolder\**" />
+    <None Remove="Areas\Admin\**" />
     <None Remove="Views\NewFolder1\**" />
     <None Remove="Views\NewFolder\**" />
   </ItemGroup>
@@ -29,13 +33,11 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.18" />
+    <PackageReference Include="System.Text.Json" Version="7.0.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Controllers\" />
-    <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\" />
+    <Folder Include="Areas\Manager\Data\" />
     <Folder Include="wwwroot\Images\Events\" />
     <Folder Include="wwwroot\Images\userAvt\" />
   </ItemGroup>

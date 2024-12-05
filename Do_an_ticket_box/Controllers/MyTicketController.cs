@@ -14,7 +14,7 @@ namespace Do_an_ticket_box.Controllers
             _context = context;
         }
 
-        public IActionResult Index(int? id, string status = "All", string? filter = null)
+        public IActionResult Index(int? id, string status = "All", string? filter = "Upcoming")
         {
             var userEmail = Request.Cookies["UserEmail"];
             Console.WriteLine("useremai la: " + userEmail);

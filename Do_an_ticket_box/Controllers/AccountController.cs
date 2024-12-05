@@ -142,7 +142,7 @@ namespace Do_an_ticket_box.Controllers
                 var user = await _context.User.FirstOrDefaultAsync(u => u.Email == model.Email);
 
                 // Kiểm tra xem người dùng có tồn tại và mật khẩu có hợp lệ không
-                if (user != null && BCrypt.Net.BCrypt.Verify(model.Password, user.Password))
+                if (user != null && BCrypt.Net.BCrypt.Verify(model.Password, user.Password) && user.role != "admin" && user.status != "lock")
                 {
                     // Đăng nhập thành công, tạo cookie xác thực
                     var claims = new List<Claim>

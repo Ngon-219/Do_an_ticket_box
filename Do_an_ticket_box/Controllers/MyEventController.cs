@@ -25,7 +25,7 @@ namespace Do_an_ticket_box.Controllers
 
 
                 var myEvent = await this._context.Set<Event>()
-                    .Where(e => e.UserID == userId.UserID)
+                    .Where(e => e.UserID == userId.UserID && e.status != "unvertify")
                     .ToListAsync();
 
 
@@ -43,7 +43,7 @@ namespace Do_an_ticket_box.Controllers
             } else
             {
                 var ticket = this._context.Set<Ticket>()
-                    .Where(e => e.Event_ID == id)
+                    .Where(e => e.Event_ID == id && e.status != "unvertify")
                     .ToList();
                 ViewData["ticket"] = ticket;
                 return View();

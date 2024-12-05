@@ -30,9 +30,8 @@ namespace Do_an_ticket_box.Controllers
         {
             int currentYear = DateTime.Now.Year;
             int currentMonth = DateTime.Now.Month;
-            var events = await this._context.Events
+            var events = await this._context.Events.Where(e => e.status != "unvertify")
             .OrderByDescending(e => e.countClick)
-            .Where(e => (e.Event_date_end.Month == currentMonth || e.Event_date.Month == currentMonth))
             .Take(10) 
             .ToListAsync();
 
@@ -40,22 +39,22 @@ namespace Do_an_ticket_box.Controllers
 
 
             var count_event_in_month = await this._context.Set<Event>()
-                .Where(e => (e.Event_date_end.Month == currentMonth || e.Event_date.Month == currentMonth))
+                .Where(e => (e.Event_date_end.Month == currentMonth || e.Event_date.Month == currentMonth) && e.status != "unvertify")
                 .CountAsync();
             var events_in_month = await this._context.Set<Event>()
-                .Where(e => (e.Event_date_end.Month == currentMonth || e.Event_date.Month == currentMonth))
+                .Where(e => (e.Event_date_end.Month == currentMonth || e.Event_date.Month == currentMonth) && e.status != "unvertify")
                 .Take(8)
                 .ToListAsync();
             // sự kiện tại hà nội
             var eventInHaNoi =await this._context.Events
-                .Where(e => EF.Functions.Like(e.location, "%Hà Nội%"))
+                .Where(e => EF.Functions.Like(e.location, "%Hà Nội%") && e.status != "unvertify")
                 .Take(8)
                 .ToListAsync();
             var count_event_in_HaNoi = await this._context.Events
-                .Where(e => EF.Functions.Like(e.location, "%Hà Nội%"))
+                .Where(e => EF.Functions.Like(e.location, "%Hà Nội%") && e.status != "unvertify")
                 .CountAsync();
             var count_events_in_month = await this._context.Set<Event>()
-            .Where(e => (e.Event_date_end.Month == currentMonth || e.Event_date.Month == currentMonth))
+            .Where(e => (e.Event_date_end.Month == currentMonth || e.Event_date.Month == currentMonth) && e.status != "unvertify")
             .CountAsync();
 
             var userEmail = Request.Cookies["UserEmail"];
@@ -63,8 +62,14 @@ namespace Do_an_ticket_box.Controllers
 
             if (user != null)
             {
-                ViewData["userStatus"] = user.status;
-                Console.WriteLine(ViewData["userStatus"]);
+                if(user.status == "lock")
+                {
+                    return RedirectToAction("Logout", "Account");
+                } else
+                {
+                    ViewData["userStatus"] = user.status;
+                    Console.WriteLine(ViewData["userStatus"]);
+                }
             }
             else ViewData["userStatus"] = "unlogin";
 
@@ -84,7 +89,7 @@ namespace Do_an_ticket_box.Controllers
             int currentYear = DateTime.Now.Year;
             int currentMonth = DateTime.Now.Month;
             int pageIndex = page;
-            var totalPage = await this._context.Events.Where(e => (e.Event_date_end.Month == currentMonth || e.Event_date.Month == currentMonth)).CountAsync();
+            var totalPage = await this._context.Events.Where(e => (e.Event_date_end.Month == currentMonth || e.Event_date.Month == currentMonth) && e.status != "unvertify").CountAsync();
             totalPage = (int)Math.Ceiling(totalPage / 10.0);
             ViewBag.currentPage = pageIndex;
             ViewBag.TotalPage = (int)totalPage;
@@ -92,7 +97,7 @@ namespace Do_an_ticket_box.Controllers
             if (pageIndex <= totalPage)
             {
                 var paginatedEvent = await this._context.Set<Event>()
-                    .Where(e => (e.Event_date_end.Month == currentMonth || e.Event_date.Month == currentMonth))
+                    .Where(e => (e.Event_date_end.Month == currentMonth || e.Event_date.Month == currentMonth) && e.status != "unvertify")
                     .Skip((pageIndex - 1) * 10)
                     .Take(10)
                     .ToListAsync();
@@ -113,14 +118,22 @@ namespace Do_an_ticket_box.Controllers
         //}
         public async Task<IActionResult> Ticket (int id)
         {
-            var EventInfor = await this._context.Events.FindAsync(id);
+            var EventInfor = await this._context.Events
+                .Where(e => e.status != "unvertify" && e.Event_ID == id)
+                .FirstOrDefaultAsync();
+
+            if (EventInfor == null)
+            {
+                return NotFound();
+            }
+
             if (EventInfor != null) { 
                 EventInfor.countClick += 1;
             }
             await this._context.SaveChangesAsync();
             var ticket = this._context.Ticket
             .Include(t => t.Event)
-                .Where(t => t.Event_ID == id)
+                .Where(t => t.Event_ID == id && t.status != "unvertify")
                 .ToList();
             ViewData["ticket"] = ticket;
 
@@ -134,14 +147,14 @@ namespace Do_an_ticket_box.Controllers
 
         public async Task<IActionResult> AllEvent(int page, string? filter, string? sorting)
         {
-            Console.WriteLine("Ở trang all event " + filter + " " + sorting);
             int pageIndex = page;
-            var totalPage = await this._context.Events.CountAsync();
+            var totalPage = await this._context.Events.Where(e => e.status != "unvertify").CountAsync();
             totalPage = (int)Math.Ceiling(totalPage / 10.0);
             ViewBag.currentPage = pageIndex;
             ViewBag.TotalPage = (int)totalPage;
+            Console.WriteLine("Ở trang all event " + filter + " " + sorting + " " + totalPage );
 
-            var query = this._context.Events.AsQueryable();
+            var query = this._context.Events.AsQueryable().Where(e => e.status != "unvertify");
 
             if (!string.IsNullOrEmpty(filter) && filter != "null")
             {
@@ -173,7 +186,6 @@ namespace Do_an_ticket_box.Controllers
                 }
                 else
                 {
-                    /*return Content("Không tìm thấy bất kì sự kiện nào");*/
                     return RedirectToAction("EventNull", "Home");
                 }
 

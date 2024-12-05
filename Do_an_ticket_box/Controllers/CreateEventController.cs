@@ -75,6 +75,7 @@ namespace Do_an_ticket_box.Controllers
                     location = event_location + " " + event_note,
                     description = description,
                     created_at_time = DateTime.Now,
+                    status = "unvertify",
                     event_image = $"/Images/Events/{fileName}",
                     countClick = 0,
                 };
