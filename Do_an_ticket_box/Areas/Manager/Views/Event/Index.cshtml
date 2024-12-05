@@ -1,0 +1,327 @@
+﻿@{
+    Layout = null; // Hoặc kiểm tra file Layout được dùng
+}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketBox Admin Dashboard</title>
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar {
+            height: 100vh;
+            position: fixed;
+            width: 250px;
+            background: #343a40;
+            color: #fff;
+        }
+
+            .sidebar a {
+                color: #ddd;
+                text-decoration: none;
+            }
+
+                .sidebar a:hover {
+                    background: #495057;
+                    color: #fff;
+                }
+
+            .sidebar .nav-link.active {
+                background-color: #495057;
+            }
+
+        .content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .navbar {
+            margin-left: 250px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar d-flex flex-column p-3">
+        <h4 class="text-center py-3 border-bottom">TicketBox Admin</h4>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a href="@Url.Action("Home", "Login")" class="nav-link active">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a href="@Url.Action("Index", "User")" class="nav-link">Users</a>
+            </li>
+            <li class="nav-item">
+                <a href="@Url.Action("Index", "Event")" class="nav-link">Events</a>
+            </li>
+            <li class="nav-item">
+                <a href="@Url.Action("Index", "Report")" class="nav-link">Reports</a>
+            </li>
+            <li class="nav-item">
+                <a href="@Url.Action("Index", "Banner")" class="nav-link">Banner</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Profile</a>
+                        </li>
+                        <li class="nav-link">
+                            <a href="@Url.Action("Logout", "Login")">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Dashboard Table -->
+        <div class="container mt-4">
+            <h2 class="mb-4">Event Management</h2>
+            <input type="text" id="searchInput" name="search" class="form-control form-control-lg" value="" placeholder="Tìm kiếm theo tên event" style="margin-bottom: 2vh;" />
+            <select id="provinceSelect" class="form-select" style="margin-bottom: 2vh;">
+                <option value="">Chọn tỉnh thành</option>
+            </select>
+
+
+
+
+            <table class="table table-bordered table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>UserID</th>
+                        <th>Fullname</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Role</th>
+                        <th>Gender</th>
+                        <th>Birthday</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="userTableBody">
+                </tbody>
+            </table>
+        </div>
+        <div class="text-center">
+            <select id="paginationSelect" class="text-center">
+        </div>
+        </select>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        localStorage.removeItem("filter_event_management");
+        function updateStatus(selectElement, userId, preStatus) {
+            const newStatus = selectElement.value;
+            console.log(preStatus);
+
+            Swal.fire({
+                title: "Are you sure?",
+                text: "Are you want to change status",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: 'https://localhost:7132/manager/event/UpdateStatus',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({
+                            UserID: userId,
+                            status: newStatus
+                        }),
+                        success: function (response) {
+                            if (response.success) {
+                                Swal.fire({
+                                    title: "Deleted!",
+                                    text: "Your file has been deleted.",
+                                    icon: "success"
+                                });
+                            } else {
+                                console.log(response.success);
+                                Swal.fire({
+                                    title: "Deleted!",
+                                    text: "Your file has been deleted.",
+                                    icon: "error"
+                                });
+                            }
+                        },
+                        error: function (error) {
+                            console.error('Error:', error);
+                            alert('An error occurred.');
+                        }
+                    });
+                } else {
+                    console.log("ahihi");
+                    selectElement.value = preStatus;
+                }
+            });
+        }
+
+        const provinces = [
+            "Hà Nội", "Hồ Chí Minh", "Hải Phòng", "Đà Nẵng", "Cần Thơ",
+            "An Giang", "Bà Rịa - Vũng Tàu", "Bắc Giang", "Bắc Kạn", "Bến Tre",
+            "Bình Dương", "Bình Định", "Bình Phước", "Bình Thuận", "Cà Mau",
+            "Cao Bằng", "Đắk Lắk", "Đắk Nông", "Điện Biên", "Đồng Nai",
+            "Đồng Tháp", "Gia Lai", "Hà Giang", "Hà Nam", "Hải Dương",
+            "Hòa Bình", "Hưng Yên", "Khánh Hòa", "Kiên Giang", "Kon Tum",
+            "Lai Châu", "Lạng Sơn", "Lào Cai", "Long An", "Nam Định",
+            "Nghệ An", "Ninh Bình", "Ninh Thuận", "Phú Thọ", "Phú Yên",
+            "Quảng Bình", "Quảng Nam", "Quảng Ngãi", "Quảng Ninh", "Quảng Trị",
+            "Sóc Trăng", "Sơn La", "Tây Ninh", "Thái Bình", "Thái Nguyên",
+            "Thanh Hóa", "Thừa Thiên Huế", "Tiền Giang", "Trà Vinh", "Tuyên Quang",
+            "Vĩnh Long", "Vĩnh Phúc", "Yên Bái"
+        ];
+
+        const selectElement = document.getElementById('provinceSelect');
+        provinces.forEach(province => {
+            const option = document.createElement("option");
+            option.value = province;
+            option.textContent = province;
+            selectElement.appendChild(option);
+        });
+
+        selectElement.value = localStorage.getItem("filter_event_management") ?? "";
+
+        $(document).ready(function () {
+            loadEvents(1);
+            selectElement.addEventListener('change', () => {
+                document.getElementById('searchInput').value = "";
+                console.log(selectElement.value);
+                localStorage.setItem('filter_event_management', selectElement.value);
+                selectElement.value = localStorage.getItem('filter_event_management');
+                loadEvents(1);
+            })
+
+            $('#paginationSelect').on('change', function () {
+                const selectedPage = $(this).val();
+                console.log(selectedPage)
+                loadEvents(selectedPage);
+            });
+
+            document.getElementById('searchInput').addEventListener('keydown', function (event) {
+                const valueSearch = document.getElementById('searchInput').value;
+                if (event.key === 'Enter') {
+                    event.preventDefault();
+
+                    $.ajax({
+                        url: `/manager/event/Search`,
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({
+                            search: valueSearch
+                        }),
+                        success: function (response) {
+                            if (response.success) {
+                                console.log(response);
+                                renderTable(response.userdata);
+                                const select = document.getElementById('paginationSelect');
+                                select.innerHTML = '';
+                                for (let i = 1; i <= response.totalPages; i++) {
+                                    const option = document.createElement("option");
+                                    option.value = i;
+                                    option.textContent = i;
+                                    select.appendChild(option);
+                                }
+                                select.value = response.currentPage;
+                            } else {
+                                Swal.fire("Error", response.message, "error");
+                            }
+                        },
+                        error: function (error) {
+                            console.error('Error:', error);
+                        }
+                    });
+                }
+            });
+
+
+            function loadEvents(page) {
+                $.ajax({
+                    url: `/manager/event/pagnination/?page=${page}&filter=${localStorage.getItem('filter_event_management') ?? ""}`,
+                    type: 'GET',
+                    success: function (response) {
+                        console.log(response);
+                        if (response.success) {
+                            renderTable(response.eventData);
+                            const select = document.getElementById('paginationSelect');
+                            select.innerHTML = '';
+                            for (let i = 1; i <= response.totalPages; i++) {
+                                const option = document.createElement("option");
+                                option.value = i;
+                                option.textContent = i;
+                                select.appendChild(option);
+                            }
+                            select.value = response.currentPage;
+                        } else {
+                            Swal.fire("Error", response.message, "error");
+                        }
+                    },
+                    error: function (error) {
+                        console.error('Error:', error);
+                    }
+                });
+            }
+
+            function formatDate(dateString) {
+                const date = new Date(dateString);
+                return date.toLocaleDateString("vi-VN", { day: "2-digit", month: "2-digit", year: "numeric" });
+            }
+
+            function renderTable(events) {
+                const tbody = $('#userTableBody');
+                tbody.empty(); // Xóa nội dung cũ
+
+                events.forEach(event => {
+                    tbody.append(`
+                        <tr>
+                            <td>${event.event_ID}</td>
+                            <td>${event.event_Name}</td>
+                            <td>${moment(event.event_date).format("YYYY-MM-DD HH:mm:ss")}</td>
+                            <td>${moment(event.event_date_end).format("YYYY-MM-DD HH:mm:ss")}</td>
+                            <td>${event.location}</td>
+                            <td>${event.total_tickets}</td>
+                            <td>${(event.countClick)}</td>
+                            <td>${(event.avaiable_ticket)}</td>
+                            <td>
+                                        <select class="form-control" onchange="updateStatus(this, ${event.event_ID}, '${event.status}')">
+                                    <option value="Banner" ${String(event.status) === "Banner" ? "selected" : ""}>Banner</option>
+                                    <option value="vertify" ${String(event.status) === "vertify" ? "selected" : ""}>vertify</option>
+                                    <option value="unvertify" ${String(event.status) === "unvertify" ? "selected" : ""}>unvertify/lock</option>
+                                </select>
+                            </td>
+                        </tr>
+                    `);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

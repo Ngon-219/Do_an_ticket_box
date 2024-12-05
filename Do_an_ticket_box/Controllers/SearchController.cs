@@ -21,7 +21,7 @@ namespace Do_an_ticket_box.Controllers
         public IActionResult Index(string query)
         {
             var result = this._context.Events
-                        .Where(r => r.Event_Name.ToLower().Contains(query) || r.location.ToLower().Contains(query) || r.description.ToLower().Contains(query))
+                        .Where(r => (r.Event_Name.ToLower().Contains(query) || r.location.ToLower().Contains(query) || r.description.ToLower().Contains(query)) && r.status != "unvertify")
                         .ToList();
             return View(result);
 

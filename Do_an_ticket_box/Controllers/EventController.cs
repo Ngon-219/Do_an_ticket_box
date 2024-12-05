@@ -18,7 +18,7 @@ namespace Do_an_ticket_box.Controllers
             int pageIndex = page;
             string searchPattern = $"%{location}%"; // Chuỗi cho LIKE
             var totalPage = await this._context.Events
-                .Where(e => EF.Functions.Like(e.location, searchPattern.ToString()))
+                .Where(e => EF.Functions.Like(e.location, searchPattern.ToString()) && e.status != "unvertify")
                 .CountAsync();
             totalPage = totalPage / 10 + 1;
             ViewBag.currentPage = pageIndex;
@@ -28,7 +28,7 @@ namespace Do_an_ticket_box.Controllers
             if (pageIndex <= totalPage)
             {
                 var paginatedEvent = await this._context.Set<Event>()
-                    .Where(e => EF.Functions.Like(e.location, searchPattern))
+                    .Where(e => EF.Functions.Like(e.location, searchPattern) && e.status != "unvertify")
                     .Skip((pageIndex - 1) * 10)
                     .Take(10)
                     .ToListAsync();

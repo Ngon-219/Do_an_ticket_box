@@ -30,7 +30,7 @@ namespace Do_an_ticket_box.Controllers
             int userId = int.Parse(userIdClaim.Value);
 
             var events = _dbContext.Events
-                .Where(e => e.UserID == userId) 
+                .Where(e => e.UserID == userId && e.status != "unvertify") 
                 .Select(e => new { e.Event_ID, e.Event_Name }) 
                 .ToList();
 
