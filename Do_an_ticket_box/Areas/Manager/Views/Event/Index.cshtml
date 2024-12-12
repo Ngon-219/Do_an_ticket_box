@@ -317,6 +317,9 @@
                                     <option value="unvertify" ${String(event.status) === "unvertify" ? "selected" : ""}>unvertify/lock</option>
                                 </select>
                             </td>
+                            <td>
+                                <a href=${"https://localhost:7132/myevent/details/" + event.event_ID}>details</a>
+                            </td>
                         </tr>
                     `);
                 });
