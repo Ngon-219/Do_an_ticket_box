@@ -175,8 +175,16 @@ button:hover {
             <p><i class="fas fa-map-marker-alt"></i> @Model.location</p>
             <hr style="margin-top: 60px;">
             <div class="ticket-price-ticket">
-                <span>Giá từ: <span class="price-ticket">@String.Format("{0:N0} VND", @ViewData["min_price"])</span></span>
-                <a href="@Url.Action("Booking", "Checkout", new {eventId = Model.Event_ID})" class="link-booking"><button class="book-ticket">Book now</button></a>
+                @if ((int)ViewData["check_seat"] == 0)
+                {
+                    <span>Giá từ: <span class="price-ticket">@String.Format("{0:N0} VND", @ViewData["min_price"])</span></span>
+                    <a href="@Url.Action("Booking", "Checkout", new {eventId = Model.Event_ID})" class="link-booking"><button class="book-ticket" disabled>Book now</button></a>
+                } else
+                {
+                    <span>Giá từ: <span class="price-ticket">@String.Format("{0:N0} VND", @ViewData["min_price"])</span></span>
+                    <a href="@Url.Action("Booking", "Checkout", new {eventId = Model.Event_ID})" class="link-booking"><button class="book-ticket">Book now</button></a>
+                }
+
             </div>
         </div>
         <div class="right-content-ticket">
@@ -224,7 +232,6 @@ button:hover {
 
 <script>
     const eventDateEnd = new Date('@Model.Event_date_end.ToString("yyyy-MM-ddTHH:mm:ss")');
-
     if (eventDateEnd < Date.now()) {
         document.addEventListener('DOMContentLoaded', function () {
             const buttons = document.querySelectorAll('.link-booking');

@@ -62,7 +62,8 @@ namespace Do_an_ticket_box.Areas.Manager.Controllers
                                   eventName = events.Event_Name,
                                   report = report.comment,
                                   reportRate = report.rate,
-                                  eventStart = events.Event_date
+                                  eventStart = events.Event_date,
+                                  event_id = events.Event_ID
                               })
                               .OrderBy(r => r.reportRate)
                               .Skip((page - 1) * pageSize)

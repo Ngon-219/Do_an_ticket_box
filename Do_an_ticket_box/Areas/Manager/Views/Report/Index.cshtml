@@ -288,6 +288,9 @@
                                     <td>${report.report}</td>
                                     <td>${report.reportRate}</td>
                                     <td>${moment(report.eventStart).format("YYYY-MM-DD HH:mm:ss")}</td>
+                                    <td>
+                                                        <a href=${"https://localhost:7132/myevent/details/" + report.event_id}>details</a>
+                                    </td>
                                 </tr>
                             `);
                 });

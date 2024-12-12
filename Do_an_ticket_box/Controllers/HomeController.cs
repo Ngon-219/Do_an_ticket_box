@@ -138,9 +138,17 @@ namespace Do_an_ticket_box.Controllers
             ViewData["ticket"] = ticket;
 
             var minPriceForEvent = this._context.Ticket
-                .Where(t => t.Event_ID == id)
-                .Min(t => t.price);
-            ViewData["min_price"] = minPriceForEvent;
+               .Where(t => t.Event_ID == id)
+               .OrderBy(t => t.price)
+               .Take(1)                .Union(
+                   this._context.Ticket
+                       .Where(t => t.Event_ID == id)
+                       .OrderBy(t => t.price)
+                       .Take(1)
+               )
+               .FirstOrDefault();
+            ViewData["min_price"] = minPriceForEvent.price;
+            ViewData["check_seat"] = minPriceForEvent.seat_remain;
 
             return View(EventInfor);
         }

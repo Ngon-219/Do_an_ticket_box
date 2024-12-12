@@ -37,7 +37,8 @@ namespace Do_an_ticket_box.Controllers
         {
             ViewData["eventId"] = id;
             var userEmail = Request.Cookies["UserEmail"];
-            if (userEmail == null)
+            var userManage = Request.Cookies["UserEmailManage"];
+            if (userEmail == null|| userManage == null )
             {
                 return RedirectToAction("Login", "Account");
             } else

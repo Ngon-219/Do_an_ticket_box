@@ -46,7 +46,7 @@ namespace Do_an_ticket_box.Areas.Manager.Controllers
 
                 return View();
             }
-            return Content("Home");
+            return View("Index");
         }
 
         public async Task<IActionResult> Logout()
