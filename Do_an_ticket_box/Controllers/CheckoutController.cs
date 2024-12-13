@@ -220,6 +220,7 @@ namespace Do_an_ticket_box.Controllers
         [HttpPost]
         public async Task<JsonResult> CompleteOrder([FromBody] JsonObject data)
         {
+
             Console.WriteLine("completeOrrder");
             var orderId = data["orderID"]?.ToString();
             Console.WriteLine(orderId);

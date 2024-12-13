@@ -38,10 +38,29 @@ namespace Do_an_ticket_box.Controllers
             ViewData["eventId"] = id;
             var userEmail = Request.Cookies["UserEmail"];
             var userManage = Request.Cookies["UserEmailManage"];
-            if (userEmail == null|| userManage == null )
+            if (userEmail == null)
             {
                 return RedirectToAction("Login", "Account");
             } else
+            {
+                var ticket = this._context.Set<Ticket>()
+                    .Where(e => e.Event_ID == id && e.status != "unvertify")
+                    .ToList();
+                ViewData["ticket"] = ticket;
+                return View();
+
+            }
+        }
+
+        public IActionResult DetailsManage(int? id)
+        {
+            ViewData["eventId"] = id;
+            var userManage = Request.Cookies["UserEmailManage"];
+            if (userManage == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            else
             {
                 var ticket = this._context.Set<Ticket>()
                     .Where(e => e.Event_ID == id && e.status != "unvertify")

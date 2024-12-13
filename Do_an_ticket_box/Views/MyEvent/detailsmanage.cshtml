@@ -1,0 +1,50 @@
+﻿@{
+    decimal? totalRevenue = 0;
+    <!-- Khai báo biến decimal trong Razor block -->
+}
+
+<div class="text-center text-white">
+    <h2>Thông tin chi tiết của sự kiện</h2>
+</div>
+
+<div class="text-center text-white" style="display: flex; justify-content: center; align-items: center; padding: 2vw;">
+    <table style="border: 1px solid white; border-collapse: collapse; width: 100%; margin: 0;">
+        <thead>
+            <tr>
+                <th style="border: 1px solid white; padding: 8px; text-align: center;">Tên vé</th>
+                <th style="border: 1px solid white; padding: 8px; text-align: center;">Số lượng bán ra</th>
+                <th style="border: 1px solid white; padding: 8px; text-align: center;">Số lượng còn lại</th>
+                <th style="border: 1px solid white; padding: 8px; text-align: center;">Số tiền thu được</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var ticket in (List<Ticket>)ViewData["ticket"])
+            {
+                decimal? revenue = (@ticket.seat_number - @ticket.seat_remain) * (@ticket.price ?? 0);
+
+                totalRevenue = totalRevenue + revenue;
+                <tr>
+                    <td style="border: 1px solid white; padding: 8px;">@ticket.Ticket_type</td>
+                    <td style="border: 1px solid white; padding: 8px;">@(@ticket.seat_number - @ticket.seat_remain)</td>
+                    <td style="border: 1px solid white; padding: 8px;">@ticket.seat_remain</td>
+                    <td style="border: 1px solid white; padding: 8px;">
+                        @String.Format("{0:N0} VND", revenue)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="text-center text-white" style="padding-top: 0vh; margin-bottom: 2vh;">
+    <h4 style="color: white;">Tổng tiền đã bán: @String.Format("{0:N0} VND", totalRevenue)</h4>  <!-- Hiển thị tổng doanh thu -->
+</div>
+
+<div class="text-center" style="margin-bottom: 4vh;">
+    <a href="@Url.Action("Ticket", "Home", new {id = ViewData["eventId"]})"
+       class="btn btn-success"
+       style="text-decoration: none; border-radius: 8px; padding: 10px 20px;">
+        <h3>Xem sự kiện của bạn tại đây</h3>
+    </a>
+</div>
