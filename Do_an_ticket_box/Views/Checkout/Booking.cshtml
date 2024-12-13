@@ -200,13 +200,13 @@
     function increase(button, ticketPrice) {
         const ticketRemain = button.closest('.ticket-group').querySelector('input[name="ticketRemain"]');
         const ticketQuanlity = button.closest('.ticket-group').querySelector('input[name="ticketQuanlity"]');
-        console.log(ticketRemain, ticketQuanlity)
-        if (ticketQuanlity.value < ticketRemain.value) {
+        if (parseInt(ticketQuanlity.value) < parseInt(ticketRemain.value)) {
             ticketQuanlity.value++;
             updateTotal();
+            console.log(ticketRemain.value, ticketQuanlity.value)
         } else {
             alert("Vé này đã hết!");
-            button.disabled = true;
+            console.log(ticketRemain.value, ticketQuanlity.value + "ngon")
         }
     }
 

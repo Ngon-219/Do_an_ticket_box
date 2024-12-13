@@ -30,7 +30,7 @@ namespace Do_an_ticket_box.Controllers
         {
             int currentYear = DateTime.Now.Year;
             int currentMonth = DateTime.Now.Month;
-            var events = await this._context.Events.Where(e => e.status != "unvertify")
+            var events = await this._context.Events.Where(e => e.status != "unvertify" && e.Event_date_end.Month == currentMonth || e.Event_date.Month == currentMonth)
             .OrderByDescending(e => e.countClick)
             .Take(10) 
             .ToListAsync();
@@ -44,11 +44,13 @@ namespace Do_an_ticket_box.Controllers
             var events_in_month = await this._context.Set<Event>()
                 .Where(e => (e.Event_date_end.Month == currentMonth || e.Event_date.Month == currentMonth) && e.status != "unvertify")
                 .Take(8)
+                .OrderByDescending(e => e.Event_date)
                 .ToListAsync();
-            // sự kiện tại hà nội
+            
             var eventInHaNoi =await this._context.Events
                 .Where(e => EF.Functions.Like(e.location, "%Hà Nội%") && e.status != "unvertify")
                 .Take(8)
+                .OrderByDescending(e => e.Event_date)
                 .ToListAsync();
             var count_event_in_HaNoi = await this._context.Events
                 .Where(e => EF.Functions.Like(e.location, "%Hà Nội%") && e.status != "unvertify")
