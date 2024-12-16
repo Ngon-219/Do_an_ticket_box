@@ -159,12 +159,6 @@ button:hover {
 
 </style>
 
-@if(Model.Event_date_end < DateTime.Now)
-{
-    <div class="alert alert-danger text-center" role="alert">
-        <h3>Sự kiện đã kết thúc</h3>
-    </div>
-}
 
 <body class="mal">
     <section class="event-info-ticket">
@@ -230,6 +224,7 @@ button:hover {
     </section>
 </body>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     const eventDateEnd = new Date('@Model.Event_date_end.ToString("yyyy-MM-ddTHH:mm:ss")');
     if (eventDateEnd < Date.now()) {
@@ -239,11 +234,27 @@ button:hover {
             buttons.forEach(function (button) {
                 const btn = button.querySelector('.book-ticket');
                 if (btn) {
+                    btn.textContent = "sự kiện này đã kết thúc";
                     btn.disabled = true;  
                     button.style.pointerEvents = 'none';  
                     button.style.color = 'gray'; 
                 }
             });
+        });
+        Swal.fire({
+            title: "Sự kiện này đã kết thúc",
+            text: "Bấm Oke để tiếp tục xem thông tin sự kiện, Back để trở về trang chủ",
+            icon: "question",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            cancelButtonText: "Back",
+            confirmButtonText: "Oke"
+        }).then((result) => {
+            if (result.isConfirmed) {
+            } else {
+                window.location.href = "/";
+            }
         });
     }
 </script>

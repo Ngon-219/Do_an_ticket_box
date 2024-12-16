@@ -50,16 +50,44 @@
             @foreach (var events in Model)
             {
                 <div class="col-6 col-lg-3 p-1 align-content-center align-items-center" style="cursor: pointer;" id="item-card">
-                    <div class="bg-black" style="height: 35vh;  border-radius: 10px; overflow: hidden; position: relative;">
-                        <a href="@Url.Action("Ticket", "Home", new { id = events.Event_ID })">
-                            <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src=@events.event_image alt="Alternate Text" />
-                            <div class="text-white" style="position: absolute; bottom:0; padding-left:0.5vw; background-color: rgba(128, 128, 128, 0.7); width:100%">
-                                <h5>@events.Event_Name</h5>
-                                <h6>@events.Event_date.ToString("dd/MM/yyyy") @events.Event_time</h6>
-                                <h6>@events.location</h6>
-                            </div>
-                        </a>
-                    </div>
+                    @if (events.Event_date_end < DateTime.Now)
+                    {
+                        <div class="bg-black" style="height: 35vh; border-radius: 10px; overflow: hidden; position: relative;">
+                            <a href="@Url.Action("Ticket", "Home", new { id = events.Event_ID })">
+                                <span style="background-color: #FF9B3F; color: white; border-radius: 5px;
+                             position: absolute; top: 10px; right: 10px;
+                             padding: 5px 10px; font-weight: bold; z-index: 10;">
+                                    Kết thúc
+                                </span>
+
+                                <img class="" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;"
+                                     src="@events.event_image" alt="Alternate Text" />
+                                <div class="text-white" style="position: absolute; bottom: 0; padding-left: 0.5vw;
+                                                background-color: rgba(128, 128, 128, 0.7); width: 100%;">
+                                    <h5>
+                                        @events.Event_Name
+                                    </h5>
+                                    <h6>@events.Event_date.ToString("dd/MM/yyyy") @events.Event_time</h6>
+                                    <h6>@events.location</h6>
+                                </div>
+                            </a>
+                        </div>
+
+                    }
+                    else
+                    {
+                        <div class="bg-black" style="height: 35vh;  border-radius: 10px; overflow: hidden; position: relative;">
+                            <a href="@Url.Action("Ticket", "Home", new { id = events.Event_ID })">
+                                <img class="" style="width: 100%; height: 100%; object-fit: cover ;border-radius: 10px;" src=@events.event_image alt="Alternate Text" />
+                                <div class="text-white" style="position: absolute; bottom:0; padding-left:0.5vw; background-color: rgba(128, 128, 128, 0.7); width:100%">
+                                    <h5>@events.Event_Name</h5>
+                                    <h6>@events.Event_date.ToString("dd/MM/yyyy") @events.Event_time</h6>
+                                    <h6>@events.location</h6>
+                                </div>
+                            </a>
+                        </div>
+                    }
+
                 </div>
             }
         </div>
@@ -160,8 +188,6 @@
             window.addEventListener('load', () => {
                 const province = localStorage.getItem('select-province');
                 const sorting = localStorage.getItem('sort_Event');
-
-                // Cập nhật lại giá trị cho các dropdown nếu có giá trị trong localStorage
                 if (province) {
                     document.getElementById("select-province").value = province;
                 }

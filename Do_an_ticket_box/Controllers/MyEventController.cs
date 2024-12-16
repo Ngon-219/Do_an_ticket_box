@@ -65,6 +65,15 @@ namespace Do_an_ticket_box.Controllers
                 var ticket = this._context.Set<Ticket>()
                     .Where(e => e.Event_ID == id && e.status != "unvertify")
                     .ToList();
+                var result = (from e in this._context.Events
+                              join u in this._context.User on e.UserID equals u.UserID
+                              where e.Event_ID == id
+                              select new
+                              {
+                                  u.Email
+                              }).FirstOrDefault();
+
+                ViewData["userHost"] = result.Email;
                 ViewData["ticket"] = ticket;
                 return View();
 

@@ -57,6 +57,42 @@ namespace Do_an_ticket_box.Areas.Manager.Controllers
             return Json(new { success = false, message = "Unauthorized" });
         }
 
+        public async Task<IActionResult> pagninationBanner(int page = 1, int pageSize = 5, string filter = "")
+        {
+            Console.WriteLine(page + " " + pageSize);
+            var userManage = Request.Cookies["UserEmailManage"];
+            if (userManage != null)
+            {
+                var totalEvents = 0;
+                IQueryable<Event> eventsQuery = _context.Events;
+                eventsQuery = eventsQuery.Where(e => e.status != "unvertify");
+
+                if (!string.IsNullOrEmpty(filter))
+                {
+                    eventsQuery = eventsQuery.Where(e => e.location.ToLower().Contains(filter.ToLower()));
+                }
+
+                totalEvents = await eventsQuery.CountAsync();
+
+                var events = await eventsQuery
+                    .OrderByDescending(u => u.Event_date)
+                    .Skip((page - 1) * pageSize)
+                    .Take(pageSize)
+                    .ToListAsync();
+
+                return Json(new
+                {
+                    success = true,
+                    eventData = events,
+                    totalEventData = totalEvents,
+                    currentPage = page,
+                    totalPages = (int)Math.Ceiling((double)totalEvents / pageSize)
+                });
+            }
+
+            return Json(new { success = false, message = "Unauthorized" });
+        }
+
 
 
         [HttpPost]
