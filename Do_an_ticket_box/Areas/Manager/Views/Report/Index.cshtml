@@ -56,7 +56,7 @@
         <h4 class="text-center py-3 border-bottom">TicketBox Admin</h4>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a href="@Url.Action("Home", "Login")" class="nav-link active">Dashboard</a>
+                <a href="@Url.Action("Home", "Login")" class="nav-link">Dashboard</a>
             </li>
             <li class="nav-item">
                 <a href="@Url.Action("Index", "User")" class="nav-link">Users</a>
@@ -65,7 +65,7 @@
                 <a href="@Url.Action("Index", "Event")" class="nav-link">Events</a>
             </li>
             <li class="nav-item">
-                <a href="@Url.Action("Index", "Report")" class="nav-link">Reports</a>
+                <a href="@Url.Action("Index", "Report")" class="nav-link active">Reports</a>
             </li>
             <li class="nav-item">
                 <a href="@Url.Action("Index", "Banner")" class="nav-link">Banner</a>
@@ -109,6 +109,7 @@
                         <th>Content</th>
                         <th>Rate</th>
                         <th>Ngày bắt đầu sự kiện</th>
+                        <th>Chi tiết</th>
                     </tr>
                 </thead>
                 <tbody id="userTableBody">
@@ -289,7 +290,7 @@
                                     <td>${report.reportRate}</td>
                                     <td>${moment(report.eventStart).format("YYYY-MM-DD HH:mm:ss")}</td>
                                     <td>
-                                                        <a href=${"https://localhost:7132/myevent/details/" + report.event_id}>details</a>
+                                        <a href=${"https://localhost:7132/myevent/DetailsManage/" + report.event_id}>details</a>
                                     </td>
                                 </tr>
                             `);

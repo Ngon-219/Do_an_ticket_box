@@ -18,6 +18,12 @@
             flex-direction: column;
         }
 
+        .expired {
+            background-color: red;
+            color: white; /* Bạn có thể thay đổi màu chữ nếu muốn */
+        }
+
+
         .sidebar {
             height: 100vh;
             position: fixed;
@@ -56,13 +62,13 @@
         <h4 class="text-center py-3 border-bottom">TicketBox Admin</h4>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a href="@Url.Action("Home", "Login")" class="nav-link active">Dashboard</a>
+                <a href="@Url.Action("Home", "Login")" class="nav-link">Dashboard</a>
             </li>
             <li class="nav-item">
                 <a href="@Url.Action("Index", "User")" class="nav-link">Users</a>
             </li>
             <li class="nav-item">
-                <a href="@Url.Action("Index", "Event")" class="nav-link">Events</a>
+                <a href="@Url.Action("Index", "Event")" class="nav-link active">Events</a>
             </li>
             <li class="nav-item">
                 <a href="@Url.Action("Index", "Report")" class="nav-link">Reports</a>
@@ -107,15 +113,16 @@
             <table class="table table-bordered table-striped">
                 <thead class="table-dark">
                     <tr>
-                        <th>UserID</th>
-                        <th>Fullname</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Address</th>
-                        <th>Role</th>
-                        <th>Gender</th>
-                        <th>Birthday</th>
-                        <th>Status</th>
+                        <th>EventID</th>
+                        <th>Tên sự kiện</th>
+                        <th>Ngày bắt đầu</th>
+                        <th>Ngày kết thúc</th>
+                        <th>Địa chỉ</th>
+                        <th>Tổng số lượng vé</th>
+                        <th>Lượt truy cập</th>
+                        <th>số vé còn lại</th>
+                        <th>Trạng thái</th>
+                        <th>CHi tiết</th>
                     </tr>
                 </thead>
                 <tbody id="userTableBody">
@@ -140,8 +147,8 @@
             console.log(preStatus);
 
             Swal.fire({
-                title: "Are you sure?",
-                text: "Are you want to change status",
+                title: "Thay đổi trạng thái",
+                text: "Bạn có muốn thay đổi trạng thái",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#3085d6",
@@ -160,15 +167,15 @@
                         success: function (response) {
                             if (response.success) {
                                 Swal.fire({
-                                    title: "Deleted!",
-                                    text: "Your file has been deleted.",
+                                    title: "Thành công",
+                                    text: "Trạng thái thay đổi thành công",
                                     icon: "success"
                                 });
                             } else {
                                 console.log(response.success);
                                 Swal.fire({
-                                    title: "Deleted!",
-                                    text: "Your file has been deleted.",
+                                    title: "Thất Bại!",
+                                    text: "Trạng thái thay đổi thất bại",
                                     icon: "error"
                                 });
                             }
@@ -301,30 +308,33 @@
 
                 events.forEach(event => {
                     tbody.append(`
-                        <tr>
-                            <td>${event.event_ID}</td>
-                            <td>${event.event_Name}</td>
-                            <td>${moment(event.event_date).format("YYYY-MM-DD HH:mm:ss")}</td>
-                            <td>${moment(event.event_date_end).format("YYYY-MM-DD HH:mm:ss")}</td>
-                            <td>${event.location}</td>
-                            <td>${event.total_tickets}</td>
-                            <td>${(event.countClick)}</td>
-                            <td>${(event.avaiable_ticket)}</td>
-                            <td>
-                                        <select class="form-control" onchange="updateStatus(this, ${event.event_ID}, '${event.status}')">
-                                    <option value="Banner" ${String(event.status) === "Banner" ? "selected" : ""}>Banner</option>
-                                    <option value="vertify" ${String(event.status) === "vertify" ? "selected" : ""}>vertify</option>
-                                    <option value="unvertify" ${String(event.status) === "unvertify" ? "selected" : ""}>unvertify/lock</option>
-                                </select>
-                            </td>
-                            <td>
-                                        <a href=${"https://localhost:7132/myevent/DetailsManage/" + event.event_ID}>details</a>
-                            </td>
-                        </tr>
-                    `);
+                            <tr id="event-${event.event_ID}" class="${moment(event.event_date_end) < (moment()) ? 'expired' : ''}">
+                        <td>${event.event_ID}</td>
+                        <td>${event.event_Name}</td>
+                        <td>${moment(event.event_date).format("YYYY-MM-DD HH:mm:ss")}</td>
+                        <td>${moment(event.event_date_end).format("YYYY-MM-DD HH:mm:ss")}</td>
+                        <td>${event.location}</td>
+                        <td>${event.total_tickets}</td>
+                        <td>${event.countClick}</td>
+                        <td>${event.avaiable_ticket}</td>
+                        <td>
+                            <select class="form-control" onchange="updateStatus(this, ${event.event_ID}, '${event.status}')">
+                                <option value="vertify" ${String(event.status) === "vertify" || String(event.status) == "Banner" ? "selected" : ""}>vertify</option>
+                                <option value="unvertify" ${String(event.status) === "unvertify" ? "selected" : ""}>unvertify/lock</option>
+                            </select>
+                        </td>
+                        <td>
+                            <a href="${"https://localhost:7132/myevent/DetailsManage/" + event.event_ID}">details</a>
+                        </td>
+                    </tr>
+                `);
                 });
             }
+
         });
+
+
+
     </script>
 </body>
 </html>
