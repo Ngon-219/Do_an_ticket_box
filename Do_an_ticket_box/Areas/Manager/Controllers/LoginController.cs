@@ -1,4 +1,5 @@
-﻿using Do_an_ticket_box.Services;
+﻿using Do_an_ticket_box.Models;
+using Do_an_ticket_box.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
@@ -38,7 +39,6 @@ namespace Do_an_ticket_box.Areas.Manager.Controllers
                 ViewData["countReport"] = countReport;
 
                 var total = await this._context.Ticket
-                .Where(t => t.status == "remain")
                 .SumAsync(t => (((t.seat_number ?? 0) - (t.seat_remain ?? 0)) * (t.price ?? 0)));
 
                 ViewData["revenue"] = total;
@@ -96,10 +96,132 @@ namespace Do_an_ticket_box.Areas.Manager.Controllers
 
         }
 
-        public async Task<ActionResult> GetDetailsByMonth()
+        public ActionResult GetDetailsByMonth(int? year, string type)
         {
+            /*       var monthlyRevenue = _context.Payments
+                      .Join(_context.Bookings,
+                            payment => payment.Booking_ID,
+                            booking => booking.Booking_ID,
+                            (payment, booking) => new { payment, booking })
+                      .Join(_context.Events,
+                            combined => combined.booking.Event_ID,
+                            ev => ev.Event_ID,
+                            (combined, ev) => new { combined.payment, combined.booking, ev })
+                      .Where(x => x.payment.Payment_time.Year == year) // Lọc theo năm custom
+                      .GroupBy(x => x.payment.Payment_time.Month)      // Nhóm theo tháng
+                      .Select(g => new
+                      {
+                          Month = g.Key,
+                          TotalRevenue = g.Sum(x => x.payment.Amount_paid)
+                      })
+                      .OrderBy(result => result.Month)
+                      .ToList();*/
 
-            return Json(new { success = true });
+            var months = Enumerable.Range(1, 12);
+
+            switch (type)
+            {
+                case "Users":
+                    {
+                        var result = (from month in months
+                                      join monthlyData in
+                                          (from user in this._context.User
+                                           join token in this._context.EmailVerificationTokens
+                                               on user.EmailVerificationTokenId equals token.Id
+                                           where token.CreateOnUtc.Year == year
+                                           group user by token.CreateOnUtc.Month into monthlyGroup
+                                           select new
+                                           {
+                                               Month = monthlyGroup.Key,
+                                               UserCount = monthlyGroup.Count()
+                                           })
+                                      on month equals monthlyData.Month into monthlyJoin
+                                      from joinedData in monthlyJoin.DefaultIfEmpty()
+                                      select new
+                                      {
+                                          UserCount = joinedData != null ? joinedData.UserCount : 0
+                                      })
+                          .Select(x => x.UserCount) 
+                          .ToArray(); 
+
+                        return Json(new { success = true, data = result });
+                    }
+                case "Events":
+                    {
+                        var result = (from month in months
+                                      join monthlyData in
+                                          (from e in this._context.Events
+                                           where e.Event_date.Year == year
+                                           group e by e.Event_date.Month into monthlyGroup
+                                           select new
+                                           {
+                                               Month = monthlyGroup.Key,
+                                               UserCount = monthlyGroup.Count()
+                                           })
+                                      on month equals monthlyData.Month into monthlyJoin
+                                      from joinedData in monthlyJoin.DefaultIfEmpty()
+                                      select new
+                                      {
+                                          UserCount = joinedData != null ? joinedData.UserCount : 0
+                                      })
+                          .Select(x => x.UserCount)
+                          .ToArray();
+                        return Json(new { success = true, data = result });
+                    }
+                case "Reports":
+                    {
+                        var result = (from month in months
+                                      join monthlyData in
+                                          (from r in this._context.Reports
+                                           join e in this._context.Events
+                                               on r.Event_ID equals e.Event_ID
+                                           where e.Event_date.Year == year
+                                           group r by e.Event_date.Month into monthlyGroup
+                                           select new
+                                           {
+                                               Month = monthlyGroup.Key,
+                                               UserCount = monthlyGroup.Count()
+                                           })
+                                      on month equals monthlyData.Month into monthlyJoin
+                                      from joinedData in monthlyJoin.DefaultIfEmpty()
+                                      select new
+                                      {
+                                          UserCount = joinedData != null ? joinedData.UserCount : 0
+                                      })
+                          .Select(x => x.UserCount)
+                          .ToArray();
+                        return Json(new { success = true, data = result });
+                    }
+                case "Revenue":
+                    {
+                        var result = (from month in months
+                                      join monthlyData in
+                                          (from t in this._context.Ticket
+                                           where t.start_time.Year == year
+                                           group t by t.start_time.Month into monthlyGroup
+                                           select new
+                                           {
+                                               Month = monthlyGroup.Key,
+                                               UserCount = monthlyGroup.Sum(t => (((t.seat_number ?? 0) - (t.seat_remain ?? 0)) * (t.price ?? 0)))
+                                           })
+                                      on month equals monthlyData.Month into monthlyJoin
+                                      from joinedData in monthlyJoin.DefaultIfEmpty()
+                                      select new
+                                      {
+                                          UserCount = joinedData != null ? joinedData.UserCount : 0
+                                      })
+                          .Select(x => x.UserCount)
+                          .ToArray();
+                        return Json(new { success = true, data = result });
+                    }
+                default:
+                    {
+                        return Json(new { success = false });
+                    }
+
+            }
+
+            
         }
     }
 }

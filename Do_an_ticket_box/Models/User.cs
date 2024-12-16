@@ -34,6 +34,7 @@ namespace Do_an_ticket_box.Models
         public string? gender { get; set; }
         [Column("Birthday", TypeName = "Date")]
         public DateTime? birthday { get; set; }
+        public Guid? EmailVerificationTokenId { get; set; }
         public List<Booking> Bookings { get; set; }
         public List<Report> Reports { get; set; }
 

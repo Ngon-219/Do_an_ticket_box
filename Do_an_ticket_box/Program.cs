@@ -46,6 +46,8 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.ExpireTimeSpan = TimeSpan.FromDays(7); // Thời gian hết hạn cookie
         options.SlidingExpiration = true;              // Cho phép cookie tự động gia hạn khi người dùng hoạt động
     });
+
+builder.Services.AddHostedService<DailyTaskService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

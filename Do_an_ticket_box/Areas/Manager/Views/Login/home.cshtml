@@ -132,7 +132,7 @@
         </div>
     </div>
 
-    <div class="container text-center">
+    <div class="container text-center" style="margin-left: 20vw;">
         <label for="yearSelect" class="form-label">Chọn Năm</label>
         <select id="yearSelect" class="">
         </select>
@@ -148,11 +148,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         $(document).ready(function () {
-            var startYear = 2000; 
+            var startYear = 2019; 
             var endYear = new Date().getFullYear(); 
             var select = $('#yearSelect');
 
-            for (var year = startYear; year <= endYear; year++) {
+            for (var year = endYear; year >= startYear; year--) {
                 select.append('<option value="' + year + '">' + year + '</option>');
             }
 
@@ -176,13 +176,16 @@
         let chartInstance = null; // Khai báo biến global để lưu biểu đồ
 
         const rerender = () => {
+            var selectedYear = $('#yearSelect').val();
+            var selectedType = $('#typeSelect').val();
+            const Geturl = `https://localhost:7132/manager/login/GetDetailsByMonth?year=${selectedYear}&type=${selectedType}`;
+            console.log(Geturl);
+
             $.ajax({
-                url: "https://localhost:7132/manager/login/GetDetailsByMonth",
-                type: 'GET',
+                url: Geturl,
                 success: function (res) {
                     if (res.success) {
-                        var selectedYear = $('#yearSelect').val();
-                        var selectedType = $('#typeSelect').val();
+                        console.log(res.data);
 
                         let myChart = document.getElementById('myChart').getContext('2d');
                         if (chartInstance) {
@@ -241,6 +244,8 @@
                                 }
                             }
                         });
+                    } else {
+                        alert("sai");
                     }
                 },
                 error: function () {

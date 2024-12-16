@@ -24,7 +24,11 @@ namespace Do_an_ticket_box.Controllers
             var user = this._context.User.FirstOrDefault(x => x.Email == userEmail);
             if (user == null) { return RedirectToAction("Login", "Account"); }
             if (user.status == "vertify") return View();
-            var emailToken = this._context.EmailVerificationTokens.FirstOrDefault(x => x.UserId == user.UserID);
+            var emailToken = this._context.EmailVerificationTokens
+                .Where(x => x.UserId == user.UserID)
+                .OrderByDescending(x => x.ExpiresOnUtc)
+                .FirstOrDefault();
+
             if (emailToken.ExpiresOnUtc > DateTime.UtcNow)
             {
                 Console.WriteLine("first " + emailToken.ExpiresOnUtc.ToString());
