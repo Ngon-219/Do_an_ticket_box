@@ -98,6 +98,7 @@ namespace Do_an_ticket_box.Areas.Manager.Controllers
 
         public async Task<ActionResult> GetDetailsByMonth()
         {
+
             return Json(new { success = true });
         }
     }

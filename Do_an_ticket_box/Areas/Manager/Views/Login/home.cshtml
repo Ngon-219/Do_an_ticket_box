@@ -185,20 +185,16 @@
                         var selectedType = $('#typeSelect').val();
 
                         let myChart = document.getElementById('myChart').getContext('2d');
-
-                        // Hủy biểu đồ cũ nếu tồn tại
                         if (chartInstance) {
                             chartInstance.destroy();
                         }
-
-                        // Tạo biểu đồ mới
                         chartInstance = new Chart(myChart, {
                             type: 'bar',
                             data: {
                                 labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'],
                                 datasets: [{
                                     label: selectedType + ' ' + selectedYear,
-                                    data: res.data, // Dữ liệu từ API
+                                    data: res.data,
                                     backgroundColor: [
                                         'rgba(255, 99, 132, 0.6)',
                                         'rgba(54, 162, 235, 0.6)',
