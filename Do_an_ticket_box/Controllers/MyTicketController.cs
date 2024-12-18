@@ -33,6 +33,7 @@ namespace Do_an_ticket_box.Controllers
                              join Ticket in this._context.Ticket on Booking.Ticket_ID equals Ticket.Ticket_ID
                              where Booking.User_ID == user.UserID && Booking.status == "COMPLETED"
                              group new { Booking, Event, Ticket } by Booking.OrderId into grouped
+                             orderby grouped.FirstOrDefault().Event.Event_date
                              select new MyTicketVM
                              {
                                  EventName = grouped.FirstOrDefault().Event.Event_Name,

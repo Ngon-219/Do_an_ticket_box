@@ -80,15 +80,30 @@
                         window.location.href = "/";
                     }
                 });
-
             }
             else {
-                document.getElementById("notification-container").innerHTML = `
-            <div class='alert alert-danger alert-dismissible fade show' role='alert'>
-                <strong>Failed to create the order!</strong>
-                <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-            </div>
-        `;
+                if (details == "soldOut") {
+                    Swal.fire({
+                        title: "Thanh toán thất bại, vé đã sold out",
+                        confirmButtonText: "Trở về trang chủ",
+                        icon: "warning",
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = "/";
+                        }
+                    });
+                }
+                if (details == "error") {
+                    Swal.fire({
+                        title: "Thanh toán thất bại,vui lòng kiểm tra số dư paypal hoặc kết nối mạng",
+                        confirmButtonText: "Trở về trang chủ",
+                        icon: "warning",
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = "/";
+                        }
+                    });
+                }
             }
 
         },

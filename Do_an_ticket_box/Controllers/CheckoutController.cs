@@ -114,14 +114,12 @@ namespace Do_an_ticket_box.Controllers
                 }
                 try
                 {
-                    // Thêm các Booking vào cơ sở dữ liệu và lưu thay đổi
                     await this._context.Bookings.AddRangeAsync(data);
                     await this._context.SaveChangesAsync();
                     return RedirectToAction("Index", new { eventId = eventId[0], amount = amount.ToString() });
                 }
                 catch (Exception ex)
                 {
-                    // Xử lý lỗi nếu có
                     Console.WriteLine($"Error when saving bookings: {ex.Message}");
                     return Content("An error occurred while saving your bookings.");
                 }
@@ -170,7 +168,6 @@ namespace Do_an_ticket_box.Controllers
                 return new JsonResult(new { Id = "" });
             }
 
-            // create the request body
             JsonObject createOrderRequest = new JsonObject();
             createOrderRequest.Add("intent", "CAPTURE");
 
@@ -265,7 +262,7 @@ namespace Do_an_ticket_box.Controllers
                                 return new JsonResult("success");
                             } else
                             {
-                                return new JsonResult("error");
+                                return new JsonResult("soldOut");
                             }
                         }
                     }
@@ -314,7 +311,6 @@ namespace Do_an_ticket_box.Controllers
                 if (httpResponse.IsSuccessStatusCode)
                 {
                     string strResponse = await httpResponse.Content.ReadAsStringAsync();
-                    /*Console.WriteLine(strResponse);*/
 
                     var jsonResponse = JsonNode.Parse(strResponse);
                     if (jsonResponse != null)
